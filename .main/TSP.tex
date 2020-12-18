@@ -1,0 +1,964 @@
+\documentclass[12pt]{article}
+\usepackage{MicSheets}
+
+\usepackage{chemformula,siunitx}
+\newcommand{\upup}[2]{\stackrel{\mbox{\normalfont\footnotesize{#1}}}{#2}}
+
+\begin{document}
+\title{TSP Example Sheets}
+\author{Feiyang Chen}
+\date{Michaelmas 2020}
+\maketitle
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+\section{}
+\subsection{} van der Waals gas law:
+        \[\left(p + \frac{N^2a}{V^2} \right)(V - Nb) = Nk_BT\]
+        
+        $ \dif U$ in its natural variables is
+        \begin{align*}
+           \dif U &=  - p\dif V + T\dif S\\
+            \dif U &=  T\dif S - p\dif V\\
+            \dif U &=  T \thm{S}{T}{V}\dif T +\left(T\thm{S}{V}{T} - p\right)\dif V
+        \end{align*}
+        So heat capacity at constant volume is by definition,
+        \begin{align*}
+            C_V &=  \thm{U}{T}{V} \\&=  T\thm{S}{T}{V}
+        \end{align*}
+        This Maxwell's relation might be useful for relating the expression above to van der Waals' law
+        \begin{align*}
+            \dif F &=  - S\dif T - p\dif V\\
+            \thm{S}{V}{T} &= - \pdv{F}{V}{T} \\&= +\thm{p}{T}{V}
+        \end{align*}
+        Finally,
+        \begin{align*}
+            \thm{C_V}{V}{T} &= \thm{T\thm{S}{T}{V}}{V}{T}\\
+            &= T \thm{}{T}{V}\thm{S}{V}{T}\\
+            &= T \left(\pdv[2]{p}{T}\right)_V\\
+            &= T\, \pdv{T} \frac{Nk_B}{V - Nb}\\
+            &= 0
+        \end{align*}
+        As for the specific heat $c_V(p,T)$
+        \begin{align*}
+            \thm{c_V}{V}{T} = - \frac{1}{V^2}C_V
+        \end{align*}
+        Due to local pressure changes upon increasing volume at fixed temperature.
+        \subsection{} {  \[
+            G = U - TS + pV\qquad \dif G = - S \dif T + V \dif p +\mu \dif N
+        \]}
+        \[
+            G = Nk_BT \ln \left(\frac{p}{p_0}\right) - NA(T)p
+        \]
+            \subsubsection{} { \begin{align*}
+                \thm{G}{p}{T,N} = V &= N k_BT \frac{1}{p} - NA(T)\\
+                pV &= N k_BT - NA(T)p
+            \end{align*}}
+            \subsubsection{} {  \begin{align*}
+                S = -\thm{G}{T}{p,N} &= - N k_B \ln\left(\frac{p}{p_0}\right) + Np \dv{A}{T} 
+            \end{align*}}
+            \subsubsection{} {  \begin{align*}
+                H &=  G + TS\\
+                H &= Np\pqty{- A(T) + T \dv{A}{T} }
+            \end{align*}}
+            \subsubsection{} {  \begin{align*}
+                U &= H - pV\\
+                U &= N T \pqty{\dv{A}{T} p- k_B}
+            \end{align*}}
+            \subsubsection{} {  \begin{align*}
+                F &= G - pV\\
+                F &= Nk_BT \left({\ln \left(\frac{p}{p_0}\right) - 1}\right)
+            \end{align*}}
+            \(F(T,V,N)\) is the Helmholtz free energy given in its natural variables, so all equilibrium thermodynamic information can be retrieved.
+            \((T,p,N)\) are the natural variables of \(G\), but we cannot get an expression for $S$ in \( G = U - TS + pV\) with only \(U\) and the equation of state.
+        \subsection{} {  \[
+            S(U,V,N) = Nk_B \ln\left\{\alpha\frac{V}{N}\left(\frac{U}{N}\right)^\frac{3}{2}\right\}
+        \]}
+        \begin{align*}
+            U &=  \pqty{\frac{N^ \frac{5}{2}}{V\alpha} \exp {\frac{S}{Nk_B}}}^\frac{2}{3}\\
+            p &=  -\thm{U}{V}{S,N} = \frac{2}{3 V^ \frac{5}{3} }\pqty{\frac{N^ \frac{5}{2}}{\alpha} }^\frac{2}{3}\exp {\frac{2S}{3Nk_B}}\\
+            T &= \thm{U}{S}{V,N} = \pqty{\frac{N^ \frac{5}{2}}{V\alpha}}^\frac{2}{3} \exp {\frac{2S}{3Nk_B}}\frac{2}{3Nk_B}\\
+            &\exp {\frac{2S}{3Nk_B}} = \frac{T}{\pqty{\frac{N^ \frac{5}{2}}{V\alpha}}^\frac{2}{3}} \frac{3Nk_B}{2}\\
+            p &= \frac{Nk_BT}{ V }
+        \end{align*}
+        \subsection{} {  \begin{align*}
+            C_p &= \left(\frac{ \dif Q}{ \dif T}\right)_p =\left(\frac{T \dif S}{ \dif T}\right)_p = T\thm{S}{T}{p}\\
+            \thm{V}{T}{p} &=  \pdv[2]{G}{T}{p} = -\thm{S}{p}{T}\\
+            \thm{S}{p}{S} &=  \thm{S}{p}{T}\overbrace{\thm{p}{p}{S}}^1 + \thm STp \thm TpS = 0\\
+            \thm VTp&= \frac{C_p}{T}\thm{T}{p}{S}\\
+            \thm TpS &= \frac{T}{C_p}\thm VTp
+        \end{align*}}
+        Similarly, \begin{align*}
+            \thm{S}{V}{S} &=  \thm{S}{V}{T}\overbrace{\thm{V}{V}{S}}^1 + \thm STV \thm TVS = 0\\
+            \thm SVT&= - \thm STV \thm TVS\\
+            -\pdv[2]{F}{V}{T} &= \thm pTV = - \frac{C_V}{T}\thm TVS\\
+            \thm TVS &=  - \frac{T}{C_V}\thm pTV
+        \end{align*}
+        For an ideal monatomic gas, \(pV = Nk_BT,\: S = N k_B \ln\left(\alpha\frac{V}{N}\left(\frac{U}{N}\right)^\frac{3}{2}\right)\)
+        \begin{align*}
+            S &=  \frac{3Nk_B}{2} \ln{\pqty{\frac{3}{2}k_BT\left(\frac{V\alpha}{N}\right)^\frac{2}{3}}}\\
+            S &=  S(T\left({V\alpha}\right)^\frac{2}{3})
+        \end{align*}
+        Where \( N\) is regarded a constant for this question
+        \begin{align*}
+            \thm TpS \pqty{\frac{T\alpha}{p}}^\frac{2}{3} + \frac{2}{3}\frac{p\thm TpS - T}{p^2} \pqty{\frac{T\alpha}{p}}^\frac{2}{3}  &= 0 & \frac{T}{\frac{5}{2}Nk_B}\frac{Nk_B}{p}&=  \frac{T}{C_p}\thm VTp \\
+            \frac{5}{3}\thm TpS &= \frac{2T}{3p}& \frac{2T}{5p}&= \frac{T}{C_p}\thm VTp\\
+            \thm TpS &= \frac{2T}{5p}& \frac{2T}{5p}&= \frac{T}{C_p}\thm VTp
+        \end{align*}
+        Now we have left hand side equals right hand side. Similarly,
+        \begin{align*}
+            \thm TVS (V\alpha)^\frac{2}{3} +   \frac{2}{3}T\frac{ (V\alpha)^{\frac{2}{3}}}{V} &= 0 & \frac{T}{\frac{3}{2}Nk_B}\frac{Nk_B}{V}&=  \frac{T}{C_V}\thm pTV \\
+            \thm TVS &= -\frac{2T}{3V}& -\frac{2T}{3V}&= - \frac{T}{C_V}\thm pTV 
+        \end{align*}
+        \(\blacksquare\)
+        \subsection{} Thermodynamic equilibrium of an isolated system is achieved when the total entropy of the system is maximised. i.e. \[
+            \dd{S}_\text{tot} = 0
+        \]
+        at equilibrium. 
+
+        However, no finite system other than the universe itself is isolated, so we often consider closed systems, which can only exchange energy with the rest of the universe, and open systems, which can exchange both energy and matter with the universe.
+        
+        For an open system and the universe (reservoir), the total entropy has
+        \begin{align*}
+            \dd{S}_\text{tot} &= \dd{S}_s + \dd{S}_R\\
+            \text{From first law}\qquad &=  \dd{S}_s + \frac{\dd{U}_R+p_R\dd V_R-\mu_R \dd{N}_R}{T_R} \\
+            -T_R \dd{S}_\text{tot} &= \dd{U}_s-T_R \dd{S}_s +p_R\dd V_s -\mu_R \dd{N}_s 
+        \end{align*}
+        where we have expressed the total entropy of the universe as a function of reservoir thermodynamic forces and system variables. In big reservoirs whose temperature are not subject to change, equilibrium state of the system is described by minimisation of \textit{availability} \[
+            \dd{A} = - T_R \dd{S}_\text{tot}
+        \]
+        Under a set of constraints on the system variables, the availability reduces to other thermodynamic potentials. For example, if the system number of particles is constrained, we have returned to the special case of equilibrium of a closed system.
+        \subsection{} The Helmoholtz free energy $F$ of a system in equilibrium is a minimum when $T,V,N$ are constrained.
+
+        A spherical air bubble of radius \(r\) is in a large tank of liquid. The differetial Helmholtz free energy of the surface of the bubble is \( \dd F_s = + \Gamma \dd A\). The total Helmholtz free energy of a liquid-bubble system is
+        \[
+            F = F_a + F_s + F_l
+        \]
+        In equilibrium at constant temperature and amount of air and liquid we have \begin{align*}
+            \dd F = - p_a \dd V_a + \Gamma \dd A - p_l \dd V_l &= 0& \dd V_a =- \dd V_l\\
+            p_a 4\pi r^2 \dd r - 8\pi r \Gamma \dd r &= p_l 4\pi r^2 \dd r\\
+            p_a &=  p_l +  \frac{2\Gamma}{l}
+        \end{align*}
+        \subsection{} At the same pressure and temperature, the minimum work required is the change in Gibbs free energy
+        \[
+            W =\Delta G = T \Delta S_\text{mix}
+        \]
+        Where $S_\text{mix}$ arises from diluting 1 mole of gas to from $p$ to \(\frac{p}{5}\), its appropriate partial pressure.
+        \begin{align*}
+            \Delta S_\text{mix} &= - N k_B \ln(\frac{1}{5})\\
+            W &=  13.38T\: \pqty{\si[]{J.K^{-1}}}
+        \end{align*}
+        \subsection{} \(G_n^{(m)} = H_n^{(m)} - TS_n^{(m)}\)
+        \begin{table}[htbp]
+            \centering\begin{tabular}{|r|c|c|c|}
+                \hline
+                n & \ch{H2} & \ch{O_2} & \ch{H2O} (liquid)\\
+                Gibbs Free energy \(G_n^{(m)}\, \si{kJ.mol^{-1}}\)&-38.9&-61.1&-306.6\\ 
+                \hline
+            \end{tabular}
+        \end{table}
+        \begin{align*}
+            K_c &=  \exp { - \frac{1}{k_BT}\sum_i \nu_i \frac{G_i^{(m)}}{N_A} }\\
+            &= 1.37\times10^{83}            
+        \end{align*}
+        Meaning that reaction is very spontaneous and the equilibrium mixture almost entirely consists of the product.
+
+        The maximum possible work extracted in the fuel cell is given by 
+        \[
+            W^{(m)} = -\sum_i \nu_i G^{(m)}_i = 237.2\:  \si{kJ.mol^{ - 1}}
+        \]
+        per mole of \ch{H2O} formed. The entropy change of this reaction is
+        \[
+            \Delta S^{(m)} = \sum_i \nu_i S^{(m)}_i = 163.4\:  \si{J.mol^{ - 1}.K^{-1}}
+        \]
+        Correspondingly the minimum heat dissipated is 
+        \[
+            Q = -T\Delta S =48.7\:  \si{kJ.mol^{ - 1}}
+        \]
+        We get effficiency
+        \[
+            \eta = \frac{W}{Q + W} = 83\%
+        \]
+        and voltage 
+        \[
+            V = \frac{\Delta G}{2F} = 1.23 \si{V}
+        \]
+        \subsection{} The entropy change of phase transition at $T=T_C$ is \(\frac{L}{T} = 0\), so the entropy of two phases are equal at $T_c$.
+        \[
+            \dd S = \frac{C \dd T}{T}
+        \]
+        \begin{align*}
+            S_n &=\int_0 \frac{C_n}{T} \dd T + S(0)& S_p &= \int \frac{C_s}{T} \dd T + S(0)\\
+            S_n &=\int \qty(V\beta T^2 + V\gamma)  \dd T + S(0)& S_p &= \int V\alpha T^2  \dd T + S(0)
+        \end{align*}
+        By the third law, \(S(0) = 0\) for both phases.
+        \begin{align*}
+            S_n &=V\beta \frac{T^3}{3} + V\gamma T & S_p &= V\alpha \frac{T^3}{3}
+        \end{align*}
+        and \(S_n = S_p\) at $T_c$,
+        \[
+            \pqty{(\beta - \alpha)  T_c^2 + 3 \gamma }T_c = 0
+        \]
+        \[
+            T_c = 0 \text{ or } \sqrt{\frac{3\gamma}{\alpha- \beta}}
+        \]
+    \newpage
+    \section{}
+    \subsection{} 
+        \subsubsection{} In a \(p\)-\(T\) phase diagram, for liquid and vapour to coexist, 
+        \[
+            \mu_g(p,T) = \mu_l(p,T)
+        \]
+        Two variables are related by one equation, which gives us a set of solutions along a curve.
+
+        For vapour-liquid-solid coexistence,
+        \[
+            \mu_g(p,T) = \mu_l(p,T) = \mu_s(p,T)
+        \]
+        Two variables contrained by two equations gives us at most a unique solution, which is one point on the $p$-$T$ plane.
+        \subsubsection{} Three-phase coexistence of both substances require 4 equations to be satisfied. \(p\), \(T\), and the 6 different concentrations give us 8 variables, which are reduced by 3 contraints of the form \(c^A + c^B = 1\) to 5 degrees of freedom. Therefore, on the \(p\)-\(T\) plane a set of solutions along a curve (spanning one dimension) can be found.
+        \subsubsection{}   \begin{align*}
+            P \text{ phases}&& C\text{ components}
+        \end{align*} The number of phase coexistence equations is \[
+            C \times \pqty{P - 1}
+        \]
+        The number of free variables is \[
+            \overbrace{2}^\text{p,T}+ \overbrace{C\times P }^\text{\# of concentrations} - \overbrace{P}^\text{constraints}=2+ P \times \pqty{C-1}
+        \]
+        We get that the set of solutions have
+        \[
+            2 + PC - P - CP + C = 2 + C - P
+        \]
+        degrees of freedom that can be adjusted while preserving all phases in all components.
+        \subsection{} Helmholtz free energy is given by\begin{align*}
+            F &=  - k_BT\ln Z\\
+            &=  - ak_BT^4 V 
+        \end{align*}
+        The equation of state can be derived \begin{align*}
+            p &=  -\thm FV{T,N}\\
+            p &= ak_BT^4
+        \end{align*}
+        Internal energy\begin{align*}
+            U &= F + TS\\
+            U &= F - T\thm FT{V,N}\\
+            U &= -ak_BT^4V + 4ak_BT^4V\\
+            U &= 3ak_BT^4V
+        \end{align*}
+        Heat capaity at constant volume
+        \begin{align*}
+            c_V &= \thm UTV\\
+            c_V &= 12ak_BT^3V
+        \end{align*}
+        chemical potential
+        \begin{align*}
+            \mu &= \thm FN{V,T}\\
+            \mu &= 0
+        \end{align*}
+        pressure is equal to \begin{align*}
+            p = \frac{1}{3} u
+        \end{align*}
+        where \(u\) is internal energy per unit volume.
+
+        This system could be the photon gas, for which particle number cannot be distinguished from total energy and therefore chemical potential is 0.
+        \subsection{} Given that \(n\) atoms are on interstitial sites, the configurationrational entropy is \[
+            S = k_B \ln(\Omega_n)
+        \]
+        where \(\Omega_n\) is the number of different ways that \(n\) atoms are on interstitial sites and \(N - n\) atoms are on lattice sites \[
+            \Omega(n) = \dfrac{N!}{n!\pqty{N - n}!} \dfrac{N!}{n!\pqty{N - n}!}
+        \]
+        Therefore \[
+            S = 2k_B\ln(\frac{N!}{n!(N - n)!})
+         \]
+        The temperature of the system, total particle number, and total volume are all constrained, so the relevant free energy is Helmholtz free energy. Assuming vacancies are very rare, the free energy can be written as \begin{align*}
+            F &= n \varepsilon - TS\\
+            F &= n \varepsilon - 2k_BT \pqty{N\ln N - n\ln n - \pqty{N - n}\ln(N - n)}
+        \end{align*}
+        Minimising with respect to \(n\) gives
+        \begin{gather*}
+            \varepsilon + 2k_BT\pqty{\frac{n}{n} + \ln n - \frac{N - n}{N - n} - \ln(N - n)} = 0\\
+            \varepsilon + 2k_BT{ \ln(\frac{n}{N - n})} = 0\\
+            \frac{N}{n} - 1 = e^{\frac{\varepsilon}{2k_BT}}\\
+            n = \frac{N}{1 + \exp{\frac{\varepsilon}{2k_BT}}}
+        \end{gather*}
+        \subsection{} \subsubsection{} The statistical weight of there being \(s\) zippers open is \[
+            \Omega (s) = \underbrace{\exp{ -\frac{\varepsilon}{k_BT}}}_\text{boltzmann factor} \Omega(s - 1)
+        \] which is obciously a geometric series with general expression \[
+            \Omega (s) = \exp{ - \frac{s\varepsilon}{k_BT}}
+        \]
+        if we take \(\Omega (0) = 1\) which we can for the calculation of partition functions.
+
+        The partition function is given by \begin{align*}
+            Z &= \sum_{s = 0}^{N}\Omega(s)\\
+            &= \sum_{s = 0}^{N}\exp{ - \frac{s\varepsilon}{k_BT}}\\
+            &= \frac{1 - \exp( -\frac{(N + 1)\varepsilon}{k_BT} )}{1 -\exp( -\frac{\varepsilon}{k_BT})}
+        \end{align*}
+        \subsubsection{} The average number of open links is directly related to the internal energy of this system
+        \begin{align*}
+            \mean{n} &= \frac{\mean{E}}{\varepsilon} \\
+            &= -\frac{1}{\varepsilon} \pdv{\ln Z}{\beta }\\
+            &= - \frac{{{(N + 1)}  e^{ -\frac{(N + 1)\varepsilon}{k_BT} }}\pqty{1 - e^{ -\frac{\varepsilon}{k_BT}}} - {  e^{ -\frac{\varepsilon}{k_BT}}}\pqty{1 -  e^{ -\frac{(N + 1)\varepsilon}{k_BT} }}}{ \pqty{1 -  e^{ -\frac{(N + 1)\varepsilon}{k_BT} }}\pqty{1 - e^{ -\frac{\varepsilon}{k_BT}}}}\\
+            &=  \frac{N\exp{ -\frac{(N + 2)\varepsilon}{k_BT}} -(N + 1)\exp{ -\frac{(N + 1)\varepsilon}{k_BT}} + \exp{ - \frac{\varepsilon}{k_BT}}}{{ \pqty{1 -  e^{ -\frac{(N + 1)\varepsilon}{k_BT} }}\pqty{1 - e^{ -\frac{\varepsilon}{k_BT}}}}}
+        \end{align*}
+        In low temperature limits,
+        \[
+            \mean{n} \approx \frac{1}{\exp{\frac{\varepsilon}{k_BT}} - 1} \approx \frac{k_BT}{\varepsilon}
+        \]
+        \subsection{} \subsubsection{} { 
+        \begin{align*}
+            Z_\text{cl} &=  \iint e^{-\beta \pqty{\frac{p^2}{2m} + \frac{kx^2}{2}}} \frac{\dd{x} \dd{p}}{2\pi\hbar} \\
+            &= \frac{1}{2\pi\hbar} \int e^{-\beta \frac{p^2}{2m}} \dd{p} \int e^{-\beta \frac{kx^2}{2}}  \dd{x}\\
+            &= \frac{1}{2\pi\hbar} \sqrt{\frac{2m\pi}{\beta }} \sqrt{\frac{2\pi}{\beta k}}\\
+            &= \frac{1}{\beta \hbar} \sqrt{\frac{m}{k}}
+        \end{align*}}
+        \subsubsection{} Assume the gravitational field is confined to \(z> z_0\)\begin{align*}
+            Z_\text{cl}
+            &= \frac{1}{2\pi\hbar} \int e^{-\beta \frac{p^2}{2m}} \dd{p} \int_{z_0} e^{-\beta mgz }  \dd{z}\\
+            &= \frac{1}{2\pi\hbar} \sqrt{\frac{2m\pi}{\beta }} \frac{e^{-\beta mg z_0}}{\beta mg}\\
+            &= \frac{1}{\hbar} \sqrt{\frac{1}{2\pi m\beta^3 }} \frac{e^{-\beta mg z_0}}{g}
+        \end{align*}
+        \subsection{} \subsubsection{} The dispersion relation is \( \varepsilon = cp\), and the particles are indistinguishable, so we have \begin{align*}
+            Z &= \frac{1}{N!} \pqty{\int e^{ - \beta c\,  \abs{p}}\frac{\dd[3]{r} \dd[3]{p}}{(2\pi\hbar)^3}}^N\\
+            Z &= \frac{1}{N!} {\frac{(2V)^{N}}{( 2\pi\hbar\beta c)^{3N}}}
+        \end{align*}
+        Helmholtz free energy is then \begin{align*}
+            F &= - k_BT \ln Z\\
+            &= - N k_BT \bqty{ \ln(\frac{2V}{( 2\pi \hbar\beta c)^3}) -\ln N  + 1}
+        \end{align*}
+        The equation of state is \begin{align*}
+            p &= -\thm FV{T,N}\\
+            p &= \frac{Nk_BT}{V}
+        \end{align*}
+        entropy \begin{align*}
+            S &= -\thm FT{V,N}\\
+            &= Nk_B\bqty{ \ln(\frac{2V e^4}{( 2\pi \hbar\beta c)^3N})}
+        \end{align*}
+        which we can check is extensive.
+        The internal energy is \begin{align*}
+            U &= -\pdv{\ln Z}{\beta }\\
+            &= \frac{3N}{\beta }\\
+            &= 3N k_BT
+        \end{align*}
+        and the constant volume heat capacity is \begin{align*}
+            C_V &= \thm{U}{T}{V}\\
+            &= 3Nk_B    
+        \end{align*}
+        \subsubsection{} Each of the particles can exist in energy states \( + \Delta \) or \( - \Delta \), so the partition function is now
+        \begin{align*}
+            Z &= \frac{1}{N!} \pqty{\int e^{ - \beta c\,  \abs{p}}\frac{\dd[3]{r} \dd[3]{p}}{(2\pi\hbar)^3}\; \pqty{e^{ - \beta \Delta } + e^{ +\beta \Delta }}}^N\\
+            Z &= \frac{1}{N!} {\frac{(4V)^{N}}{( 2\pi\hbar\beta c)^{3N}}}{\cosh^N(\beta \Delta )}
+        \end{align*}
+        Helmholtz free energy is then \begin{align*}
+            F &= - k_BT \ln Z\\
+            &= - N k_BT \bqty{ \ln(\frac{4V}{( 2\pi \hbar\beta c)^3}) -\ln N  + \ln(\cosh(\beta \Delta )) + 1}
+        \end{align*}
+        The equation of state is \begin{align*}
+            p &= -\thm FV{T,N}\\
+            p &= \frac{Nk_BT}{V}
+        \end{align*}
+        entropy can be derived \begin{align*}
+            S &= -\thm FT{V,N}\\
+            &= Nk_B\bqty{ \ln(\frac{4V e^4{\cosh(\beta \Delta )}}{( 2\pi \hbar\beta c)^3N}) - \Delta\beta\tanh(\beta \Delta) }
+        \end{align*}
+        The internal energy is \begin{align*}
+            U &= -\pdv{\ln Z}{\beta }\\
+            &= \pdv{\beta } \pqty{3N\ln \beta - N\ln \cosh(\beta \Delta )}\\
+            &= 3Nk_BT - \Delta N\tanh{\beta \Delta }
+        \end{align*}
+        which is even about \(\Delta \), as we would expect. Finally the constant volume heat capacity is \begin{align*}
+            C_V &= \thm{U}{T}{V}\\
+            &= 3Nk_B + \frac{N\beta \Delta^2}{T} \pqty{1 - \tanh^2(\beta \Delta )}
+        \end{align*}
+        \subsection{} The grand potantial of the adsorbed Helium atoms is
+        \begin{align*}
+            \Phi &= \int \Phi (\varepsilon) \frac{\dd[2]{x}\dd[2]{p}}{(2\pi\hbar)^2}
+        \end{align*}
+        where \(\Phi (\varepsilon)\) is the grand potential of a particular momentum state
+        \begin{align*}
+            \Xi (\varepsilon) &=\sum_n \pqty{e^{ - \beta (\varepsilon - \Delta -\mu_s )}}^n\\
+            &= \frac{1}{1 - e^{ - \beta \pqty{\varepsilon -\Delta- \mu_s }}}\\
+            \Phi(\varepsilon) &= - k_BT \ln \Xi\\
+            &= k_BT\ln(1 - e^{ - \beta \pqty{\varepsilon -\Delta- \mu_s }})\\
+            & \approx - k_BT e^{ - \beta \pqty{\varepsilon -\Delta- \mu_s}}
+        \end{align*}
+        thus \begin{align*}
+            \Phi &= - \frac{A k_BT}{(2\pi\hbar)^2}  \int e^{ - \beta (\varepsilon - \Delta - \mu_s )}  \dd[2]{p}\\
+            &= - \frac{A k_BT e^{ \beta (\mu_s + \Delta ) }}{(2\pi\hbar)^2}  \frac{2m\pi}{\beta }\\
+            &= - \frac{A m(k_BT)^2 e^{ \beta (\mu_s + \Delta ) }}{2\pi\hbar^2}
+        \end{align*}
+        Under free exchange of particle between surface and reservoir, the equilibrium condition is \[
+            \mu_s = \mu_v = k_BT \ln(\frac{p}{k_BT}\pqty{\frac{2\pi\hbar^2}{mk_BT}}^\frac{3}{2})
+        \]
+        The area density of adsorbed atoms is then 
+        \begin{align*}
+            n_\text{ads} &= - \frac{1}{A}\thm{\Phi}{\mu_s}{T,V}\\
+            &= \frac{p}{k_BT}\pqty{\frac{2\pi\hbar^2}{mk_BT}}^\frac{1}{2} \exp{ \beta \Delta  }
+        \end{align*}
+    \newpage
+    \section{}
+    \subsection{} The grand partition function and grand potential of the point defect are \begin{align*}
+        \Xi &= \sum_{\qty{n}} \exp{ - \beta \varepsilon_n - \mu{n}}\\
+        &= 1 + 2e^{ - \beta(\varepsilon - \mu)} + e^{ - \beta\pqty{2(\varepsilon - \mu)+ U} }\\
+        \Phi &= -k_BT \ln(\Xi)\\
+        &= -k_BT \ln(1 + 2e^{ - \beta(\varepsilon - \mu)} + e^{ - \beta\pqty{2(\varepsilon - \mu)+ U} })
+    \end{align*}
+    Equilibrium occupation of the defect is \begin{align*}
+        \mean{n} &= -\thm{\Phi }{\mu}{T}\\
+        &= \frac{2e^{ - \beta(\varepsilon - \mu)} + 2e^{ - \beta\pqty{2(\varepsilon - \mu)+ U} }}{1 + 2e^{ - \beta(\varepsilon - \mu)} + e^{ - \beta\pqty{2(\varepsilon - \mu)+ U} }}
+    \end{align*}
+    At low temperatures \(T \ll \frac{U}{k_B}\), the two-electron occupied state is almost inaccessible, we have \[
+        \mean{n} \approx \frac{2}{e^{ \beta(\varepsilon - \mu)} + 2}
+    \]
+    \begin{center}
+        \def\svgwidth{200pt}
+        \incfig{TSP_301}
+
+        \footnotesize{hand plotted \(\mean{n}\) against \(\varepsilon - \mu\), on scales \(\varepsilon - \mu \ll \frac{U}{\beta}\)}
+    \end{center}
+    \begin{center}
+        \def\svgwidth{200pt}
+        \incfig{TSP_301_comp}
+
+        \footnotesize{computer-generated plot of \(\mean{n}\) against \(\varepsilon - \mu\) on the same scale as \(\frac{U}{\beta}\)}
+    \end{center}
+     \subsection{} Assuming the delocalised electrons are sparse and interact weakly, such that they form an ideal nonrelativistic Fermi gas, obeying Fermi-Dirac statistics \[
+        \mean{n}_k = \frac{1}{e^{ \beta(\varepsilon_k - \mu)} + 1} 
+    \]
+    The total number of delocalised electrons is given by \begin{align*}
+        N_e &= \int_0^{\infty} g(k) n(k) \dd{k}\\
+        &= \frac{\sigma V}{8\pi^3}\int_0^{\infty} n(k) 4\pi k^2\dd{k}\\
+        &= \frac{\sigma V}{2\pi^2}\int_0^{\infty} \frac{k^2}{e^{ \beta\qty(\frac{\hbar^2k^2}{2m_e} - \mu)} + 1} \dd{k}\\
+        &= \frac{\sigma V}{2\pi^2}\pqty{\frac{2m_e}{\hbar^2\beta}}^\frac{3}{2} \int_0^{\infty} \frac{u^2}{e^{u^2 - \beta\mu} + 1} \dd{u}
+    \end{align*}
+    In low temperature limit \(\beta(\varepsilon - \mu) \gg 1\), approximate \(\frac{1}{e^{\beta(\varepsilon - \mu)} + 1}\) as \(e^{ - \beta(\varepsilon - \mu)}\), and substitute in \(\mu = -e\phi\) \begin{align*}
+        N &=  \frac{\sigma V}{2\pi^2}\pqty{\frac{2m_e}{\hbar^2\beta}}^\frac{3}{2}  e^{-\beta e\phi} \int_0^{\infty} e^{ - u^2}u^2 \dd{u}\\
+        N &=  \frac{\sigma V}{2\pi^2}\pqty{\frac{2m_e}{\hbar^2\beta}}^\frac{3}{2}   e^{-\beta e\phi} \frac{\sqrt{\pi}}{4} \\
+        N_{e^ -} &=  {\sigma V} \pqty{\frac{m_e k_BT}{2\pi\hbar^2}}^\frac{3}{2}  e^{ -\beta e\phi}
+    \end{align*}
+    Similarly, the number of \(\mathrm{He}^ +\) is  \[
+        N_{\mathrm{He}^ +} =  {\sigma V} \pqty{\frac{m_{\mathrm{He}} k_BT}{2\pi\hbar^2}}^\frac{3}{2}
+    \]
+    For the number of \(\mathrm{He}\) which has spin \(0\), Bose-Einstein statistics is used instead, but the result is analogous \begin{align*}
+        N_{\mathrm{He}} &= \frac{V}{2\pi^2}\pqty{\frac{2m_\mathrm{He}}{\hbar^2\beta}}^\frac{3}{2} \int_0^{\infty} \frac{u^2}{e^{u^2 - \beta\mu} - 1} \dd{u}\\
+        &=  {V} \pqty{\frac{m_\mathrm{He} k_BT}{2\pi\hbar^2}}^\frac{3}{2} 
+    \end{align*} 
+    Substituting in \(\sigma = 2\), we get \begin{align*}
+        K_N &= \frac{N_{\mathrm{He}}}{N_{\mathrm{He}^ +}N_{e^ -}}\\
+        &=  \frac{1}{4V }\pqty{\frac{2\pi\hbar^2}{m_e k_BT}}^\frac{3}{2}e^{ \beta e\phi}
+    \end{align*}
+    where the masses of Helium atom and cation are approximated as identical.
+
+    Denote \[
+        \alpha = \frac{p}{4k_BT} \pqty{\frac{2\pi\hbar^2}{m_e k_BT}}^\frac{3}{2}e^{ \beta e\phi}
+    \]
+    By definition of equilibrium constant, the proportion of ionised Helium \(n_e = \frac{N_e}{N_{\mathrm{He(orig)}}}\) is\begin{align*}
+        N_e^2 &= \frac{(N_{\mathrm{He(orig)}} - N_{e})(N_{\mathrm{He(orig)}} + N_{e})}{\alpha}\\
+        (\alpha + 1)n_e^2 &= 1\\
+        n_e &= \frac{1}{\sqrt{\alpha + 1}}
+    \end{align*}
+    At \(10^4\: \mathrm{K}\)
+    \begin{table}[htbp]
+        \centering\begin{tabular}{cc}
+            pressure& concentration\\
+            \(1\:  \mathrm{atm}\)& \(7.3 \times 10^{ - 5}\)  \\
+            \(10^{ - 2}\: \mathrm{Pa}\)&  \(0.23\)  \\
+        \end{tabular}
+    \end{table}
+     \subsection{} 
+     \subsubsection{} Each energy state in Fermi-Dirac statistics can at most house one particle, so the partition function is  \[
+        Z = e^{ - \beta \varepsilon}
+    \]
+     \subsubsection{} The partition function of Bosons is the sum of Boltzmann factors of 3 different energy states, \[
+        Z = 1 + e^{ - \beta\varepsilon} + e^{ - 2\beta\varepsilon}
+    \]
+     \subsubsection{} For classical indistinguishable particles, the two-particle partition function is \begin{align*}
+        Z_2 &= \frac{Z_1^2}{2!}\\
+        Z_2 &= \frac{\qty(1 + e^{ -\beta\varepsilon})^2}{2}
+    \end{align*}
+    where \(Z_1\) is the one-particle partition function.
+     \subsubsection{} Classical distinguishable particles have
+    \begin{align*}
+        Z_2 &= {Z_1^2}\\
+        Z_2 &= {\qty(1 + e^{ -\beta\varepsilon})^2}
+    \end{align*}
+     \subsection*{} In the high temperature limit partition functions of Fermions, Bosons, and classical indistinguishable particles tend to different values, because the two-level system is intrinsically quantum and has no limit that reduces to classical statistical dynamics.
+     \subsection{} 
+     \subsubsection{} Thermal wavelength of a particle given by \begin{align*}
+        \lambda &= \sqrt{\frac{2\pi\hbar^2}{mk_BT}}\\
+        \lambda_e &= 1.86 \times 10^{ - 11}\: \mathrm{m}\\
+        \lambda_p &= 4.35 \times 10^{ - 13}\: \mathrm{m}\\
+        \lambda_{\mathrm{He}} &= 2.17 \times 10^{ - 13}\: \mathrm{m}
+    \end{align*}
+     \subsubsection{} The average occpation of accessible energy levels is the same order as \[
+        n_{\text{avg}} = \frac{N}{V} \lambda^3 = \frac{\rho}{m_1} \lambda^3
+    \]
+    The interested system is degenerate if the average occupation \( ~ 1\). \begin{align*}
+        n_{\text{avg},p} &=  \frac{\rho_p}{m_p} \lambda_p^3\\ &= 3.0 \times 10^{ - 6}\\
+        n_{\text{avg},\mathrm{He}} &=  \frac{\rho_\mathrm{He}}{m_\mathrm{He}} \lambda_\mathrm{He}^3\\ &= 1.5 \times 10^{ - 7}\\
+        N_e &= N_p + 2N_\mathrm{He}\\
+        n_{\text{avg},e} &=  (\frac{\rho_p}{m_p} + \frac{2\rho_\mathrm{He}}{m_\mathrm{He}} ) \lambda_e^3\\ &= 0.42
+    \end{align*}
+    Therefore Helium and Hydrogen are effectively nondegenerate, while electrons are weakly degenerate.
+     \subsubsection{} Pressure due to massive particles: \begin{align*}
+        p_{\mathrm{H},\mathrm{He}} &= k_BT \pqty{\frac{\rho_p}{m_p} + \frac{\rho_\mathrm{He}}{m_\mathrm{He}} + \frac{\rho_p}{m_p} + 2\frac{\rho_\mathrm{He}}{m_\mathrm{He}} }\\
+        &= 2.58 \times 10^{ 16}\: \mathrm{Pa}
+    \end{align*}
+    Pressure due to radiation: \begin{align*}
+        p_{\gamma} &= \frac{1}{3} \frac{\pi^2k_B^4}{15\hbar^3c^3}T^4\\
+        &= 1.65 \times 10^{13}\: \mathrm{Pa}
+    \end{align*}
+     \subsubsection{} The pressure due to massive particles are much stronger than that due to radiation, so the gravitational collapse is mainly prevented by the massive particles.
+     \subsection{}
+    At low temperatures number of particles in Fermi gas \(\mathrm{He}^3\) can be expanded as \begin{align*}
+        N &= \frac{\sigma V}{4\pi^2}\pqty{\frac{2m_{\text{eff}}}{\hbar^2}}^\frac{3}{2} \int_0^{\varepsilon_F} \sqrt{\varepsilon}\dd{\varepsilon}\\
+        \rho_{\mathrm{He}^3} &= \frac{2}{4\pi^2}\pqty{\frac{2m_{\text{eff}}}{\hbar^2}}^\frac{3}{2} \frac{2}{3}\varepsilon_F^{3 /2}\\
+        \rho_{\mathrm{He}^3} &= \frac{140}{3 \times m_{p}} \times \frac{5 \times 3}{5 \times 3 + 95 \times 4}\\
+        \varepsilon_F &= 4.59 \times 10^{ - 24}\: \mathrm{J}\\
+        T_F &= 3.33 \times 10^{ - 1}\: \mathrm{K}
+    \end{align*}
+    The specific heat per atom at low temperatures is expanded as \begin{align*}
+        c_V&= \frac{T}{N} \frac{\pi^2k_B^2g(\varepsilon_F)}{3}\\
+        &= T \frac{\pi^2k_B^{2} }{2k_B T_F}\\
+        &= T \frac{\pi^2k_B }{2T_F}\\
+        &= 2.05 \times 10^{ - 22} \: \mathrm{J\: K^{ - 1}} \times (T)
+    \end{align*}
+    \begin{center}
+        \includegraphics[scale=0.8]{plot305.pdf}
+    \end{center}
+     \subsection{} Given the dispersion relation \[
+        \varepsilon = \hbar \omega = \Delta  + ak^2
+    \]
+    with density of states \[
+        g(k) = \frac{V}{8\pi^3} 4\pi k^2
+    \]
+    The internal energy and heat capacity due to this elementary excitation is \begin{align*}
+        U &= \frac{V}{2\pi^2}\int_0^{\infty} \frac{\varepsilon}{e^{\beta \varepsilon + 1}}  k^2 \dd{k} \\
+        &= \frac{V}{4\pi^2 a^{3 /2}} \int_\Delta^{\infty} \frac{\varepsilon \sqrt{\varepsilon - \Delta}}{e^{\beta \varepsilon} - 1}\dd{\varepsilon} \\
+        &= \frac{V}{4\pi^2 a^{3 /2}\beta^{5 /2}} \int_0^{\infty} \frac{u^{3 /2} +\beta \Delta u^{1 /2}}{e^{u + \beta \Delta } - 1}\dd{u} \\
+        &= \frac{V}{4\pi^2 a^{3 /2}}\bqty{ (k_BT)^{5 /2}\int_0^{\infty} \frac{u^{3 /2}}{e^{u + \beta \Delta } - 1}\dd{u} + \Delta (k_BT)^{3 /2} \int_0^{\infty} \frac{u^{1 /2}}{e^{u + \beta \Delta } - 1}\dd{u} }
+    \end{align*}
+    At low temperatures, \(\beta \Delta = \frac{\Delta}{k_BT} \gg 1\), the denominator in the intnegrands can be approximated as \(e^{\beta \Delta }\), \begin{align*}
+        U& \approx \frac{V}{4\pi^2 a^{3 /2}} \exp( -\frac{\Delta}{k_BT}) \bqty{ (k_BT)^{5 /2}\int_0^{\infty} u^{3 /2}\dd{u} + \Delta (k_BT)^{3 /2} \int_0^{\infty} u^{1 /2}\dd{u} }
+    \end{align*}
+    The exponential term gives rise to a very flat plateau where \(U\) remains \(0\) for \(k_BT \ll \Delta \). Upon approaching \(k_BT = \Delta \), the exponential prefactor converges to \(1\), and the functional dependence reduces to the case \(\Delta = 0\), \(U\propto (k_BT)^{5 /2}\)
+    \begin{center}
+        \def\svgwidth{200pt}
+        \incfig{TSP_306}
+    \end{center}
+     \subsection{} The Bose-Einstein distribution for photons is \[
+        \mean{n_{\bf k}} = \frac{1}{e^{\beta \hbar kc} - 1}
+    \]
+    For \(\nu = 10^9 \; \mathrm{Hz}\), at room temperature, \(\beta h \nu \sim 1e - 1\) and \(\frac{c}{\nu} = 30 \;\mathrm{cm}\). There are barely any excitations along the ``small'' diameter of the cavity, i.e. only longitudinal dimension contributes effectively to density of states. 
+    \[
+        g(k) = \frac{L}{\pi}
+    \]
+    The energy density can therfore be written as \begin{align*}
+        \hbar\omega\mean{n_k} g(k) \dd{k} &= \frac{\hbar \omega L}{\pi} \frac{1}{e^{\beta \hbar \omega} - 1} \dd{k}\\
+        & \approx  \frac{\hbar \omega L}{\pi} \frac{1}{\beta \hbar \omega} \frac{\dd{\omega}}{c}\\
+        & \approx  \frac{k_BT L}{\pi c} \dd{\omega}
+    \end{align*}
+    where we made the approximation that the frequency range of interest satisfies \(\hbar\omega\beta \ll 1\).
+
+    For \(\nu = 10^{12}\; \mathrm{Hz}\), however, \(\frac{c}{\nu} = 0.03 \;\mathrm{cm}\). The transverse dimension \(\sim 1\; \mathrm{cm} \gg \frac{c}{\nu}\) of the cavity contains considerably many excitatons. The density of states should be \[
+        g(k) = \frac{2V}{8\pi^3} 4\pi k^2 \dd{k} = \frac{V}{\pi^2} k^2\dd{k}
+    \]
+    which gives energy density \begin{align*}
+        \hbar\omega\mean{n_k} g(k) \dd{k} &= \frac{\omega^2}{c^2}\frac{\hbar \omega}{e^{\beta \hbar \omega} - 1} \frac{V}{\pi^2} \frac{\dd{\omega}}{c}  \\
+        &= \frac{\hbar \omega^3 V}{\pi^2 c \beta \hbar \omega} \dd{\omega}\\
+        &= \pi k_BT \omega^2\frac{V}{(\pi c)^3} \dd{\omega}
+    \end{align*}
+     \subsection{} Chemical potential \(\mu\) is a thermodynamic force which drives particles in a system to flow into another. Internal energy, which is a homogeneous function, depends on chemical potential via \begin{align*}
+        U &=  TS - pV + \mu N\\
+        \dd{U} &= T\dd{S} - p\dd{V} + \mu\dd{N} 
+    \end{align*}
+    which lead to the Gibbs-Duhem equation
+    \[
+        \dd{\mu} = - \frac{S}{N} \dd{T} + \frac{V}{N}\dd{p}
+    \]
+    Equivalently, chemical potential can be defined as Gibbs free energy per particle \[
+        G = \mu N
+    \] Values of chemical potentials of open systems are equated when these system come into equilibrium. Examples of these include phase equilibrium and chemical equilibrium. Chemical equilibria is often characterised by a equilibrium constant, whereas phase equilibrium is achieved in a subspace spanned by independent thermodynamic variables.
+
+    In statistical mechanics, chemical potential can be calculated from \[
+        \mu(T,V,N) = \pdv{F}{N} = - \pdv{ (k_BT \ln Z)}{N}
+    \]
+    where \(Z\) is the partition function of the system. Just like \(Z\) can be separated as products of statistcis due to internal and external degrees of freedom, \(\mu\) can be separated into sums of terms corresponding to internal and external variables.
+
+    The difference in statistics of Bosons and Fermions is carried over to chemical potentials. For bosons there is no limit to the number of particles that can be contained near the ground state, so \(Z\) remains nondecreasing with respect to \(N\), such that \(\mu \leq 0\). However Fermi-Dirac statistics means that the partition function can decrease with respect to increasing \(N\) due to high occupation of the ground state at low temperatures, thereby leading to positive values of chemical potential.
+    \begin{figure}[H]
+        \centering
+        \def\svgwidth{200pt}
+        \incfig{TSP_308}
+        \caption{A rough plot of chemical potentials of dlassical and quantum gases}
+    \end{figure}
+    \newpage
+    \section{}
+    \subsection*{Legacy question:} The Helmholtz free energy \(F\) corresponding to a given partition function \(Z\) is \begin{align*}
+        F &= - k_BT \ln Z\\
+        &=  - k_BT \ln\bqty{\frac{A^N}{N!}T^{3N /2}V^N \exp(\frac{ - B(T)N^2}{V} )}\\
+        &\upup{Stirling}{ \approx }  - Nk_BT\bqty{- \ln N + \frac{3}{2} \ln T + \ln V - \frac{B(T )N}{V} + \ln A + 1}\\
+        &=  Nk_BT\bqty{\ln N - \frac{3}{2} \ln T - \ln V + \frac{B(T )N}{V} - \ln(eA)}
+    \end{align*}
+    \(F\) is expressed in its natural variables \(N,V,T\). The equation of state can therefore be obtained as \begin{align*}
+        p &= - \thm{F}{V}{T,N}\\
+        p &= Nk_BT \pqty{\frac{1}{V} + \frac{B(T)N}{V^2} }\\
+        \frac{p}{k_BT} &= n + B(T) n^2
+    \end{align*}
+    where we denoted \(n = \frac{N}{V}\). The internal energy is \begin{align*}
+        U &= F + TS\\
+        &= F - T \thm{F}{T}{V,N}\\
+        &= F - F - Nk_BT^2\pqty{ - \frac{3}{2T} + \frac{N}{V} \dv{B}{T}}\\
+        &= \frac{3}{2} nV k_BT - n^2 T \dv{B}{T}Vk_BT
+    \end{align*}
+    The heat capacity at constant volume is \begin{align*}
+        C_V &= \thm{U}{T}{V,N}\\
+        &= k_B V\pqty{\frac{3}{2}n - \pqty{2T \dv{B}{T} + T^2 \dv[2]{B}{T}} n^2}
+    \end{align*}
+    The chemical potential is \begin{align*}
+        \mu &= \thm{F}{N}{T,V}\\
+        &= k_BT\bqty{\ln N - \frac{3}{2} \ln T - \ln V + \frac{B(T )N}{V} - \ln(eA)} + Nk_BT\bqty{\frac{1}{N} + \frac{B(T )}{V}}\\
+        &= k_BT\bqty{\ln N - \frac{3}{2} \ln T - \ln V + \frac{2B(T )N}{V} - \ln(A)}
+    \end{align*}
+    This partition function corresponds to a gas expanded up to the second virial coefficient.
+     \subsection{} Given an intermolecular potential \[
+        \phi(r) = \begin{cases}
+            \infty &r < a\\
+            - \epsilon &a < r < 2a\\
+            0& 2a < r
+        \end{cases}
+    \]
+    equilibrium statistical physics gives the radial distribution function as \[
+        g(r_{12}) = \frac{V^2}{N^2} \pqty{\tensor[_N]{P}{_2}} \pdv{\ln Z_\phi}{r_1}{r_2}
+    \]
+    where \[
+        Z_\phi = \int \exp( - \sum_{j > i} \beta \phi(r_{ij}))  \dd[3]{r_1} \dots \dd[3]{r_N}.
+    \]
+     \subsubsection{} The density-independent, i.e. zeroth order term of \(g(r)\) is \begin{align*}
+        g_0(r) &= e^{\beta \phi(r)}\\
+        g_0(r) &= \begin{cases}
+            0 & r < a\\
+            e^{\frac{\epsilon}{k_BT}} & a < r < 2a\\
+            1 & 2a < r
+        \end{cases}
+    \end{align*}
+    \begin{figure}[H]
+        \centering
+        \subcaptionbox*{ \(k_BT \ll \epsilon\)}{\def\svgwidth{223pt}
+        \incfig{TSP_402lowt}}
+        \subcaptionbox*{ \(k_BT \gg  \epsilon\)}{\def\svgwidth{223pt}
+        \incfig{TSP_402hight}}
+    \end{figure}
+     \subsubsection{} The second virial coefficient \(B_2\) can characterises the \(n^2\) dependent term in the equation of state \[
+        \frac{p}{k_BT} = n + B_2(T) n^2 + B_3(T) n^3 + \dots 
+    \]
+    According to virial theorem \[
+        p = nk_BT - \frac{n^2}{6} \int_0^\infty r \dv{\phi}{r} 4\pi r^2 \pqty{g_0(r) + ng_1(r) + n^2 g_2(r) + \dots} \dd{r} 
+    \]
+    \(B_2(T)\) only depends on the leading order term \(g_0\) in the radial distribution function, i.e. \begin{align*}
+        B_2(T) &= - \frac{1}{6k_BT} \int_0^\infty 4\pi r^3 \dv{\phi}{r} e^{\frac{\phi}{k_BT}}\dd{r}\\
+        &= \int^\infty_0 2\pi r^2 \pqty{1 - g_0(r)}\dd{r}\\
+        &= \int_0^a 2\pi r^2 \dd{r} +\int^{2a}_a 2\pi r^2 \pqty{1 - e^{\beta \epsilon}}\dd{r} +\int^{\infty}_{2a} 2\pi r^2 \pqty{1 - 1}\dd{r}\\
+        &= \frac{2\pi a^3}{3}\pqty{8 - 7e^{\beta \epsilon}}.
+    \end{align*}
+    The Boyle temperature \(T_B\), when \(B_2(T) = 0\), can be calculated as \begin{align*}
+        0 &= 8 - 7e^{\frac{\epsilon}{k_B T_B}}\\
+        T_B &= \frac{\epsilon}{k_B\ln(\frac{8}{7})}.
+    \end{align*}
+     \subsubsection{} Using \(T^* = \frac{k_B T}{\epsilon}\) and \(v^*_0 = \frac{2\pi a^3}{3} \), we can rewrite \[
+        \frac{B_2(T)}{v^*_0}  = 8 - 7e^{\frac{1}{T^*}}
+    \]
+    \begin{center}
+        \def\svgwidth{300pt}
+        \incfig{TSP_402c}
+    \end{center}
+     \subsection{} The Landau free energy of a non-nematic fluid in terms of order parameter \(Q\), the degree of alignment, is \[
+        F(Q,T) = a(T - T_c) Q^2 - bQ^3 + cQ^4
+    \]
+    where \(a\), \(b\), \(c\), and \(T_c\) are positive constants.
+     \subsubsection{} equilibrium values of \(Q\) produce stationary free energies. \begin{align*}
+        \pdv{F}{Q} = 2a(T - T_c)Q - 3bQ^2 + 4cQ^3 &=  0\\
+        Q \pqty{a(T - T_c) - \frac{3}{2}bQ + 2cQ^2} &= 0
+    \end{align*}
+    At temperature \(T^*\), there is a transition. The free energies of both phases \(Q_0 = 0\) and \(Q^*\neq 0\) are equal. Then we have \begin{align*}
+        F(Q^*, T^*) &= F(Q_0, T^*)\\
+        a(T_c - T_c)(Q^*)^2 - b(Q^*)^3 + c(Q^*)^4 &=  0\\
+        (Q^*)^2\pqty{a(T^* - T_c) - bQ^* + c(Q^*)^2} &=  0\\
+        \overbrace{a(T - T_c) - \frac{3}{2}bQ + 2cQ^2}^0 + \frac{1}{2}bQ^* - c(Q^*)^2 &= 0\\
+        \Aboxed{Q^* &= \frac{b}{2c}}\\
+        \implies \qquad a(T^* - T_c) - \frac{b^2}{2c} + \frac{b^2}{4c} &= 0\\
+        \Aboxed{T^* &=  \frac{b^2}{4ca} + T_c}
+    \end{align*}
+    Below \(T^*\), the system chooses \(Q = Q^*\), whereas above \(T^*\), the system chooses \(Q = 0\).
+     \subsubsection{} The entropy change associated with the transition from aligned phase of \(T^{* -}\) to unaligned phase of \(T^{* +}\) is \begin{align*}
+        \Delta S &= -\eval{ \pdv{F(Q_0)}{T}}_{T^*} + \eval{ \pdv{F(Q^*)}{T}}_{T^*}\\
+        \Delta S &= a(Q^*)^2 = \frac{a b^2}{4c^2} 
+    \end{align*}
+    Thus the latent heat is \[
+        L = T\Delta S = \pqty{\frac{b^2}{4c} + aT_c} \frac{b^2}{4c^2} 
+    \]
+     \subsection{}  \subsubsection{} Given the free energy of a system expanded about order parameter \(P\) \[
+        F = \alpha (T - T_c)P^2 + b P^4 + c P^6
+    \]
+    We have that at equilibrium \begin{align*}
+        \pdv{F}{P} = 2 \alpha (T - T_c) P + 4b P^3 + 6cP^5 &=  0\\
+        2P\pqty{ \alpha (T - T_c)  + 2b P^2 + 3cP^4} &=  0
+    \end{align*}
+    Given \(c > 0\), the unordered \(P = 0\) phase always exists for some temperature. The order parameter can undergo first order phase transition if due to a small perturbation of energy, the free energy of some nonzero \(P\) is lower than \(F(0) = 0\), i.e. at transition \begin{align*}
+        F(T, P^*) =\alpha (T - T_c)(P^*)^2 + b (P^*)^4 + c (P^*)^6 &=  0\\
+        \overbrace{ \alpha (T - T_c)  + 2b (P^*)^2 + 3c(P^*)^4}^{0} - b(P^*)^4 - 2c (P^*)^6 &= 0\\
+        \Aboxed{(P^*)^2 &= -\frac{b}{2c}}\\
+        F =-\alpha(T^* - T_c) \frac{b}{2c} + \frac{b^3}{4c^2} - \frac{b^3}{8c^2} &= 0\\
+        \Aboxed{T^* &= \frac{b^2}{4\alpha c} + T_c}
+    \end{align*}
+    For \(P^*\) to be real, \(b < 0\).
+     \subsubsection{}  The free energy of a ferroelectric crystal can be written as
+    \[
+        F = \alpha(T - T_c) P^2 + bP^4 + cP^6 + D \epsilon P^2 + E \epsilon^2
+    \]
+    where \(P\) is the polarisation of the crystal and \(\epsilon\) is the elastic strain. 
+
+    At equilibrium, the free energy is stationary in both parameters. \begin{gather*}
+        \pdv{F}{P} = 2 \alpha (T - T_c) P + 4b P^3 + 6cP^5 + 2D \epsilon P =  0\\
+        2P\pqty{ \alpha (T - T_c) + D\epsilon  + 2b P^2 + 3cP^4} =  0\\
+        \pdv{F}{\epsilon} = D P^2 + 2E \epsilon = 0\\
+        \epsilon = -\frac{D}{2E} P^2\\
+        \implies\qquad 2P\bqty{ \alpha (T - T_c) + \pqty{2b -\frac{D^2}{2E} }P^2 + 3cP^4} =  0
+    \end{gather*}
+    Exactly the same analysis as part (a) follows if we simply rename \(b' = b - \frac{D^2}{4E}\). Therefore, for a phase transition to occur \[
+        b' < 0 \qquad \implies\qquad b < \frac{D^2}{4E}
+    \]
+     \subsection{} A system held at constant temperature and volume satisfies \[
+        (\dd{A})_{T,V} = (\dd{F})_{T,V} = \mu \dd{N}
+    \]
+    The availability is reduced to Helmholtz free energy \[
+        F = - pV + \mu N
+    \]
+    The probability distribution of \(N\) is given by \[
+        P(N) = \mathfrak{N} e^{ (pV - \mu N) / k_BT}
+    \]where \(\mathfrak{N}\) is the approriate normalisation constant. We have \begin{align*}
+        \mathfrak{N}\pqty{\pdv{\mu} \int e^{ (pV - \mu N) / k_BT} \dd{N}}_{V,T} &= - \frac{1}{k_BT}\mathfrak{N}{\int Ne^{ (pV - \mu N) / k_BT} \dd{N}} \\
+        \mean{N} &= k_BT \pqty{\pdv{\mu} \ln(\mathfrak{N})}_{V,T}\\
+        \mathfrak{N}\pqty{\pdv[2]{\mu} \int e^{ (pV - \mu N) / k_BT} \dd{N}}_{V,T} &= \frac{1}{(k_BT)^2}\mathfrak{N}{\int N^2e^{ (pV - \mu N) / k_BT} \dd{N}}\\
+        \mean{N^2} &= (k_BT)^2 \mathfrak{N}\pqty{\pdv[2]{\mu} \int e^{ (pV - \mu N) / k_BT} \dd{N}}_{V,T}\\
+        \mean{N^2} -\mean{N}^2 &= k_B T\thm{\mean{N}}{\mu}{V,T} +\mean{N} k_B T\thm{\ln \mathfrak{N}}{\mu}{V,T} -\mean{N}^2\\
+        \mean{\Delta N^2} &=  k_BT \thm{N}{\mu}{V,T}
+    \end{align*}
+    where only in the last line, \(N\) denotes the equilibrium value instead of particle numbers in a macrostate.
+     \subsection{} Given the statistical weight as a function of energy, we can use \[
+        S = k_B\ln \Omega = k_B \sqrt{\frac{NU}{\epsilon_0}}
+    \]
+    to obtain internal energy in its natural variables \(S,V,N\) \[
+        U(S,V,N) = \frac{\epsilon_0}{N}\pqty{\frac{S}{k_B}}^2
+    \]
+    Then heat capacity can be calculated from \begin{align*}
+        T &= \thm{U}{S}{V,N}\\
+        T&= \frac{2\epsilon_0 S}{Nk_B^2}\\
+        C_V &= T \thm{S}{T}{V,N}\\
+        C_V &= \frac{N k_B^2 T}{2\epsilon_0}\\
+        C_V &= 3 \times 10^{ - 25}\; \mathrm{J\; K^{ - 1}\quad per\; electron}
+    \end{align*}
+    The probability distribution of the internal energy of the system held at constant volume and particle number is described by \begin{align*}
+        P(U) &= \mathfrak{N} \exp( -\frac{F}{k_BT} )\\
+        P(U) &= \mathfrak{N} \exp( -\frac{U - T_R S}{k_BT} )
+    \end{align*}
+    which is maximised when \begin{align*}
+        \pdv{P(U)}{U} = 0 &=  -\mathfrak{N} \frac{1}{k_BT} \pqty{1 - T_R \pdv{S}{U}}\exp( -\frac{U - T_R S}{k_BT} ) \\
+        \pqty{1 - \frac{k_BT_R}{2}  \sqrt{\frac{N}{\epsilon_0 U}}} &=  0\\
+        U_{\max(P)} &= Nk_BT_R\frac{k_B T_R}{4\epsilon_0}
+    \end{align*}
+    At equilibrium there is \(\pdv{F}{U} = 0\), so \[
+        \mean{U} = U_{\max(P)} = Nk_BT_R\frac{k_B T_R}{4\epsilon_0}
+    \]The form of the distribution near its maximum has \[
+        \ln(P) = - \frac{1}{k_BT} \pqty{F(\mean{U}) + \eval{\pdv{F}{U}}_{\mean{U}} (U -\mean{U}) + \frac{1}{2}\eval{\pdv[2]{F}{U}}_{\mean{U}} (U -\mean{U})^2 + \dots }
+    \]
+    but \(F(\mean{U})\) is just a constant and by requirement \(\pdv{F}{U} = 0\), so \[
+        P(U) \approx \mathfrak{N}\exp( - \dfrac{(U -\mean{U})^2}{2k_B T/ \eval{\pdv[2]{F}{U}}_{\mean{U}}})
+    \]
+    \(P(U)\) can be approximated as a Gaussian. The root mean square energy fluctuation is then \begin{align*}
+        \mean{\Delta U^2} &= \frac{k_B T_R}{ \eval{\pdv[2]{F}{U}}_{\mean{U}}}\\
+        \mean{\Delta U^2} &= - {k_B T_R} \pqty{T_R \pdv[2]{S}{U}}^{-1}\\
+        \mean{\Delta U^2} &= k_B T_R \pqty{ \frac{k_B T_R}{4}\sqrt{\frac{N}{\epsilon_0 \mean{U}^3}}}^{-1}\\
+        \frac{\mean{\Delta U^2}}{\mean{U}^2}  &= 4\sqrt{\frac{\epsilon_0 }{N \mean{U}} }\\
+        \Aboxed{\frac{\sqrt{\mean{\Delta U^2}}}{\mean{U}}  &= \sqrt{\frac{8\epsilon_0 }{N k_B T_R} }}\\
+        \frac{\sqrt{\mean{\Delta U^2}}}{\mean{U}} &= 4.4 \times 10^{ - 11}
+    \end{align*}
+     \subsection{} Let \(a,b > 0\), \begin{align*}
+        P(M) &= \mathfrak{N} \exp( - \frac{F}{k_BT}) \\
+        0 =\eval{\pdv{F}{M}}_{\mean{M}} &= 2a(T - T_c)\mean{M} + 4b \mean{M}^3\\
+        \mean{M} &= \begin{cases}
+            \pm {\sqrt{\frac{ -a(T - T_c)}{2b} }} & T < T_c\\
+            0& T > T_c
+        \end{cases}
+    \end{align*}
+    For fluctuations, use \begin{align*}
+        \mean{\Delta M^2} &=  \frac{k_BT}{\pdv[2]{F}{M}} \\
+        \mean{\Delta M^2} &=  \begin{cases}
+            \frac{k_BT}{ - 4a(T - T_c)} & T < T_c\\
+            \frac{k_BT}{2a(T - T_c)} & T > T_c
+        \end{cases}  
+    \end{align*}
+     \subsection{} The Helmholtz free energy of a system in equilibrium is 
+    \[
+        F = - \frac{1}{\beta}\ln\int e^{ -\beta H(x)} \dd{x}
+    \]
+    The auxiliary free energy can be expressed as
+    \begin{align*}
+        \tilde{F} &=  - \frac{1}{\beta}\ln( e^{ - \beta \mean{H - H_\alpha}_\alpha}\int e^{ -\beta H_\alpha(x)} \dd{x})\\
+        \tilde{F} &=  \mean{H - H_\alpha}_\alpha - \frac{1}{\beta}\ln( \int e^{ -\beta H_\alpha(x)} \dd{x})\\
+        \tilde{F} &=  \mean{H - H_\alpha}_\alpha + F_\alpha
+    \end{align*}
+    We notice
+    \begin{align*}
+        Z_\alpha \mean{e^{ - \beta(H - H_\alpha)}}_\alpha &= \int e^{ -\beta H_\alpha(x)} e^{ - \beta(H - H_\alpha)} \dd{x} = e^{ - \beta F}
+    \end{align*}
+    The negative exponential function is convex, so we can use Jensen's inequality \begin{align*}
+        e^{ - \beta \mean{H - H_\alpha}_\alpha} &\leq \mean{e^{ - \beta(H - H_\alpha)}}_\alpha\\
+        \frac{1}{\beta}\ln(e^{ - \beta F_\alpha}e^{ - \beta \mean{H - H_\alpha}_\alpha}) &\geq -\frac{1}{\beta}\ln(Z_\alpha\mean{e^{ - \beta(H - H_\alpha)}}_\alpha) \\
+        F &\leq \mean{H - H_\alpha}_\alpha + F_\alpha = \tilde{F}
+    \end{align*}
+    For the simple harmonic system \(H_\alpha\), we have \begin{align*}
+        \mean{x^2}_\alpha &= \frac{1}{2\alpha\beta} &
+        \pdv{\mean{x^2}_\alpha}{\alpha} &= -\frac{\mean{x^2}_\alpha}{\alpha} \\
+        \mean{x^4}_\alpha &= \frac{3}{2\alpha\beta}\mean{x^2}_\alpha = 3 \mean{x^2}^2_\alpha&
+        \pdv{\mean{x^4}_\alpha}{\alpha} &= -\frac{6\mean{x^2}_\alpha^2}{\alpha} 
+    \end{align*}
+    \(\tilde{F}\) produces the tightest upper bound for \(F\) when
+    \begin{align*}
+        \pdv{\tilde{F}}{\alpha} &= \pdv{\alpha}\bqty{ -\frac{1}{\beta}\ln\int   e^{ - \beta \alpha x^2} \dd{x} + Z^{- 1}_\alpha\int\bqty{(a - \alpha)x^2 + bx^4 } e^{ - \beta \alpha x^2}\dd{x}}\\
+        \pdv{\tilde{F}}{\alpha} &= \pdv{\alpha}\bqty{ -\frac{1}{\beta}\ln \sqrt{\frac{\pi}{\alpha\beta}} + Z^{- 1}_\alpha\int\bqty{(a - \alpha)x^2 + bx^4 } e^{ - \beta \alpha x^2}\dd{x}}\\
+        \pdv{\tilde{F}}{\alpha} &=  \frac{1}{2\beta\alpha} + \pdv{\alpha}\pqty{(a - \alpha) \mean{x^2}_\alpha + b\mean{x^4}_\alpha}\\
+        0 &= \frac{1}{2\beta \alpha} + (a - \alpha)\pdv{\alpha}\mean{x^2}_\alpha -\mean{x^2}_\alpha +  b\pdv{\alpha}\mean{x^4}_\alpha  \\
+        0 &= (a - \alpha) \frac{\mean{x^2}_\alpha}{\alpha} + \frac{6b\mean{x^2}_\alpha^2}{\alpha} \\
+        \Aboxed{\alpha &= 6b\mean{x^2}_\alpha + a}\\
+        0 &= \alpha^2 - a \alpha - \frac{3b}{\beta}\\
+        \alpha &= \frac{a}{2}\pqty{1 + \sqrt{1 + \frac{12b}{a^2} k_BT}} \approx a + \frac{3b k_BT}{a} \\
+        \mean{x^2}_\alpha &= \frac{k_BT}{a\pqty{1 + \sqrt{1 + 12b k_BT}}} \approx \frac{k_BT}{2a} \pqty{1 - \frac{3b k_BT}{a^2} }
+    \end{align*}
+    where we have assumed restoring forces \(a\) and \(b\), and discarded the negative root.
+     \subsection{} The \emph{Langevin equation} which describes an undriven particle in Brownian motion is stated \[
+        m \dot{v_i} = - \gamma v_i + \xi(t)
+    \]
+    where \(v_i\) is the \(i\)th component of the particle's velocity. Integrating, we get \begin{align*}
+        \dv{t} \pqty{mv_i e^{ \frac{\gamma}{m}t}} &= \xi(t)e^{\frac{\gamma}{m} t}\\
+        v_i &= v_{i_0}e^{ - \frac{\gamma}{m} t} + \frac{1}{m} \int_0^t \xi(t')e^{ -\frac{\gamma}{m} (t -t')} \dd{t'}
+    \end{align*}
+    The mean square speed can be obtained as \begin{multline*}
+        \mean{v_i(t)^2} = \mean{v^2_{i_0}e^{ - \frac{2\gamma}{m} t} + \frac{2}{m} v_{i_0}e^{ - \frac{\gamma}{m} t}\int_0^t \xi(t')e^{ -\frac{\gamma}{m} (t -t')} \dd{t'} } \\
+        +\mean{ \frac{1}{m^2}\int_0^t \int_0^t \xi(t_1)\xi(t_2)e^{ -\frac{\gamma}{m} (t - t_1) -\frac{\gamma}{m} (t - t_2)} \dd{t_1} \dd{t_2}}
+    \end{multline*}
+    Using \(\mean{\xi(t)} = 0\) and \(\mean{\xi(t_1)\xi(t_2)} = \Gamma  \delta({t_1 - t_2})\)
+    \begin{align*}
+        \mean{v_i(t)^2} &= \mean{v^2_{i_0}e^{ - \frac{2\gamma}{m} t} } + { \frac{1}{m^2}\int_0^t \int_0^t e^{ -\frac{\gamma}{m} (2t - t_1 - t_2)} \Gamma  \delta({t_1 - t_2}) \dd{t_1} \dd{t_2}}\\
+        \mean{v_i(t)^2} &= \mean{v^2_{i_0}e^{ - \frac{2\gamma}{m} t} } + { \frac{1}{m^2}\int_0^t e^{ - 2\frac{\gamma}{m} (t - t')} \Gamma  \dd{t'}}
+    \end{align*}
+    The transient part dies after equilibrium has been established for a long time, so \[
+        \mean{v_i^2(\infty)} =  \frac{\Gamma}{ 2\gamma m} = \frac{k_BT}{m} 
+    \]
+    where we've used equipartition theorem \(\mean{\frac{1}{2} m v^2} = \frac{k_BT}{2}\).
+
+    The diffusion constant is defined by \[
+        \mean{x_i^2} \equiv 2Dt
+    \]
+    The mean square displacement can be computed by similar to the mean square speed \begin{align*}
+        \mean{x_i^2(t)} &= \frac{\Gamma }{m^2} \int_0^t \int_0^t \int_0^{t_1'} \int_0^{t_2'} \delta(t_1'' - t_2'') e^{ - \frac{\gamma}{m}(t_1' + t_2' - t_1'' - t_2'')} \dd{t_1''}\dd{t_2''}\dd{t_1'}\dd{t_2'}\\
+        \mean{x_i^2(t)} &= \frac{\Gamma }{m^2} \int_0^t \int_{t_2'}^t   e^{ - \frac{\gamma}{m}(t_1' + t_2')}\int_0^{t_2'} e^{\frac{\gamma}{m} 2t_2''} \dd{t_2''}\dd{t_1'}\dd{t_2'}\\
+        \mean{x_i^2(t)} &= \frac{\Gamma }{m \gamma} \int_0^t \int_{t_2'}^t   e^{ - \frac{\gamma}{m}(t_1' - t_2')}  \dd{t_1'}\dd{t_2'}\\
+        \mean{x_i^2(t)} &= \frac{\Gamma }{\gamma^2} \int_0^t 1 - e^{ - \frac{\gamma}{m}2t_2'}  \dd{t_2'}\\
+        \mean{x_i^2(t)} &= \frac{\Gamma }{\gamma^2} t
+    \end{align*}
+    In the last line, the decaying term was dropped. Therefore we have by definition \[
+        D = \frac{\Gamma}{2\gamma^2} = \frac{2\gamma k_BT}{2 \gamma^2} = \frac{k_B T}{\gamma} =\frac{k_B T}{6\pi \eta R} 
+    \]
+    \(\gamma = 6\pi \eta R\) comes from Stoke's law.
+
+    The mean square displacement can be alternatively expressed as \[
+        \mean{x_i^2(t)} = \frac{2 k_BT}{\gamma} t
+    \]
+    Assuming that Pospisil observed displacements from a microscope glass which makes \(\mean{x^2} = 2\mean{x_i^2}\), \(k_B\) can be estimated to be\begin{align*}
+        k_B &= \frac{3\pi \eta R}{T} \frac{\mean{x^2}  /2}{t} \\
+        &= 5.92 \times 10^{ - 25} \quad\mathrm{J\;K^{ 1}}
+    \end{align*}
+    which is much \(40\) times smaller than the modern value. Fermi would have done better in a bar quiz.
+     \subsection{} The classical fluctuation-dissipation theorem states \begin{align*}
+        \mean{\delta q^2_\omega} &= \frac{2 k_B T}{\omega} \Im( \chi(\omega))
+    \end{align*}
+    where \(\chi(\omega) = \frac{q}{v}\) is the relevant susceptibility, which is given by \begin{align*}
+        \pqty{\frac{1}{C} - i\omega R}\chi &=  1\\
+        \chi &= \frac{C}{1 - i\omega RC}\\
+        \chi &= \frac{C}{1 + \omega^2 \tau^2}(1 + i\omega \tau)
+    \end{align*}
+    Substituting back, \begin{align*}
+        \mean{\delta q^2_\omega} &=  \frac{2 k_B T C \tau }{1 + \omega^2 \tau^2}\\
+        \mean{q^2_\omega} &=  \frac{2 k_B T C \tau }{1 + \omega^2 \tau^2} 
+    \end{align*}
+    where we've used \(\tau = RC\) and \(\mean{q} = \chi \mean{v} = 0\). The voltage noise can be obtained as \begin{align*}
+        \abs{\chi^2(\omega)} \mean{v_\omega^2} &= \mean{q_\omega^2}\\
+        \frac{C^2}{1 + \omega^2 \tau^2} \mean{v_\omega^2} &= \frac{2 k_B T C \tau }{1 + \omega^2 \tau^2} \\
+        \mean{v_\omega^2} &= 2 k_B T R
+    \end{align*}
+    The expected noise in a frequency interval \(\dd{f}\) consists of that from both positive and negative angular frequencies \begin{align*}
+        \mean{v^2} \dd{f}&= \frac{1}{2\pi}\mean{v^2( + \omega)} \dd{\omega} + \frac{1}{2\pi}\mean{v^2( -\omega)} \dd{\omega}\\
+        \mean{v^2} \dd{f}&= 4 k_B T R  \dd{f}
+    \end{align*}
+    where the \(2\pi\) comes from the fourier convention we use \(\int \mean{v_\omega^2} \dd{\omega} = 2\pi\). This is consistent with the observed Johnson noise.
+
+    The voltage across the capacitor is \begin{align*}
+        \mean{v_c^2(\omega)} &= \frac{1}{C^2} \mean{q^2(\omega)}\\
+        \mean{v_c^2(\omega)} &= \frac{2 k_B T R}{1 + \omega^2 \tau^2} \\
+        \mean{v_c^2} =\frac{1}{2\pi} \int \mean{v_c^2(\omega)}\dd{\omega} &= \frac{k_B T R}{\pi\tau}  \int_{ - \infty}^\infty \cos^2 u \dd{ \tan u}\\
+        \mean{v_c^2} &= \frac{k_B T }{C} 
+    \end{align*}
+    and correspondingly \[
+        E_c = \mean{\frac{1}{2}C v_c^2} = \frac{k_BT}{2} 
+    \] consistent with equipartition theorem for thermal energy in a degree of freedom on which energy quadratically depends. 
+
+    The power dissipated in the resistor is given by \begin{align*}
+        P_{\omega} &= \mean{\omega^2 q_\omega^2 R}\\
+        P_{\omega} &= \frac{2 k_B T \tau^2 }{1 /\omega^2 + \tau^2} 
+    \end{align*}
+    the power supplied by the noise source is \begin{align*}
+        P'_\omega &= \Re{\mean{v^*_\omega ( - i\omega q_\omega)}}\\
+        P'_\omega &= \Re{\mean{v^2_\omega  \chi}}\\
+        P'_\omega &= \frac{C \omega^2 \tau }{1 + \omega^2 \tau^2} 2 k_B TR\\
+        P'_\omega &= \frac{2 k_B T \tau^2 }{1 /\omega^2 + \tau^2} = P_\omega
+    \end{align*}
+    The power supplied in circuit is fully dissipated in the resistor. 
+
+    Measurements of the voltage noise spectrum \(\mean{v_\omega^2}\) across the known capacitor can be integrated to deduce temperature \[
+        T = \frac{C}{2\pi k_B} \int_{ -\infty}^{\infty} \mean{v_\omega^2} \dd{\omega}
+    \]
+    Once temperature is obtained, the unknown resistance can be obtained by solving \[
+        \mean{v_c^2(\omega)} = \frac{2 k_B T R}{1 + \omega^2 R^2 C^2}
+    \]
+    The correct root can be identified by also using \[
+        \pdv{\omega}\mean{v_c^2(\omega)} = -\frac{2R^2 C^2 \omega\mean{v_c^2(\omega)}}{1 + \omega^2 R^2 C^2}.
+    \]
+     \subsection{} The relative probability of the vanes being rotated forward by gas of temperature \(T_1\), driving the ratchet to overcome the elastic energy \(\epsilon\) and the external torque \(L\), is \[
+        e^{ - \frac{1}{k_BT_1} (L\theta +\epsilon)}
+    \]
+    The relative probability of the pawl being lifted by gas of temperature \(T_2\) against elastic energy \(\epsilon\) is \[
+        e^{ - \frac{1}{k_BT_2} \epsilon}
+    \]
+    The system is reversible if the two probabilities are equal, i.e. \begin{align*}
+        e^{ - \frac{1}{k_BT_1} (L\theta +\epsilon)} &= e^{ - \frac{1}{k_BT_2} \epsilon} &\implies&& \frac{L\theta +\epsilon}{T_1} &= \frac{\epsilon}{T_2}
+    \end{align*}
+    Therefore, the energy taken from one reservoir \(Q_1 = L\theta +\epsilon\) and that delivered to another \(Q_2 = \epsilon\) satisfy \[
+        \frac{Q_1}{Q_2} = \frac{T_1}{T_2}
+    \]
+     \subsection{} The problem can be formulated as \begin{gather*}
+        \pdv{t}P =  D\pdv[2]{x} P \qquad \text{for} \qquad {0<x<L}\\
+        \pdv{x}P(0,t) = 0\\
+        P(L,t)= 0
+    \end{gather*}
+    To start with, assume separable solutions \begin{align*}
+        P(x,t) &=  X(x)T(t)\\
+        \frac{T'(t)}{T(t)} &= D \frac{X''(x)}{X} = -C\\
+        X &= \cos(\sqrt{\frac{C}{D}} x)\\
+        T &= T_0 e^{ - C t}
+    \end{align*}
+    The constraint \(P(L,t) = 0\), gives \[
+        C = \frac{(n + \frac{1}{2})^2\pi^2}{L^2}D
+    \]
+    Any general solution would be a linear superposition of \(X_nT_n\), additionally satisfying \(P(x,t)\geq 0\). No single mode can \emph{completely} decay away, so neither can the inseparable superposition of modes. However, the \(\frac{1}{e}\)-life of a mode can be computed as \[
+        \tau = \frac{1}{C} = \frac{1}{(n + \frac{1}{2})^2}\frac{L^2}{\pi^2 D} 
+    \]
+\end{document}

@@ -1,0 +1,907 @@
+\documentclass[12pt]{article}
+\usepackage{MicSheets}
+
+\newcommand{\vecvary}[2]{\pdv{x'^{#1}}{x^{#2}}}
+\newcommand{\dualvary}[2]{\pdv{x^{#1}}{x'^{#2}}}
+
+\begin{document}
+\title{Relativity Example Sheets}
+\author{Feiyang Chen}
+\date{Michaelmas 2020}
+\maketitle
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+\section{}
+\subsection{} Without loss of generality, we consider systems of reference in which $y$ and $z$ coordinates are perpendicular to the connecting line of events of interest in spacetime.
+        \begin{equation*}
+            \Delta s^2 = c^2 \Delta t^2 - \Delta x^2
+        \end{equation*}
+
+        Transform rules:
+        \begin{align*}
+            c\Delta t' &= \gamma (c\Delta t\, - \beta \Delta x) = c\Delta t \cosh \psi_u - \Delta x \sinh \psi_u\\
+            \Delta x' &= \gamma (\Delta x\, - \beta c \Delta t) = \Delta x \cosh \psi_u - c\Delta t \sinh \psi_u
+        \end{align*}
+        
+        Proof by construction:
+            \subsubsection{} time-like: \(\Delta s^2 > 0\)
+            \begin{gather*}
+                c^2 \Delta t^2 - \Delta x^2 > 0\\
+                - 1 < \frac{\Delta x}{c\Delta t} < 1 
+            \end{gather*}
+                
+            To find $S'$ where $\Delta x=0$, we simp;y require $\frac{\Delta x}{c\Delta t}=\tanh \psi_u$ which can always be found for real rapidity $-1<\psi_u<1$.
+            \subsubsection{} space-like: \(\Delta s^2 < 0\)
+            \begin{gather*}
+                c^2 \Delta t^2 - \Delta x^2 < 0\\
+                - 1 < \frac{c\Delta t}{\Delta x} < 1 
+            \end{gather*}
+                
+            To find $S'$ where $\Delta t=0$, we simp;y require $\frac{c\Delta t}{\Delta x}=\tanh \psi_u$ which can always be found for real rapidity $-1<\psi_u<1$. 
+        \subsection{} 
+            \subsubsection{} In $S$, \( \Delta t = t_B - t_A > 0\), \(\Delta x = 0\).
+            
+            In all frames $S'$,
+            \begin{align*}
+                \Delta t' &= \Delta t \cosh \psi_u\\
+                \Delta t' &\geq \Delta t > 0\\
+                t_B' &> t_A'
+            \end{align*}
+            \subsubsection{} If event A causes event B, \( \Delta t = t_B - t_A \geq \frac{\Delta r}{c} \geq 0 \),
+            \[\Delta t = \Delta t \cosh \psi_u -\frac{\Delta r}{c}\sinh \psi_u\geq \Delta t(\cosh \psi_u - \sinh \psi_u)\geq 0 \]
+            \begin{gather*}
+                \Delta s^2 = c^2 \Delta t^2 - \Delta^2 \geq 0\\
+                c^2 \Delta t'^2 - \Delta r'^2\geq 0\\
+                \Delta t \geq \frac{\abs{\Delta r'}}{c}\quad \text{ in all frames.}\qquad\blacksquare
+            \end{gather*}
+        \subsection{} 
+            \subsubsection{} \text{ }
+            \begin{center}
+                \def\svgwidth{300pt}
+                \incfig{relat3}
+            \end{center}
+            \begin{gather*}
+                x' = x\cosh \psi_v - ct \sinh\psi_v\\
+                ct'\text{-axis:}\quad x\cosh \psi_v - ct \sinh\psi_v = 0\\
+                \theta_t = \tan^{-1}\left(\frac{\sinh \psi_v}{\cosh \psi_v}\right)\\
+                \theta_t = \tan^{-1}\left(\frac{\beta \gamma}{\gamma}\right) = \tan^{-1}\left(\frac{v}{c}\right)
+            \end{gather*}
+            Similarly
+            \begin{gather*}
+                ct' = ct\cosh \psi_v - x \sinh\psi_v\\
+                x'\text{-axis:}\quad ct\cosh \psi_v - x \sinh\psi_v = 0\\
+                \theta_x = \tan^{-1}\left(\frac{ct}{x}\right)\\
+                \theta_x = \tan^{-1}\left(\frac{\beta \gamma}{\gamma}\right) = \tan^{-1}\left(\frac{v}{c}\right)
+            \end{gather*}
+            \subsubsection{} 
+            \begin{figure}[ht]
+                \centering
+                \def\svgwidth{300pt}
+                \incfig{relat3b}
+            \end{figure}
+            \begin{gather*}
+                \Delta s^2 = c^2t^2 - x^2
+            \end{gather*}
+            Since we are interested in constant $\Delta s^2$ curves, 
+            \begin{gather*}
+                \thm{\Delta s^2}{x}{\Delta s^2} = 0 = 2ct \thm{ct}{x}{\Delta s^2} - 2x
+            \end{gather*}
+            If the curve does intersect the $ct$-axis, at $x=0$, we have 
+            \begin{equation*}
+                \thm{ct}{x}{\Delta s^2} = 0 \implies \text{curve is parallel to $x$-axis}
+            \end{equation*}
+            Similarly, taking derivative with respect to $ct$, we get
+            \begin{gather*}
+                \thm{\Delta s^2}{ct}{\Delta s^2} = 0 = 2x \thm{x}{ct}{\Delta s^2} - 2ct
+            \end{gather*}
+            which means at $ct=0$ (intersecting $x$-axis)
+            \begin{equation*}
+                \thm{x}{ct}{\Delta s^2} = 0 \implies \text{curve is parallel to $ct$-axis}
+            \end{equation*}
+
+            These curves intersect the coordinate axes of different $S'$ frames at the same values of $x'$ or $t'$, as shown in the plot above. The new axes can then be calibrated linearly with respect to the test length $x'=\sqrt{- \Delta s^2}, ct'=\sqrt{\Delta s^2}$
+            \subsubsection{} \text{ }
+            \begin{center}
+                \def\svgwidth{400pt}
+                \incfig{relat3c}
+            \end{center}
+        \subsection{} Dissolve the 3-vector coordinate $\mathbf{r}=(x,y,z)^T$ into components parallel and perpendicular to $\beta$
+        \[
+            \vec{r} = \overbrace{\frac{\dotprod{r}{\beta}}{\beta^2}\vec{\beta}}^\text{parallel}\: +\: \overbrace{\vec{r} - \frac{\dotprod{r}{\beta}}{\beta^2}\vec{\beta}}^\text{perpendicular}
+        \]
+        \[
+            r_\parallel = \frac{(\beta_x x +\beta
+            _y y + \beta_z z)}{\beta}\qquad \vec r_\perp = \begin{pmatrix}
+                x -\frac{(\beta_x x +\beta
+            _y y + \beta_z z)}{\beta^2}\beta_x\\
+            y -\frac{(\beta_x x +\beta
+            _y y + \beta_z z)}{\beta^2}\beta_y\\
+            z -\frac{(\beta_x x +\beta
+            _y y + \beta_z z)}{\beta^2}\beta_z
+            \end{pmatrix}
+        \]
+        Then the rules for the components can be applied respectively:
+        \begin{gather*}
+            ct' = \gamma (ct - \beta r_\parallel)\\
+            \vec{r} = \gamma(r_\parallel - \beta ct)\frac{\vec\beta}{\beta} + \vec{r}_\perp
+        \end{gather*}
+        Reorganised into matrix equations
+        \begin{equation*}
+            \begin{pmatrix}
+                ct'\\
+                x'\\
+                y'\\
+                z'
+            \end{pmatrix} = \begin{pmatrix}
+                \gamma & -\gamma\beta_x&-\gamma\beta_y&-\gamma\beta_z\\
+                -\gamma\beta_x&\gamma\frac{\beta_x^2}{\beta^2}&\gamma\frac{\beta_x\beta_y}{\beta^2}&\gamma\frac{\beta_x\beta_z}{\beta^2}\\
+                -\gamma\beta_y&\gamma\frac{\beta_y\beta_x}{\beta^2}&\gamma\frac{\beta_y^2}{\beta^2}&\gamma\frac{\beta_y\beta_z}{\beta^2}\\
+                -\gamma\beta_z&\gamma\frac{\beta_z\beta_x}{\beta^2}&\gamma\frac{\beta_z\beta_y}{\beta^2}&\gamma\frac{\beta_z^2}{\beta^2}
+            \end{pmatrix}\begin{pmatrix}
+                ct\\
+                x\\
+                y\\
+                z
+            \end{pmatrix} +\begin{pmatrix}
+                0&0&0&0\\
+                0&1 - \frac{\beta_x^2}{\beta^2}&-\frac{\beta_y\beta_x}{\beta^2}&- \frac{\beta_z\beta_x}{\beta^2}\\
+                0&-\frac{\beta_x\beta_y}{\beta^2}&1-\frac{\beta_y^2}{\beta^2}&- \frac{\beta_z\beta_y}{\beta^2}\\
+                0&-\frac{\beta_x\beta_z}{\beta^2}&1-\frac{\beta_y\beta_z}{\beta^2}&- \frac{\beta_z^2}{\beta^2}\\
+            \end{pmatrix} \begin{pmatrix}
+                ct\\
+                x\\
+                y\\
+                z
+            \end{pmatrix}
+        \end{equation*}
+        \begin{equation*}
+            \begin{pmatrix}
+                ct'\\
+                x'\\
+                y'\\
+                z'
+            \end{pmatrix} = \begin{pmatrix}
+                \gamma & -\gamma\beta_x&-\gamma\beta_y&-\gamma\beta_z\\
+                -\gamma\beta_x&1 + \alpha \beta_x^2&\alpha \beta_y\beta_x&\alpha\beta_z\beta_x\\
+                -\gamma\beta_y& \alpha \beta_x\beta_y&1 +\alpha \beta_y^2&\alpha\beta_z\beta_y\\
+                -\gamma\beta_z&\alpha \beta_x\beta_z&\alpha \beta_y\beta_z&1 +\alpha\beta_z^2\\
+            \end{pmatrix}\begin{pmatrix}
+                ct\\
+                x\\
+                y\\
+                z
+            \end{pmatrix}
+        \end{equation*}
+        \subsection{} Writing down the transformation law from ZMF to $S'$ which is the rest frame of the backward-moving particle
+        \begin{gather*}
+            ct' = \gamma(ct -\beta x)\\
+            x' = \gamma(x -\beta ct)
+        \end{gather*}
+        Plug in \(x = vt\)
+        \begin{gather*}
+            ct' = \gamma(c -\beta v)t = \frac{c^2 + v^2}{c^2\sqrt{1 - \frac{v}{c}^2}} ct\\
+            x' = \gamma(v -\beta c)t = \frac{2v}{\sqrt{1 - \frac{v}{c}^2}} t\\
+            \implies v' =\frac{x'}{t'} = \frac{2v}{1 + \frac{v}{c}^2}
+        \end{gather*}
+        \subsection{}
+            \subsubsection{} The direction of the rdv parallel to the direction of motion is contracted:\[l_x = \gamma^{-1} l_{0}\cos \theta'\]
+            The direction perpendicular to the motion is unchanged. That gives
+            \[\theta = \tan^{-1} \left(\frac{\gamma\sin \theta'}{ \cos\theta'}\right)\]
+            \subsubsection{} Write down the transform rules in standard configuration and plug in $x'=u't'\cos\theta,y=u't'\sin\theta $:
+            \[
+                \begin{pmatrix}
+                    ct\\
+                    x\\
+                    y
+                \end{pmatrix} =
+                \begin{pmatrix}
+                    \gamma & + \gamma \beta&0\\
+                    +\gamma\beta & \gamma&0\\
+                    0&0&1
+                \end{pmatrix}
+                \begin{pmatrix}
+                    ct'\\
+                    u't'\cos \theta'\\
+                    u't'\sin\theta'
+                \end{pmatrix} =
+                \begin{pmatrix}
+                    \gamma (c + \beta u'\cos \theta')\\
+                    \gamma (u'\cos \theta' + \beta c) \\
+                    u'\sin \theta'
+                \end{pmatrix}t'
+            \]
+            The angle observed in $S$ frame is \(\theta =\tan^{-1}\left(\frac{u'\sin\theta'}{ \gamma(u'\cos \theta' + v)}\right)\). If the bullet was a photon, \(\theta =\tan^{-1}\left(\frac{\sqrt{c^2 - v^2}\sin\theta'}{c\cos \theta' + v}\right)\)
+        \subsection{} In $S'$ frame, the angular distribution of photons is \begin{align*}
+            P'(\theta')d\theta' &=  \frac{\sin \theta'}{2}d\theta'\\
+            P(0\leq\theta' \leq \theta_0') &= \left. -\frac{\cos \theta'}{2}\right|_{0}^{\theta_0'} = \frac{1 -\cos \theta_0' }{2}
+        \end{align*}
+        If $\theta$ is the angle that the photon makes with respect to the motion of the $\pi$-mesons. As computed in question 6.(b), the transformation rule of $\theta$ is  \(\theta =\tan^{-1}\left(\frac{\sqrt{c^2 - v^2}\sin\theta'}{c\cos \theta' + v}\right)\). Applying reverse transform, \(\theta' =\tan^{-1}\left(\frac{\sqrt{c^2 - v^2}\sin\theta}{c\cos \theta - v}\right)\).
+
+        Substitute in $P$, 
+        \begin{gather*}
+            P(\theta) = -\frac{1}{2}\dv{\cos \theta'(\theta)}{\theta}\\
+            P(\theta) = -\frac{1}{2}\dv{}{\theta}\sqrt{\frac{1}{1 + \frac{(c^2 - v^2)\sin^2 \theta}{c (\cos\theta - v)^2} }} =-\frac{1}{2}\dv{}{\theta}\sqrt{\frac{(c\cos\theta - v)^2}{c^2\cos^2 \theta- 2vc \cos \theta + v^2 + {(c^2 - v^2)\sin^2 \theta} }}\\
+            P(\theta) = -\frac{1}{2}\dv{}{\theta}\left({\frac{c\cos\theta - v}{c - v \cos\theta} }\right)\\
+            P(\theta) = -\frac{1}{2}\left(\frac{ -c\sin\theta(c - v \cos\theta) - v\sin \theta(c \cos \theta - v)}{(c - v \cos\theta)^2} \right) \\
+            P(\theta)= \frac{1}{2}\frac{\sin \theta(c^2 - v^2)}{(c - v \cos\theta)^2}\\
+            P(\theta)= \frac{\sin \theta}{2\gamma^2(1 - \beta \cos\theta)^2}
+        \end{gather*}
+        \subsection{}
+            \subsubsection{} \begin{gather*}
+                \begin{pmatrix}
+                    c\dif t'\\
+                    \dif x'
+                \end{pmatrix}=\begin{pmatrix}
+                    \gamma &-\gamma\beta\\
+                    -\gamma\beta & \gamma
+                \end{pmatrix}\begin{pmatrix}
+                    c\dif t\\
+                    \dif x
+                \end{pmatrix}\\
+                \text{Here, $\beta$ and $\gamma$ denote constant factors at a specific time}\\
+                a_x' = \dv{}{t'}\dv{x'}{t'} = c \dv{}{t'} \frac{\gamma u - \gamma \beta c}{ \gamma c  - \gamma \beta u}\\
+                a_x' = c\dv{}{t'} \frac{\gamma u - \gamma \beta }{ \gamma c  - \gamma \beta u}\\
+                a_x' = \frac{c^2}{( \gamma c  - \gamma \beta u)} \dv{}{t}\frac{\gamma u - \gamma \beta }{ \gamma c  - \gamma \beta u}\\
+                a_x' = \frac{1}{(1  - \frac{u}{c}^2)^\frac{3}{2}}a_x
+            \end{gather*}
+            Now we have the acceleration transform rules between the instantaneous rest frames of the moving spaceship and an inertial frame
+            \begin{align*}
+                \dv{u}{t} &=  \frac{1}{\gamma^3} f(\tau)\\
+                \dv{u}{\tau} &= \dv{t}{\tau}\dv{u}{t}\\
+                &= \frac{c}{\gamma^4 (c -\beta u)}f(\tau)\\
+                &= \frac{1}{\gamma^2}f(\tau)\\
+                \frac{1}{1 - \frac{u}{c}^2}\dv{u}{\tau} &=  f(\tau)\\
+                \int_0^\tau \dif\tau c\dv{\tanh^{-1}\frac{u}{c}}{\tau} &= \int_0^\tau\dif\tau f(\tau)\\
+                c\tanh^{-1}\frac{u}{c} - c\tanh^{-1}\frac{u_0}{c} &= c{\psi(\tau)}\\
+                \frac{u(\tau) - u_0}{1 - \frac{u(\tau)u_0}{c^2}}&=  c\tanh \psi(\tau)
+            \end{align*}
+            For $u(\tau)$ to reach $c$, any finite proper acceleration has to be supplied for a infinite period of time.
+            \subsubsection{} \begin{align*}
+                \int_0^{\tau_a} \dif t(\tau)\:  u &=  \Delta x\\
+                \int_0^{\tau_a}\dif\tau\: c\cosh\frac{ g \tau}{c}\tanh \frac{ g \tau}{c} &=  \Delta x\\
+                \int_0^{\tau_a} \dif \tau\:  c \sinh \frac{ g \tau}{c} &=  \Delta x\\
+                \frac{c^2}{g}\left(\cosh \frac{g\tau_a}{c} -\cosh 0\right) &=  \Delta x\\
+                \cosh \frac{g\tau_a}{c} &=  \frac{g\Delta x}{c^2} + 1\\
+                \tau_a &=  3.02 \text{ years (taking }g=9.8\, m\, s^{-2} \text{)}
+            \end{align*}
+        \subsection{} 
+        \begin{figure}[ht]
+            \centering
+            \def\svgwidth{300pt}
+            \incfig{relat9}
+            \caption{Sections of examples of such surfaces}
+        \end{figure}
+        Constant $x'^1$ hypersurface equation in Cartesian coords: \(x^1 + x^2 = \) const. i.e. a plane parallel to $x_3-axis$;
+        
+        Constant $x'^2$ hypersurface equation in Cartesian coords: \(x^1 - x^2 = \) const. i.e. another plane parallel to $x_3$-axis;
+
+        Constant $x'^3$ hypersurface equation in Cartesian coords: \(x^3 - \frac{1}{2}\left[(x^1)^2 - (x^2)^2 \right]= \) const. i.e. a surface constituted of stacked hyperbolae.
+
+        
+
+        \[
+            g_{ab}' = \delta_{cd}\pdv{x^c}{x'^a}\pdv{x^d}{x'^b} =\begin{pmatrix}
+                1&1&0\\
+                1&- 1&0\\
+                2x'^2&2x'^2&1
+            \end{pmatrix}^T_{ac} \begin{pmatrix}
+                1&1&0\\
+                1&- 1&0\\
+                2x'^2&2x'^2&1
+            \end{pmatrix}_{cb}
+        \] 
+        \[
+            g_{ab}' = \begin{pmatrix} 2 + 4(x\indices{^\prime^2})^2& 4x'^2x\indices{^\prime^1}&2x\indices{^\prime^2}\\
+                4x\indices{^\prime^2}x\indices{^\prime^1}&2 + 4(x\indices{^\prime^1})^2&2x\indices{^\prime^1}\\
+                2x\indices{^\prime^2}&2x\indices{^\prime^1}&1
+            \end{pmatrix}_{ab}
+        \]
+        In general \(g_{ab}\neq_0\) for $a\neq b$, so the coordinate system is not orthogonal.
+        \begin{align*}
+            \dif V &=  \sqrt{g}\dif x'^1\dif x'^2\dif x'^3\\
+            \dif V&= \dif x'^1\dif x'^2\dif x'^3 \sqrt{2(2 + 4(x'^2)^2) - 8(x'^2)^2 }\\
+            \dif V&= 2\dif x'^1\dif x'^2\dif x'^3
+        \end{align*}
+        \subsection{} \[
+            x^2 + y^2 + z^2 + w^2 = a^2\]
+        \begin{gather*}
+            w \dif w = - \left(x\dif x + y \dif y + z \dif z  \right)\\
+            ds^2 = \dif x^2 + \dif y^2 + \dif z^2 +\frac{(x\dif x + y\dif y + z\dif z)^2}{a^2 - x^2 - y^2 - z^2} 
+        \end{gather*}
+        Let \(x = r\sin \theta \cos \phi, y = r \sin\theta \sin \phi, z = r\cos \theta, r = a \sin \chi\)
+        \[ds^2 = \frac{a^2}{a^2 = r^2}\dif r^2 + r^2 \dif\theta^2 + r^2\sin^2\theta \dif\phi^2\]
+        \[\dif s^2 = a^2(\dif \chi^2 + \sin^2\chi(\dif\theta \sin^2 \theta \dif \phi^2))\]
+        Metric for this 3D Riemannian space:
+        \[
+            g_{ab} = a^2 \begin{pmatrix} 1&&\\
+            &\sin^2\chi&\\
+            &&\sin^2 \chi \sin^2 \theta
+         \end{pmatrix} \]
+        \begin{align*}
+             V &= \iiint_{0,0,0}^{2\pi,\pi,\pi}\sqrt{a^6\sin^2\chi\sin^2\chi\sin^2\theta}\dif\chi \dif\theta \dif\phi\\
+             &= a^3 2\pi \iint_{0,0}^{\pi,\pi} \sin^2\chi \sin \theta \dif \chi \dif \theta\\
+             &= 2\pi^2a^3 
+        \end{align*}
+        The embedded 2-Sphere defined by \(\chi = \chi_0\) has line element
+        \begin{align*}
+            \dif s^2 &= a^2 \sin^2 \chi_0(\dif\theta^2 \sin^2 \theta \dif \phi^2)
+        \end{align*}
+        Therefore its metric is \[g_{ab} = a^2\sin^2\chi_0 \begin{pmatrix} 1&\\
+        &\sin^2\theta \end{pmatrix} \]
+        The area is 
+        \begin{align*}
+            A &= \iint_{0,0}^{2\pi,\pi}\sqrt{(a^2\sin^2\chi_0)^2\sin^2\theta}\dif \theta \dif \phi\\
+            &= 4\pi a^2 \sin^2\chi_0 
+        \end{align*}
+\newpage
+\section{}
+\subsection{}
+    \subsubsection{} { \begin{align*}
+        \mathbf{e_a'} & = \pdv{}{x'^a}                          \\
+                      & = \pdv{x^b}{x'^a}\mathbf{e_b}           \\
+        \mathbf e_1'  & = \mathbf e_1 + \bf e_2 + 2x'^2\bf e_3  \\
+        \mathbf e_2'  & = \mathbf e_1 - \bf e_2 + 2x'^1 \bf e_3 \\
+        \mathbf e_3'  & = \mathbf e_3
+    \end{align*}}
+    These are the tangent vectors to the intersections of the coordinate surfaces.
+    \begin{gather*}
+        \bf{g(e_a,e_b)} = \delta_{ab}\\
+        \bf{g(e_a',e_b')} = \begin{pmatrix} 2 + 4(x\indices{^\prime^2})^2             & 4x'^2x\indices{^\prime^1}     & 2x\indices{^\prime^2} \\
+            4x\indices{^\prime^2}x\indices{^\prime^1} & 2 + 4(x\indices{^\prime^1})^2 & 2x\indices{^\prime^1} \\
+            2x\indices{^\prime^2}                     & 2x\indices{^\prime^1}         & 1
+        \end{pmatrix}_{ab} = g\indices{^\prime_a_b}
+    \end{gather*}
+    \subsection{} \(\bf{v = e_1}\)
+    \begin{gather*}
+        \bf v = v^a \bf e_a\qquad \implies\qquad v^a = (1,0,0)^T, v_a = \delta_{ab}v^b =(1,0,0)\\
+        v'_a = \pdv{x^b}{x'^a}v_b = (1,1,0)\\
+        v'^a = \vecvary{a}{b}v^b =\left(\frac{1}{2},\frac{1}{2}, - x'^1 - x'^2\right)
+    \end{gather*}
+    \subsection{}
+    \subsubsection{} { \begin{align*}
+        A^{ab}T_{ab} & =  A^{ab}(T_{(ab)} + T_{[ab]})     \\
+        A^{ab}T_{ab} & =  A^{ab}T_{(ab)} + A^{ab}T_{[ab]}
+    \end{align*}}
+    Using (anti)symmetry under exchange of dummy indices, we have \[A^{ab}T_{(ab)} =  -A^{ba}T_{(ba)} = 0\]
+    \begin{equation*}
+        \implies\qquad A^{ab}T_{ab} = A^{ab}T_{[ab]}
+    \end{equation*}
+    Similarly,
+    \begin{equation*}
+        S^{ab}T_{[ab]} = -S^{ba}T_{[ba]} = 0
+    \end{equation*}
+    \begin{equation*}
+        S^{ab}T_{ab} = S^{ab}T_{(ab)}
+    \end{equation*}
+    \subsubsection{} {
+    \begin{align*}
+        A'_{ab} & =  \partial'_b v'_a - \partial'_a v'_b\\
+               & = \pdv{}{x^{\prime b}}\left(\dualvary c a v_c\right) - \pdv{}{x^{\prime a}}\left(\dualvary c b v_c\right)\\
+               & = \dualvary{d}{b}\pdv{}{x^{d}}\left(\dualvary c a v_c\right) - \dualvary{d}{a}\pdv{}{x^{d}}\left(\dualvary c b v_c\right)\\
+               & = \dualvary{d}{b}\dualvary c a\pdv{v_c}{x^{d}} - \dualvary{c}{a}\dualvary d b\pdv{v_d}{x^{c}} + v_c\left(\dualvary{d}{b}\pdv[2]{x^c}{x^d}{x^{\prime a}}-\dualvary{d}{a}\pdv[2]{x^c}{x^d}{x^{\prime b}}\right) \\
+               & = \dualvary{d}{b}\dualvary c a\pdv{v_c}{x^{d}} - \dualvary{c}{a}\dualvary d b\pdv{v_d}{x^{c}} + v_c\left(\pdv[2]{x^c}{x^{\prime b}}{x^{\prime a}} -\pdv[2]{x^c}{x^{\prime a}}{x^{\prime b}}\right)            \\
+               & = \dualvary c a\dualvary db A_{cd} \qquad \blacksquare
+    \end{align*}}
+    The components of $A_{ab}$ does transform like a type-$(0,2)$ tensor.
+    \begin{align*}
+        B_{abc}  & =  \pdv{A_{ab}}{x^c} +\pdv{A_{bc}}{x^a} + \pdv{A_{ca}}{x^b}                                                                                                                                          \\
+        B'_{abc} & = \dualvary gc\pdv{}{x^g}\dualvary ea \dualvary fb A_{ef} + \dualvary ga\pdv{}{x^g}\dualvary eb \dualvary fc A_{ef} + \dualvary gb\pdv{}{x^g}\dualvary ec \dualvary fa A_{ef}                        \\
+                 & = \dualvary gc\dualvary ea \dualvary fb \pdv{A_{ef}}{x^g} + \dualvary ga\dualvary eb \dualvary fc \pdv{A_{ef}}{x^g}  + \dualvary gb\dualvary ec \dualvary fa \pdv{A_{ef}}{x^g}                       \\
+                 & \qquad +A_{ef}\left(\dualvary gc \left(\pdv[2]{x^{e}}{x^g}{x^{\prime a}}\dualvary fb +\pdv[2]{x^{\prime f}}{x^g}{x^{\prime b}}\dualvary ea\right) + \dualvary gb \dots  + \dualvary ga \dots \right) \\
+                 & \text{big chunky term} = A_{ef}\left(\left(\pdv[2]{x^{e}}{x^{\prime c}}{x^{\prime a}}\dualvary fb +\pdv[2]{x^{\prime f}}{x^{\prime c}}{x^{\prime b}}\dualvary ea\right) + \dots  + \dots \right)     \\
+                 & \mkern-36mu\text{but $A_{ef}$  is antisymmetric in every frame by construction, so}                                                                                                                  \\
+                 & \text{big chunky term} = A_{ef}\left(\left(\pdv[2]{x^{e}}{x^{\prime c}}{x^{\prime a}}\dualvary fb - \pdv[2]{x^{\prime e}}{x^{\prime c}}{x^{\prime b}}\dualvary fa\right) + \dots  + \dots \right)    \\
+                 & \mkern-36mu\text{denote $\pdv[2]{x^{e}}{x^{\prime c}}{x^{\prime a}}\dualvary fb$ as $\Theta^{ef}_{cab}$, $\Theta$ is symmetric under exchange of first two lower indices}                            \\
+                 & \text{big chunky term} = A_{ef}\left(\Theta^{ef}_{cab} - \Theta^{ef}_{bca} +\Theta^{ef}_{abc} -\Theta^{ef}_{cab}+\Theta^{ef}_{bca}-\Theta^{ef}_{abc}\right)=0                                        \\
+        B'_{abc} & = \dualvary gc\dualvary ea \dualvary fb \pdv{A_{ef}}{x^g} + \dualvary ea\dualvary fb \dualvary gc \pdv{A_{fg}}{x^e}  + \dualvary fb\dualvary gc \dualvary ea \pdv{A_{ge}}{x^f}                       \\
+        B'_{abc} & = \dualvary gc\dualvary ea \dualvary fb \left(\pdv{A_{ef}}{x^g} + \pdv{A_{fg}}{x^e}  + \pdv{A_{ge}}{x^f}\right) = \dualvary gc\dualvary ea \dualvary fb B_{abc}                                     
+    \end{align*}
+    
+    $B_{abc}$ is antisymmetric under exchange of any two indices.
+    \subsection{}
+    \subsubsection{} { \begin{align*}
+        g                   & =  \det(g_{ab})                                                                            \\
+        \frac{1}{g}\partial_c g & = \Tr(g\indices{^a^b}\partial_c g\indices{_b_c}  )                                             \\
+        \partial_c g            & =  gg\indices{^a^b} \partial_c g\indices{_b_a}                                                 \\
+        \partial_c g            & =  gg\indices{^a^b} \partial_c g\indices{_a_b}\qquad \text{ using symmetry of }g\indices{_a_b}
+    \end{align*}}
+    \subsubsection{} { \begin{align*}
+        \nabla_c g\indices{_a_b} & = \partial_c g\indices{_a_b} - \Gamma\indices{^d_c_a}g\indices{_d_b} - \Gamma\indices{^d_c_b} g\indices{_d_a}\\
+                                 & =\partial_c g\indices{_a_b} - \frac{1}{2}g\indices{^d^e} \bqty{\pqty{\partial_c g\indices{_a_e} + \partial_a g\indices{_c_e} - \partial_e g\indices{_a_c} }g\indices{_d_b} + \pqty{\partial_c g_{be} + \partial_b g_{ce} - \partial_e g_{bc}}g_{da}} \\
+                                 & =\partial_c g\indices{_a_b} - \frac{1}{2}\bqty{\pqty{\partial_c g\indices{_a_b} + \partial_a g\indices{_c_b} - \partial_b g\indices{_a_c} } + \pqty{\partial_c g_{ba} + \partial_b g_{ca} - \partial_a g_{bc}}}                                      \\
+                                 & =\partial_c g\indices{_a_b} - \frac{1}{2}\bqty{\partial_c g_{ab} - \partial_c g_{ba}}                                                                                                                                                \\
+                                 & = 0
+    \end{align*}}
+    \subsubsection{} { \[
+        \Gamma^{a}_{bc} = \frac{1}{2}g^{ae} \pqty{\partial_b g_{ce} + \partial_c g_{be} - \partial_eg_{bc}}
+    \]}
+    Turn off summation convention for the rest of this question \[
+        \Gamma^{a}_{bc} = \frac{1}{2}\sum_e g^{ae} \pqty{\partial_b g_{ce} + \partial_c g_{be} - \partial_eg_{bc}}
+    \]
+    Using \(g_{ab}\) is diagonal, we have \[
+        \Gamma^{a}_{bc} = \frac{1}{2} g^{aa} \pqty{\partial_b g_{cc}\delta_{ac} + \partial_c g_{bb}\delta_{ab} - \partial_a g_{bc} \delta_{bc}}
+    \]
+    For \(a\neq b\neq c\), \[
+        \delta_{ab},\delta_{bc},\delta_{ac} = 0 \implies \Gamma^{a}_{bc} = 0
+    \]
+    If two of the indices are the same, we can get
+    \begin{align*}
+        \Gamma^{a}_{ac} = \frac{1}{2} g^{aa}  \partial_c g_{aa} = \Gamma^a_{ca} &  & \Gamma^a_{bb} = -\frac{1}{2}g^{aa} \partial_ag_{bb}
+    \end{align*}
+    If all three indices are the same, \[
+        \Gamma^a_{aa} = \frac{1}{2}g^{aa} \partial_ag_{aa}
+    \]
+    But for diagonal matrices, the diagonal entry of the inverse metric is the reciprocal of the diagonal entry, i.e.\[
+        g^{aa} = g_{aa}^{-1}
+    \]
+    We can thus rearrange into \begin{align*}
+        \Gamma^{a}_{ac} = \partial_c \ln(\sqrt{\abs{g_{aa}}}) = \Gamma^a_{ca} &  & \Gamma^a_{bb} = -\frac{1}{2g_{aa}} \partial_ag_{bb}
+    \end{align*}
+    \subsection{} { \[
+        \dd s^2 = \dd \rho^2 +\rho^2 \dd \phi^2
+    \]
+    \[
+        g_{ab} = \begin{pmatrix} 1&\\&\rho^2 \end{pmatrix}_{ab}
+    \]}
+    \subsubsection{} From the last question, we know that the only possible nonzero connection coefficients are
+    \begin{align*}
+        \Gamma^\rho_{\rho \phi } = \Gamma^\rho_{\rho \phi } & = \partial_\phi  \ln(1) = 0                  \\
+        \Gamma^\phi_{\rho \phi } = \Gamma^\phi_{\phi \rho } & = \partial_\rho \ln(\rho) = \frac{1}{\rho}   \\
+        \Gamma^\rho_{\phi \phi }                            & =  -\frac{1}{2}\partial_\rho \rho^2 = - \rho \\
+        \Gamma^\phi _{\rho \rho }                           & =\, -\frac{1}{2\rho^2}\partial_\phi 1= 0
+    \end{align*}
+    \subsubsection{} { \begin{align*}
+        \nabla_a v^a & = \partial_a v^a + \Gamma^a_{ab}v^b                                    \\
+                     & = \partial_\rho v^\rho + \partial_\phi v^\phi + \frac{1}{\rho }v^\rho      \\
+                     & = \frac{v^\rho + \rho \partial_\rho v^\rho }{\rho } + \partial_\phi v^\phi \\
+                     & = \frac{\partial_\rho \pqty{\rho  v^\rho }}{\rho } + \partial_\phi v^\phi
+    \end{align*}}To translate this result in terms of an orthonormal basis vector, we use \(\tilde{v}_\phi = \rho v_\phi\) such that \(\abs{v}^2 = v_\rho^2 + \tilde{v}_\phi^2\), and obtain\footnote{\(\tilde{v}_\phi\) is not a vector component, nor is the ``normalised basis" a basis, in the sense that is usually used in this course.}
+    \[
+        \nabla'_av\indices{^\prime^a} = \frac{\partial_\rho \pqty{\rho  v^\rho }}{\rho } + \frac{1}{\rho} \partial_\phi \tilde{v}^\phi
+    \]
+    \subsubsection{} Laplacian of a scalar field is given by
+    \begin{align*}
+        \laplacian f & = \nabla^a \pqty{\nabla_a f}                                                       \\
+                     & = g^{ba}\nabla_b \pqty{\partial_a f}                                                   \\
+                     & = \frac{\partial_\rho \pqty{\rho \partial_\rho f }}{\rho } + \frac{1}{\rho^2}\partial^2_\phi f
+    \end{align*}
+    \subsection{} {
+    \begin{gather*}
+        \dd s^2 = \dd \theta^2 + \sin^2\theta \dd \phi^2
+        g_{ab} = \begin{pmatrix} 1&\\ &\sin^2\theta \end{pmatrix}_{ab}
+    \end{gather*}}
+    \subsubsection{} Again we use the results from question 3. The only \textit{possible} nonzero connection coefficients of this coordinate system are
+    \begin{align*}
+        \Gamma^\theta_{\phi \theta } =
+        \Gamma^\theta_{\theta \phi}                             & =  \partial_\phi \ln(1) = 0                                              \\
+        \Gamma^\phi_{\theta \phi } = \Gamma^\phi_{\phi \theta } & = \partial_\theta \ln(\sin \theta ) = \cot\theta                         \\
+        \Gamma^\phi_{\theta \theta }                            & =  - \frac{1}{2\sin^2\theta }\partial_\phi 1 = 0                         \\
+        \Gamma^\theta_{\phi \phi  }                             & =  - \frac{1}{2}\partial_\theta \sin^2\theta  = - \sin\theta \cos \theta
+    \end{align*}
+    \subsubsection{} { \begin{align*}
+        L&=  g_{ab}\dot{x}^a \dot{x}^b\\
+        \pdv{L}{x^c}& = \dv{u} \pdv{L}{\dot{x}^c}\\
+        \pdv{g_{ab}}{x^c} \dot{x}^a \dot{x}^b & = \dv{u} g_{ab}\pqty{ \delta^a_c \dot{x}^b + \dot{x}^a \delta^b_c}\\
+        \pdv{g_{ab}}{x^c} \dot{x}^a \dot{x}^b & = 2\dv{u}\pqty{ g_{cb}\dot{x}^b}
+    \end{align*}}
+    On the surface of a sphere
+    \begin{align*}
+        2\sin\theta \cos\theta \dot{\phi}^2 & = 2 \dv{\theta }{u}                                                       \\
+        0                                   & =\ddot{\theta} -\sin\theta \cos\theta \dot{\phi}^2                        \\
+        0                                   & = 2 \dv{u} \pqty{\sin^2\theta \dot{\phi}}\,                                \\
+        0                                   & = \sin^2\theta \pqty{\cot \theta\: \dot{\phi} \dot{\theta} + \ddot{\phi}} \\
+    \end{align*}
+    As we would've obtained from (a).\begin{align*}
+        \ddot{\theta} +\Gamma^{\theta }_{\phi \phi } \dot{\phi}^2 + 0 + 0 + \dots                         & =  0 \\
+        \text{and }\qquad \ddot{\phi} +\Gamma^{\phi}_{\phi \theta }\dot{\phi}\dot{\theta} + 0 + 0 + \dots & = 0
+    \end{align*}
+    For a circle of constant latitude on a sphere \(\theta \) is a constant. For this to satisfy geodesic equations \begin{align*}
+        0 & = - \sin\theta\, \cos\theta\, \dot{\phi}^2 \\
+        0 & = \ddot{\phi}
+    \end{align*}
+    which gives \(\cos\theta = 0 \implies \theta = \frac{\pi}{2}\), the equator. In general \(u\), the affine parameter is linear in \(\phi \).
+
+    (\(\sin \theta = 0\) is not accepted because the coordinate system is degenerate at the north and south poles.)
+    \subsubsection{} {
+    \begin{align*}
+        \bf v &=  1 \bf e_\theta\\
+        \frac{\Dif v^a}{\Dif \phi} &=  0\\
+        \dv{v^a}{\phi} + \dv{x^b}{\phi}\Gamma^{a}_{bc}v^c &=  0\\
+        \dv{v^\theta }{\phi} + \dv{\theta }{\phi}\Gamma^{\theta}_{\theta c}v^c + \dv{\phi }{\phi}\Gamma^{\theta }_{\phi c}v^c &=  0\\
+        \dv{v^\theta }{\phi} - \sin\theta \cos\theta v^\phi  &=  0\\
+        \dv{v^\phi }{\phi}+ \Gamma^{\phi }_{\phi c}v^c &=  0\\
+        \dv{v^\phi}{\phi} + \cot \theta\, v^\theta   &=  0
+    \end{align*}}
+    Solving the two equations and plug in initial conditions \begin{align*}
+        \sin\theta \cos\theta v^\phi &= - \tan\theta \ddot{v}^\phi \\
+        -\cos^2\theta_0 v^\phi &= \ddot{v}^\phi \\
+        v^\phi &= A \sin(\phi \cos\theta_0)\\
+        {v^\theta } &= \sin\theta_0 A\pqty{1 -\cos(\phi \cos\theta_0)}  + 1 \\
+        \implies A &= - \frac{1}{\sin\theta_0}\\
+        v^\phi &= -\frac{1}{\sin\theta_0} \sin(\phi \cos\theta_0)\\
+        {v^\theta } &= \cos(\phi \cos\theta_0)
+    \end{align*}
+    After parallel transport, we will have \begin{align*}
+        v^\phi &= -\frac{1}{\sin\theta_0} \sin(2\pi \cos\theta_0)&
+        {v^\theta } &= \cos(2\pi\cos\theta_0)
+    \end{align*}
+    which is not the same as what we started with, but \[
+        v_a v^a =\pqty{v^\theta  }^2 + \sin^2\theta_0\pqty{v^\phi }^2 = 1
+     \]
+    throughout the transport.
+    \subsection{} If \(\mathcal C\) is a geodesic in \(\mathcal M\), the distance between the points along \(\mathcal{C}\) is extremal among the set of distances of all other curves, that is, including the set of distances of other curves in \(\mathcal H\). Therefore, \(\mathcal C\) is also by definition a geodesic in \(\mathcal{H}\).
+
+    The converse can be falsified by the following counterexample.
+    \begin{center}
+        \def\svgwidth{200pt}
+        \incfig{relat2_6}
+    \end{center}
+    In Euclidean spacetime, the blue curve is a geodesic in \(\mathcal{H}\) because it is the shortest path connecting \(A\) and \(B\). However, it is not a geodesic in \(\mathcal M\), as there are shorter paths connecting $A$ and $B$.
+    \subsection{} { \begin{align*}
+        \text{hypersurface } \mathcal{H} &\text{: \(M\) dimensions}\\
+        \text{Euclidean space} &\text{: \(N > M\) dimensions}
+    \end{align*}}
+    \subsubsection{} Consider \(\dd{s}^2\) which is invariant, \begin{align*}
+        \dd{s}^2 =\qquad \qquad \delta_{ab} \dd{x}^a \dd{x}^b &= g_{IJ} \dd{u^I} \dd{u^J}\\
+        \delta_{ab} \pdv{x^a}{u^I} \pdv{x^b}{u^J} \dd{u^I} \dd{u^J} &= g_{IJ} \dd{u^I} \dd{u^J}\\
+        g_{IJ} &= \delta_{ab} \pdv{x^a}{u^I} \pdv{x^b}{u^J} 
+    \end{align*}
+    \subsubsection{} Start with the explicit form of the metric connection \begin{align*}
+       \Gamma^{L}_{JK} &= \pdv[2]{x^a}{u ^J}{u^k} \pdv{u^L}{x^a}\\
+       g_{IL}\Gamma^{L}_{JK} &= \delta_{bc}\pdv{x^b}{u^I}\pdv{x^c}{u^L}\pdv[2]{x^a}{u ^J}{u^k} \pdv{u^L}{x^a}\\
+       g_{IL}\Gamma^{L}_{JK} &= \delta_{bc}\pdv{x^b}{u^I}\pdv[2]{x^a}{u ^J}{u^k} \delta^c_{a}\\
+       g_{IL}\Gamma^{L}_{JK} &= \delta_{ab}\pdv{x^a}{u^I}\pdv[2]{x^b}{u^J}{u^k}
+    \end{align*}
+    \subsubsection{} The vector \(\bf A\) is invariant under coordinate transform, i.e. \begin{align*}
+        A^I \bf e_I &= A^a \bf e_a\\
+        A^I \pdv{u^I} &= A^b \pdv{x^b}\\
+        A^I \pdv{x^a}{u^I} &= A^b \pdv{x^a}{x^b}\\
+        A^I \pdv{x^a}{u^I} &= A^b \delta^a_{b}\\
+        A^I \pdv{x^a}{u^I} &= A^a
+    \end{align*}
+    \subsubsection{} Given that the components of \(A\) are fixed in the embedding Euclidean space, we have
+    \begin{center}
+        \def\svgwidth{200pt}
+        \incfig{relat2_7d}
+    \end{center}
+    \begin{equation*}
+        {A^a}(Q) = A^a(P) =  A^I(P) \eval{\pdv{x^a}{u^I}}_P
+    \end{equation*}
+    The vector \(A^a(Q) \bf e_a\) is not a vector in the hypersurface \(\mathcal{H}\), but can be decomposed into components parallel and perpendicular to the tangent space at \(Q\),
+    \[
+        A^a(Q) \bf e_a = A_\parallel^a \bf e_a + \bf A^a_\perp e_a
+    \]
+    where \( A_\parallel^a \bf e_a\), lying in the tangent space, can be expressed as \(A_\parallel^I(Q)\eval{\pdv{x^a}{u^I}}_Q\). Now we have
+    \begin{equation*}
+        A^I(P) \eval{\pdv{x^a}{u^I}}_P \bf e_a = A_\parallel^I(Q)\eval{\pdv{x^a}{u^I}}_Q \bf e_a + A^a_\perp \bf e_a
+    \end{equation*}
+    Given the basis vectors are mutually orthogonal we can write the above as a vector equation
+    \begin{equation*}
+        A^I(P) \eval{\pdv{x^a}{u^I}}_P  = A_\parallel^I(Q)\eval{\pdv{x^a}{u^I}}_Q  + A^a_\perp 
+    \end{equation*}
+    Approximating to first order,
+    \begin{gather*}
+        A_\parallel^I(Q) = A^I(P) + \var A^I\\
+        \eval{\pdv{x^a}{u^I}}_Q = \eval{\pdv{x^a}{u^I}}_P + \eval{\pdv[2]{x^a}{u^I}{u^J}}_P \var u^J + O(\var{u^J}^2)\\
+        0=  \var A^I\eval{\pdv{x^a}{u^I}}_P + A^I(P)\eval{\pdv[2]{x^a}{u^I}{u^J}}_P \var u^J + A^a_\perp\\
+        0=  \delta_{ab}\var A^I {\pdv{x^a}{u^I}} \pdv{x^b}{u^K}+ \delta_{ab}A^I{\pdv[2]{x^a}{u^I}{u^J}} \pdv{x^b}{u^K} \var u^J 
+    \end{gather*} \begin{align*}
+        \var A^I {\pdv{x^b}{u^I}} \pdv{x^b}{u^K} &=  - A^I{\pdv[2]{x^b}{u^I}{u^J}} \pdv{x^b}{u^K} \var u^J \\
+        g_{IK} \var A^I &=  - \delta_{ab} \pdv{x^b}{u^K} \pdv[2]{x^a}{u^I}{u^J}A^I \var u^J\\
+        g_{IK} \var A^I &=  - g_{KL}\Gamma^{L}_{IJ}A^I \var u^J&&\text{ using (a)}\\
+        g_{IK} \var A^I &=  - g_{KI}\Gamma^{I}_{LJ}A^L \var u^J&&\text{ where we swapped dummies \(L\) and \(I\)}\\
+        \var A^K &=  - \Gamma^{K}_{JL}A^L \var u^J&&\text{ relabeled \(I\to K\)}
+    \end{align*}
+    The same as what we would've obtained from the parallel transport equation,
+    \[
+        \var A^K +\Gamma^{K}_{JL}(P)A^L(P) \var{u^J} = \frac{\Dif A^K}{\Dif t} \var t = 0
+    \]
+    where \(t\) is an affine paramter for the curve along which the vector is transported.
+    \subsection{} \subsubsection{} { \begin{equation*}
+        u^\mu = \dv{t}{\tau_{\mathcal E} } \pqty{c,\vec{u}}
+        \qquad v^\mu = \dv{t}{\tau_\mathcal{R}} \pqty{c,\vec{v}}
+    \end{equation*}}
+    Since \(u_\mu v^\mu \) is an invariant object we can always move to the frame where \(\vec{u} = 0\), \(\abs{\vec{v} }= V\), where \(\dv{t}{\tau_\mathcal{E}} = 1\)
+    \begin{align*}
+        & u_\mu v^\mu \\
+        =& \eta_{\mu \nu}u^\nu v^\nu\\
+        =& \dv{t}{\tau_V} \pqty{c^2 - \dotprod{0}{V}}\\
+        =& \gamma_V c^2
+    \end{align*}
+    \subsubsection{} The photon 4-momentum has expression \[
+        p^\mu = \frac{E}{c^2} \dv{x_\gamma^\mu }{t}
+    \]
+    \(u^\mu p_\mu\) is an invariant object, so we can simply evaluate it in the rest frame of \(\mathcal{E}\). \begin{align*}
+        u^\mu p_\mu &=\pqty{c,0} \pqty{\frac{E_\gamma}{c},\vec{p}}\\
+        &= E_\gamma = h \nu_{\mathcal{E}}
+    \end{align*}
+    Similarly \[
+        v^\nu p_\nu = h \nu_{\mathcal{R}}
+    \]
+    and we have \[
+        \frac{\nu_{\mathcal{E}}}{\nu_{\mathcal{R}}} = \frac{u^\mu p_\mu}{v^\nu p_\nu}
+    \]
+    \subsection{} Proper acceleration is given by 
+    \begin{align*}
+        a^\mu &= \dv{u^\mu}{\tau}\\
+        &= \gamma_u \dv{t}\bqty{\gamma_u\pqty{c,\vec{u}}}\\
+        &= \gamma_u \bqty{\gamma^3_u \frac{\dotprod ua}{c^2}\pqty{c,\vec{u}} + \gamma_u \pqty{0, \bf{a}}}\\
+        &= \gamma_u^4 \frac{\dotprod u a}{c^2} \pqty{c,\vec{u}} + \gamma_u^2\pqty{0,\vec a}\\
+        -\alpha^2 = a_\mu a^\mu &= \gamma_u^8 \frac{(\dotprod u a)^2}{c^4} (c^2 - u^2) - 2\gamma_u^6 \frac{(\dotprod ua)^2}{c^2} - \gamma_u^4 \dotprod aa\\
+        \alpha^2  &= \gamma_u^6 \frac{(\dotprod ua)^2}{c^2} +\gamma_u^4 \dotprod aa
+    \end{align*}
+    If the motion in \(S\) is circular with radius \(r\), we will have \begin{align*}
+        \bf a &= \frac{u^2}{r} \hat{\bf r} & \dotprod ua = 0
+    \end{align*}
+    which gives \[
+        \alpha = \frac{c^2u^2}{(c^2 - u^2)r}
+    \]
+\newpage
+\section{}
+\subsection{} Let the four-momenta of the incident and stationary electrons before and after the collision in the lab frame be \[
+            p^\mu = (m c, \vec{0}) \qquad q^\mu = (\gamma_u m c, \vec{q})\qquad \bar{p}^\mu =(\frac{\bar{E}_1}{c}, \vec{\bar{p}}) \qquad\bar{q}^\mu=(\frac{\bar{E}_2}{c}, \vec{\bar{q}})
+        \]
+        respectively, we have conservation of 4 momenta throughout the process \[
+            p^\mu + q^\mu = \bar{p}^\mu +\bar{q}^\mu
+        \]
+        In the zero momentum \(S'\) frame, \(\vec{p} = -\vec{q}\), and \( \abs{\vec{\bar{q}}} = \abs{\vec{q}} =\abs{\vec{\bar{p}}} = \abs{\vec{p}}\), so we can draw
+        \begin{center}
+            \includegraphics[scale=1,page=1]{Relativity_3_plots.pdf}
+        \end{center}
+        Write down the transform rules in with the incident particle velocity along \(x\) plug in \(x'_q=u't'\cos\theta,\, y_q=u't'\sin\theta \):
+        \[
+            \begin{pmatrix}
+                ct\\
+                x_q\\
+                y_q
+            \end{pmatrix} =
+            \begin{pmatrix}
+                \cosh{\frac{\psi_u}{2}} & + \sinh{\frac{\psi_u}{2}}&0\\
+                +\sinh{\frac{\psi_u}{2}} & \cosh{\frac{\psi_u}{2}}&0\\
+                0&0&1
+            \end{pmatrix}
+            \begin{pmatrix}
+                ct'\\
+                u't'\cos \theta'\\
+                u't'\sin\theta'
+            \end{pmatrix} =
+            \begin{pmatrix}
+                \cosh{\frac{\psi_u}{2}} (c + \beta u'\cos \theta')\\
+                \cosh{\frac{\psi_u}{2}} (u'\cos \theta' + \beta c) \\
+                u'\sin \theta'
+            \end{pmatrix}t'
+        \]
+        \begin{center}
+            \includegraphics[scale=1,page=2]{Relativity_3_plots.pdf}
+        \end{center}
+        The angles observed in $S$ frame have 
+        \begin{align*}
+            \tan(\pi -\theta) \tan \phi &=  \frac{ \sinh[2](\frac{\psi_u}{2})\sin[2](\theta')}{\cosh[2](\frac{\psi_u}{2})\sinh[2](\frac{\psi_u}{2})\pqty{\cos[2](\theta') - 1}} \\
+            \tan\theta \tan \phi &= \frac{ 1}{\cosh[2](\frac{\psi_u}{2})} \\
+            \tan\theta \tan \phi &=  \frac{2}{\cosh[2](\frac{\psi_u}{2}) + \sinh[2](\frac{\psi_u}{2}) + 1} \\
+            \tan\theta \tan \phi &=  \frac{2}{\gamma_u +1}
+        \end{align*}
+        In the Newtonian limit for momentum and kinetic energy which is quadratic in momentum to be simulataneously conserved,
+        \begin{gather*}
+            \bar{q}^2 + \bar{p}^2 = q^2\qquad p_\perp \qty(\frac{1}{\tan\theta} + \frac{1}{\tan\phi}) = q\\
+            \bar{p}^2 \cos[2](\theta) + \frac{2p_\perp^2}{\tan\theta \tan \phi} +\bar{p}^2 \cos[2](\phi) = \bar{p}^2 + \bar{q}^2\\
+            \frac{2p_\perp^2}{\tan\theta \tan \phi}  = 2p_\perp^2\\
+            {\tan\theta \tan \phi}  = 1
+        \end{gather*}
+        Which coincides with the limit \(u \to 0\), \(\frac{2}{\gamma_u + 1} \to 1 - \frac{u^2}{4c^2} \approx 1\).
+        \subsection{} In the mirror frame, the photon has 4-momentum (\(z\)-axis omitted)\[
+            p'^\mu =\begin{pmatrix} \frac{h\nu'}{c} \\  \frac{h\nu'}{c}\cos\theta'\\  \frac{h\nu'}{c}\sin \theta' \end{pmatrix} 
+        \]
+        which gives the invariant quantity \[
+            \eta_{\nu\mu} p^\nu_{\text{mirror}}p^\mu_{\text{photon}} = h \nu' m_\text{mirror}= h \nu \gamma_v m_\text{mirror}(1- \beta \cos\theta)
+        \]
+        where \(\beta = \frac{v}{c}\), and the frequency shift
+        \[
+            \nu' = \gamma_v \nu (1 + \beta \cos\theta)
+        \]
+        After reflection, conserving energy and momentum parallel to the mirror plane,
+        \[
+            \bar{p}'^\mu =\begin{pmatrix} \frac{h\nu'}{c} \\-  \frac{h\nu'}{c}\cos\theta'\\  \frac{h\nu'}{c}\sin \theta' \end{pmatrix} 
+        \]
+        A similar invariant quanity gives
+        \begin{align*}
+            \nu' &=  \gamma_v \bar{\nu}(1 - \beta \cos\phi)\\
+            \frac{\bar{\nu}}{\nu} &=  \frac{1 + \beta \cos\theta}{1 - \beta \cos\phi} 
+        \end{align*}
+        where \(\phi\) is the reflected angle. Requiring the momentum component parallel to the mirror conserved in lab frame, we have \begin{align*}
+            \bar{p}^\nu &=  \frac{h\bar{\nu}}{c}\begin{pmatrix} 1\\- \cos\phi \\ \sin\phi \end{pmatrix} \\
+            \frac{h\bar{\nu}}{c} \sin \phi &=  \frac{h\nu}{c}\sin \theta\\
+            \frac{\bar{\nu}}{\nu} &= \frac{\sin\theta}{\sin\phi} \\
+            \frac{1 - \beta \cos\phi}{\sin\phi} &= \frac{1 + \beta \cos\theta}{\sin \theta}\\
+            \sin \phi &= \sin\theta \frac{{1 + \beta \cos\theta} \pm \beta (\beta + \cos\theta)}{\beta^2 + 2 \beta \cos\theta + 1} \\
+            \sin \phi &= \frac{\sin \theta}{\gamma_v\pqty{1 +\beta^2 + 2 \beta \cos\theta}}
+        \end{align*}
+        So the reflected frequency is \[
+            \bar{\nu} = \gamma_v\pqty{1 +\beta^2 + 2 \beta \cos\theta}\nu 
+        \]
+        \subsection{} Assume that a electron \emph{did} emit a single photon. In the electron's initial rest frame \begin{align*}
+            E_\text{init} &= m_e c^2&
+            p_\text{init} &= 0\\
+            E_\text{final} &= \sqrt{m_e c^2 + p_e^2c^2} + h\nu&
+            p_\text{final} &= \frac{h\nu}{c} - p_e 
+        \end{align*}
+        For both quantities to be conserved, the only solution for \(\nu\) is \(0\), so no single photon can be emitted from an electron.
+
+        Similarly, assume that a massive \emph{did} emit a single photon. In the particle's initial rest frame \begin{align*}
+            E_\text{init} &= m c^2&
+            p_\text{init} &= 0\\
+            E_\text{final} &= h\nu&
+            p_\text{final} &= \frac{h\nu}{c}
+        \end{align*}
+        The two conservation conditions cannot be simultaneously satisfied, so no massive particle can decay into a single photon.
+        \subsection{} \subsubsection{}
+        The total 4-momentum is conserved, so
+        \begin{center}
+            \includegraphics[scale=1,page=3]{Relativity_3_plots.pdf}
+        \end{center}
+        \[
+            \sum \vec{p}_\text{after} = 0\qquad 2\gamma_u mc^2 = E_{p_1}+ E_{p_2} + E_\pi
+        \]
+        The minimum total kinetic energy for the reaction to occur is when \(E_{p_1} = E_{p_2} = m_pc^2,\, E_\pi = m_\pi c^2\)\[
+            E_{k,\text{min}} = 2 (\gamma_u - 1)m_pc^2 = m_\pi c^2
+        \]
+        \subsubsection{} If one of the protons is stationary, denote the speed of the the incident proton \(v\), and transfer to zero momentum frame, which is reduced to the scenario in (a).
+        \[
+            E_k' = 2 (\gamma_u - 1)m_pc^2 = m_\pi c^2
+        \]
+        transform back into lab frame by a Lorentz boost of \(u_r\),\begin{align*}
+            \text{(ZMF energies) }\ E_1' = E_2' &= \frac{m_\pi c^2}{2} + m_p c^2 = \cosh(\psi_u)m_pc^2\\
+            E_1 &= \cosh(\psi_u + \psi_{u_r})m_pc^2\\
+            E_2 &= \cosh(\psi_u - \psi_{u_r})m_pc^2
+        \end{align*}
+        For one of the particles to become stationary, simply require \(u_r = u\), which gives minimum kinetic energy in lab frame
+        \begin{align*}
+            E_k &= \gamma_v m_pc^2 - m_pc^2\\
+            E_k &= \qty(2\cosh[2](\psi_u) - 1) m_pc^2 - m_pc^2\\
+            E_k &= \bqty{2\pqty{\frac{m_\pi}{2m_p} + 1}^2 - 1} m_pc^2 - m_pc^2\\
+            E_k &= \bqty{\frac{m_\pi^2}{2m_p^2} + \frac{2m_\pi}{m_p} + 1} m_pc^2 - m_pc^2\\
+            E_k &= \pqty{\frac{m_\pi}{2m_p} + 2}m_\pi c^2
+        \end{align*}
+        \subsection{} \subsubsection{} The second field equation consists of even permutations of \(\sigma \mu \nu\), a field equation of odd permutations can be generated using antisymmetry of \(F_{\mu\nu}\). \begin{align*}
+            &&\partial_\sigma F_{\mu\nu} + \partial_\mu F_{\nu \sigma} + \partial_\nu F_{\sigma \mu} &= 0\\
+            \text{antisymmetry }\implies && -\partial_\sigma F_{\nu\mu} - \partial_\mu F_{\sigma\nu} - \partial_\nu F_{\mu\sigma} &= 0\\
+            \text{sum together }\implies && \partial_{[\sigma} F_{\mu\nu]} &=  0
+        \end{align*}
+        \subsubsection{} The second field equation, in the form in (a), allows us to write \(F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu\), then the first equation can be written as \begin{align*}
+            \partial_\mu \pqty{\partial^\mu A^\nu - \partial^\nu A^\mu} &= \mu_0 j^\nu\\
+            \partial_\mu \partial^\mu A^\nu &= \mu_0 j^\nu
+        \end{align*}
+        Where Lorentz gauge \(\partial_\mu A^\mu = 0\) was used. Definitions of the electric and magentic fields through \(A^\mu = \pqty{\frac{\phi}{c}, \vec A}\) are \begin{align*}
+            \vec E &= - \pdv{\vec A}{t} - \grad \phi& \vec B &= \curl \vec A
+        \end{align*}
+        We derive Maxwell's equations one by one
+        \begin{align*}
+            \div \vec E &= - \pdv{\div \vec A}{t} - \laplacian \phi & \div \vec B &= \div \curl \vec A\\
+            \div \vec E &= \frac{1}{c^2}\pdv{t} \pdv{\phi}{t} - \laplacian \phi &\div \vec B &= \partial_i\epsilon_{ijk} \partial_j A^k\\
+            \div \vec E &= \partial_\mu \partial^\mu A^0 c &\div \vec B &= {\epsilon_{ijk}\partial_i\partial_j} A^k \\
+            \Aboxed{\div \vec E &= c^2 \mu_0 \rho = \frac{\rho}{\varepsilon_0}} &\Aboxed{\div \vec B &= 0}\\
+            \curl \vec B &=\curl (\curl A) &             \curl \vec E &= - \pdv{\curl \vec A}{t} - \curl \div \phi\\
+            \curl \vec B &= \vec e_i \epsilon_{kij} \partial_j \epsilon_{kmn} \partial_m A^n &\curl \vec E &= - \pdv{\vec B}{t} -  \vec e_i {\epsilon_{ijk}\partial_j\partial_k}\phi\\
+            \curl \vec B &= \vec e_i  \pqty{\delta_{im}\delta_{jn} - \delta_{in}\delta_{jm}}\partial_j  \partial_m A^n &\Aboxed{\curl \vec E &= - \pdv{\vec B}{t}}\\
+            \curl \vec B &= \grad (\div \vec A) - \laplacian \vec A\\
+            \curl \vec B &= \frac{1}{c} \pdv{\grad \phi}{t} + \partial_\mu \partial^\mu \vec A - \frac{1}{c^2} \pdv[2]{\vec A}{t}\\
+            \curl \vec B &= \frac{1}{c^2} \pdv[2]{\vec A}{t} - \frac{1}{c^2} \pdv{\vec E}{t} + \mu_0 \vec J - \frac{1}{c^2} \pdv[2]{\vec A}{t}\\
+            \Aboxed{\curl \vec B &=\mu_0 \vec J - \frac{1}{c^2} \pdv{\vec E}{t}}
+        \end{align*}  
+        \subsubsection{} The electric and magnetic fields \begin{align*}
+            \vec E &= - cF^{0i} \vec e_i& \vec B &= -\frac{1}{2} \epsilon_{ijk} F^{jk}\vec e_i\implies F^{ij} = -\epsilon^{ijk} B^k
+        \end{align*}
+        are not tensors, but \(F^{\mu\nu}\) is a tensor, so the components in two frames are related by \[
+            F'^{\mu\nu} = \Lambda\indices{^\mu_\rho} \Lambda\indices{^\nu_\sigma} F^{\rho\sigma} 
+        \]
+        where \[
+            \Lambda\indices{^\rho_\nu}  = \begin{pmatrix} \gamma & - \beta\gamma\\- \beta\gamma&\gamma\\ &&1\\ &&&1 \end{pmatrix}_{\rho\nu}
+        \]
+        Working in natural units \(c = 1\) to simplify expressions \begin{align*}
+            F'^{ij} &= \begin{pmatrix} - \beta\gamma E^1 & - \gamma E^1 &- \gamma E^2 + \beta\gamma B^3& - \gamma E^3 - \beta\gamma B^2\\ \gamma E^1& - \beta\gamma E^1& \gamma \beta E^2 - \gamma B^3& \gamma \beta E^3 + \gamma B^2\\ E^2& B^3& 0 & - B^1\\ E^3 & - B^2& B^1&0  \end{pmatrix} \begin{pmatrix} \gamma & - \beta\gamma\\- \beta\gamma&\gamma\\ &&1\\ &&&1 \end{pmatrix}\\
+            &= \begin{pmatrix} 0 & - \gamma^2 (1 - \beta^2) E^1 &- \gamma (E^2 + \beta B^3)& - \gamma (E^3 - \beta B^2)\\ \gamma^2(1 - \beta^2) E^1& 0& \gamma (\beta E^2 - B^3)& \gamma (\beta E^3 + B^2)\\ \gamma(E^2 - \beta B^3)& \gamma(B^3 - \beta E^2)& 0 & - B^1\\ \gamma(E^3 + \beta B^2) & - \gamma(B^2 + \beta E^3)& B^1&0  \end{pmatrix}
+        \end{align*}
+        Sub in \(\gamma^2(1 - \beta^2) = 1\). Reading off values for \(\vec E\) and \(\vec B\), and putting back \(c\), \begin{align*}
+            \vec E &= \begin{pmatrix} E^1\\ \gamma(E^2 - v B^3)\\ \gamma(E^3 + vB^2) \end{pmatrix} & \vec B &= \begin{pmatrix} B^1\\ \gamma(B^2 + \frac{v}{c^2} E^3)\\ \gamma(B^3 - \frac{v}{c^2}E^2) \end{pmatrix}
+        \end{align*}
+        \subsubsection{} The squared moduli of the fields are \begin{align*}
+            \abs{\vec E}^2 &= c^2 F^{0i} F^{0i}\\
+            \abs{\vec B}^2 &= \frac{1}{4} \epsilon_{ijk} \epsilon_{imn} F^{jk} F^{mn}\\
+            \abs{\vec B}^2 &= \frac{1}{4} \pqty{\delta_{jm}\delta_{kn} - \delta_{jn}\delta_{km}} F^{jk} F^{mn}\\
+            \abs{\vec B}^2 &= \frac{1}{4} \pqty{ F^{mk} F^{mk}   - F^{nk} F^{kn}}\\
+            \abs{\vec B}^2 &= \frac{1}{2}F^{mk} F^{mk}\\
+            F^{\mu\nu} F_{\mu\nu} &= F^{00}F_{00} + F^{0i}F_{0i} + F^{i 0}F_{i 0} + F^{mk} F_{mk}\\
+            F^{\mu\nu} F_{\mu\nu} &= 0 - 2\frac{\abs{\vec E}^2}{c^2}  + 2\abs{\vec B}^2\\
+            c^2 \abs{\vec B}^2 - \abs{E^2} &= \frac{c^2 F^{\mu\nu}F_{\mu\nu}}{2}
+        \end{align*}
+        The speed of light and the contraction of two tensors are both invariant. Therefore, \(c^2 \abs{\vec B}^2 - \abs{E^2}\) is an invariant quantity.
+        \subsection{} The spacetime interval of an infinitesimal section of the worldline of the satellite is invariant \begin{align*}
+            \dd{s}^2 &=  g_{\mu\nu} \dd{x}^\mu \dd{x}^\nu
+        \end{align*}
+        In the weak-field approximation, \(g_{00} \approx \pqty{1 + \frac{2\Phi}{c^2}} =- g_{11}\) \begin{align*}
+            \dd{s}^2 = \pqty{1 + \frac{2\Phi(r)}{c^2}}\pqty{c^2 \dd{t}_0^2 - \dd{x}_0^2 }&= c^2 \dd{\tau_C}^2\\
+            \frac{1}{\gamma_u}\pqty{1 + \frac{2\Phi(r)}{c^2}}^{\frac{1}{2}} \dd{t_0} &= \dd{\tau_C}
+        \end{align*}
+        Where \(\tau_C\) is the proper time measured by clock on the satellite, and \(t_0\) the time measured at a point \(\Phi = 0\) in Earth's rest frame \(S_0\). Similarly, the proper time measured by the clock at North Pole, which is at rest in \(S_0\) frame, satisfies \begin{align*}
+            \dd{s}^2 = \pqty{1 + \frac{2\Phi(R)}{c^2}}\pqty{c^2 \dd{t}_0^2}&= c^2 \dd{\tau_{C 0}}^2\\
+            \pqty{1 + \frac{2\Phi(R)}{c^2}}^{\frac{1}{2}} \dd{t_0} &= \dd{\tau_{C 0}}
+        \end{align*}
+        Finally, substituting in \( u^2 = \frac{GMm}{r}\) from Newtonian dynamics, \begin{align*}
+            \frac{\Delta \tau_{C }}{\Delta \tau_{C 0}} & \approx  \frac{1}{\gamma_u}\pqty{1 + \frac{2\Phi(r)}{c^2}}^{\frac{1}{2}} \pqty{1 + \frac{2\Phi(R)}{c^2}}^{ -\frac{1}{2}} \\
+            & \approx  \pqty{1 + \frac{\Phi(r)}{c^2} }^{\frac{1}{2}}\pqty{1 + \frac{2\Phi(r)}{c^2}}^{\frac{1}{2}} \pqty{1 + \frac{2\Phi(R)}{c^2}}^{ -\frac{1}{2}} \\
+            & \approx  1 + \frac{1}{2}\bqty{\frac{\Phi(r)}{c^2} + \frac{2\Phi(r)}{c^2} -\frac{2\Phi(R)}{c^2}}\\
+            & \approx  1 + \frac{3GMm}{2rc^2} - \frac{GMm}{Rc^2}
+        \end{align*}
+        \subsection{} The two line elements imply metrics \[
+            g_{ab} = \begin{pmatrix} x^2\\ & y^2 \end{pmatrix} \qquad\text{ and }\qquad g_{ab} = \begin{pmatrix} y\\ &x \end{pmatrix} 
+        \]
+        respectively. Exploiting the diagonality of the metrics, the only nonzero entries of the connections are \begin{align*}
+           \Gamma^{a}_{bc} &=  \frac{1}{2} g^{ae} (\partial_b g_{ce} + \partial_c g_{be} - \partial_e g_{bc})\\
+           \text{first manifold }&\qquad\Gamma^{x}_{xx}= \frac{1}{x},\ \Gamma^{y}_{yy}=\frac{1}{y}\\
+           \text{second manifold }&\qquad\Gamma^{x}_{yy}= -\frac{1}{2x},\ \Gamma^{y}_{xx}=-\frac{1}{2y}
+        \end{align*}
+        yielding curvature tensors \begin{align*}
+           R\indices{_a_b_c^d} &= - \partial_a \Gamma^{d}_{bc} + \partial_b\Gamma^{d}_{ac} +\Gamma^{e}_{ac}\Gamma^{d}_{be} -\Gamma^{e}_{bc}\Gamma^{d}_{ae}\\
+           \text{first manifold }&\qquad R\indices{_{xxx}^x} =0,\ R\indices{_{yyy}^y} = 0&\implies R\indices{_{abc}^d} = 0\\
+           \text{second manifold }&\qquad R\indices{_{xyy}^x} =- \partial_x\Gamma^{x}_{yy} = \frac{1}{2x^2}&\implies R\indices{_{abc}^d} \neq 0
+        \end{align*}
+        Therefore the first manifold is flat and the second is intrinsically curved.
+        \subsection{}\subsubsection{} {\[
+            R_{abcd} = g_{de} \pqty{ -\partial_a\Gamma^{e}_{bc} + \partial_b\Gamma^{e}_{ac} +\Gamma^{f}_{ac}\Gamma^{e}_{bf} -\Gamma^{f}_{bc}\Gamma^{e}_{af}}
+        \]}
+        Using the symmetries \begin{align*}
+            R_{abcd} &= - R_{bacd} & R_{abcd} &= R_{cdab}& R_{[abc]d} &= 0
+        \end{align*}
+        In 2D there are 16 components in total,  \begin{gather*}
+            \text{12 components of the form }R_{11\cdot \cdot} =R_{22\cdot \cdot} =R_{\cdot \cdot 11} =R_{\cdot \cdot 22} = 0\\
+            \text{Remaining 4 components are related by }R_{1221} = -R_{2121} = -R_{1212} = R_{2112}
+        \end{gather*}
+        Therefore on the 2-sphere there is only one independent component, which we can choose to be \(R_{1212}\) \begin{align*}
+            R_{\theta\phi\theta\phi} &=  \sin^2\theta (- \partial_\theta \cot\theta + \partial_\phi 0 + 0 - \cot\theta \cot\theta)\\ 
+            &=  \sin^2\theta\pqty{\frac{\sec^2\theta}{\tan^2\theta} - \frac{1}{\tan^2\theta}}\\ 
+            &=  \sin^2\theta
+        \end{align*}
+        \subsubsection{} The equation of geodesic deviation can be lowered to \[
+            g_{ea}\frac{\Dif }{\Dif u} \frac{\Dif \xi^e}{\Dif u} = R\indices{_{dbca}} \dv{x^b}{u} \dv{x^c}{u} \xi^d
+        \]
+        Substituting in \(\xi^a = (0, \delta)^T\), \(x^b = (\pi u,0)^T\), the \(\phi\) components of the left and tight hand sides are \begin{align*}
+            &g_{\phi\phi} \pi \pqty{\partial_\theta \frac{\Dif \xi^\phi}{\Dif u} +\Gamma^{\phi}_{\theta\phi} \frac{\Dif \xi^\phi}{\Dif u}} & & R\indices{_{dbc\phi}} \dv{x^b}{u} \dv{x^c}{u} \xi^d\\
+            =&\sin^2\theta \pi \pqty{\partial_\theta \pi\pqty{ \partial_\theta \delta +\Gamma^{\phi}_{\theta\phi}\delta} +\Gamma^{\phi}_{\theta\phi} \pi\pqty{ \partial_\theta \delta +\Gamma^{\phi}_{\theta\phi}\delta}} &=&R\indices{_{\phi \theta\theta\phi}} \dv{\theta}{u} \dv{\theta}{u} \delta\\
+            =&\sin^2\theta \pi^2 \delta\pqty{\partial_\theta  \cot\theta + \cot\theta \cot\theta} &=&-\sin[2](\theta) \pi^2 \delta\\
+            =&\sin^2\theta \pi^2 \delta\pqty{ - \frac{\sec^2\theta}{\tan^2\theta} + \cot\theta \cot\theta} &=&-\sin[2](\theta) \pi^2 \delta\\
+            =&-\sin^2\theta \pi^2 \delta &=&-\sin[2](\theta) \pi^2 \delta
+        \end{align*} 
+        The \(\theta\) components are \begin{align*}
+            &g_{\theta\theta} \pi \pqty{\partial_\theta \frac{\Dif \xi^\theta}{\Dif u} +\Gamma^{\theta}_{\theta d} \frac{\Dif \xi^d}{\Dif u}} & & R\indices{_{dbc\theta}} \dv{x^b}{u} \dv{x^c}{u} \xi^d\\
+            =& \pi \pqty{\partial_\theta \pi \pqty{\partial_\theta 0 +\Gamma^{\theta}_{\theta d} \frac{\Dif \xi^d}{\Dif u}} + 0} & =& 0\\
+            =&0 & =& 0
+        \end{align*}
+        Indeed both components satisfy the equation of geodesic deviation.
+        \subsection{} \subsubsection{} In Newtonian gravity,
+        \begin{align*}
+            \dv[2]{x^i}{t} &= - \pdv{\phi}{x^i}\\
+            \dv[2]{\bar{x}^i}{t} &= - \pdv{\phi}{\bar{x}^i}\\
+            \dv[2]{\zeta^i}{t} &= - \pqty{\pdv{\phi}{\bar{x}^i} - \pdv{\phi}{x^i}}\\
+            \dv[2]{\zeta^i}{t} & \approx  - \zeta^j \pdv{x^j} \pqty{\pdv{\phi}{x^i}}\\
+            \dv[2]{\zeta^i}{t} & \approx - \pdv{\phi}{x^i}{x^j} \zeta^j
+        \end{align*}
+        \subsubsection{} Starting with the equation of geodesic deviation, using \(\frac{\Dif (\hat{e}_\alpha)^\mu}{\Dif \tau} = 0\) for parallel transported vectors
+        \begin{align*}
+            \frac{\Dif }{\Dif \tau} \frac{\Dif \xi^\mu}{\Dif \tau} &=  R\indices{_{\nu \alpha\beta}^\mu} \dv{x^\alpha }{\tau} \dv{x^\beta}{\tau} \xi^\nu\\
+            \frac{\Dif }{\Dif \tau} \frac{\Dif\,(\xi^{\hat{\alpha}}({\hat{ e}_\alpha})^\mu )}{\Dif \tau} &=  R\indices{_{\nu \alpha\beta}^\mu} \dv{x^\alpha }{\tau} \dv{x^\beta}{\tau} \xi^{\hat{\rho}}({\hat{ e}_\rho})^\nu \\
+            \frac{\Dif }{\Dif \tau} \bqty{ \dv{x^\beta}{\tau} \pqty{\partial_\beta (\xi^{\hat{a}}(\hat{e}_\alpha)^\mu) + \Gamma^{\mu}_{\beta \nu}\xi^{\hat{a}}(\hat{e}_\alpha)^\nu}} &=  R\indices{_{\nu \alpha\beta}^\mu} u^\alpha  u^\beta \xi^{\hat{\rho}}({\hat{ e}_\rho})^\nu \\
+            \frac{\Dif }{\Dif \tau} \bqty{ \xi^{\hat{a}}\overbrace{\dv{x^\beta}{\tau} \pqty{ \partial_\beta (\hat{e}_\alpha)^\mu + \Gamma^{\mu}_{\beta \nu}(\hat{e}_\alpha)^\nu}}^{\frac{\Dif (\hat{e}_\alpha)^\mu}{\Dif \tau} = 0} + (\hat{e}_\alpha)^\mu \dv{x^\beta}{\tau}  \partial_\beta \xi^{\hat{a}} } &=  R\indices{_{\nu \alpha\beta}^\mu} u^\alpha  u^\beta \xi^{\hat{\rho}}({\hat{ e}_\rho})^\nu \\
+            \xi^{\hat{\alpha}} \frac{\Dif (\hat{e}_\alpha)^\mu}{\Dif \tau} + (\hat{e}_\alpha)^\mu \dv{\tau} \dv{\xi^{\hat{\alpha}}}{\tau} &=  R\indices{_{\nu \alpha\beta}^\mu} u^\alpha  u^\beta \xi^{\hat{\rho}}({\hat{ e}_\rho})^\nu \\
+            ({\hat{ e}_\alpha})^\mu \dv[2]{\xi^{\hat{\alpha}}}{\tau} &=  c^2 R\indices{_{\nu \alpha\beta}^\mu} (\hat{e}_0)^\alpha (\hat{e}_0)^\beta \xi^{\hat{\rho}}({\hat{ e}_\rho})^\nu 
+        \end{align*}
+        As promised by Fermi, the general intrinsic derivative can be reduced to a simple derivative in a local-inertial coordinate system in the vicinity of a time-like geodesic.
+        \subsubsection{} In the weak field, time-independent Newtonian limit, assume \((\hat{e}_\alpha)^\mu \approx \delta_{\alpha}^\mu\), \(\tau \approx t + O(\pqty{\frac{u}{c}}^2)\), \(g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu}\), the equation of geodesic deviation becomes \begin{align*}
+            \dv[2]{\xi^\mu}{t} &\approx  c^2 R\indices{_{\nu 00}^\mu} \xi^{\nu}\\
+            \dv[2]{\xi^\mu}{t} &\approx  \eta^{\gamma \mu}\frac{c^2}{2} \pqty{\partial_\nu\partial_\gamma h_{00} + \frac{1}{c^2}\partial_ t\partial_t h_{\gamma\nu} - \frac{1}{c}\partial_t\partial_\gamma h_{0\nu} - \frac{1}{c}\partial_t \partial_\nu h_{\gamma 0}} \xi^{\nu}\\
+            \dv[2]{\xi^i}{t} &\approx \frac{c^2}{2}\bqty{\frac{1}{c}\pqty{\partial_i\partial_t h_{00}}\xi^{t} -\pqty{\partial_i\partial_j h_{00}}\xi^{j} }\\
+            \dv[2]{\xi^i}{t} &\approx - \pdv{(c^2h_{00}  /2)}{x^i}{x^j} \xi^{j}
+        \end{align*}
+        which is of the same form as the expression in (a).
+
+\end{document}
