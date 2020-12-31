@@ -903,5 +903,162 @@
             \dv[2]{\xi^i}{t} &\approx - \pdv{(c^2h_{00}  /2)}{x^i}{x^j} \xi^{j}
         \end{align*}
         which is of the same form as the expression in (a).
+        \newpage
+        \section{}
+        \subsection{Killing's equation} Given the metric components \(g_{ab}' \) are invariant under infinitesimal coordinate transformation \(x^a \to x^a + \xi^a\), remembering \(\nabla_a g_{bc} = 0\), retaining up to first order only,
+        \begin{align*}
+            g_{cd}'(x') \dd{x^{\prime c}} \dd{x^{\prime d}} &= g_{ab} (x) \dd{x^a} \dd{x^b}\\
+            g_{cd}' (x')&= \pdv{x^a}{{x'}^c} \pdv{x^b}{{x'}^d} g_{ab}(x)\\
+            g_{cd}' (x')&= \pqty{\delta^a_c - \pdv{\xi^a}{x^c}} \pqty{\delta^b_d - \pdv{\xi^b}{x^d}} g_{ab}(x)\\
+            \text{invariance} \implies  \qquad g_{cd} (x) + \xi^e \partial_e g_{cd}&= \pqty{\delta^a_c\delta^b_d - \pdv{\xi^a}{x^c} \delta^b_d - \pdv{\xi^b}{x^d} \delta^a_c} g_{ab}(x)\\
+            - \xi^e \partial_e g_{cd}&= \pdv{\xi^a}{x^c} g_{ad} + \pdv{\xi^b}{x^d} g_{c b}\\
+            - \xi^e \partial_e g_{cd}&=  (\nabla_c \xi^a -\Gamma^{a}_{ce} \xi^e) g_{ad} + (\nabla_d \xi^b -\Gamma^{b}_{de} \xi^e) g_{c b}\\
+            \text{Rename some indices} \qquad - \xi^e \partial_e g_{cd}&=  \nabla_c \xi_d + \nabla_d \xi_c - ( g_{ad}\Gamma^{a}_{ce}  + g_{ac}\Gamma^{a}_{de}) \xi^e \\
+            \Aboxed{\nabla_c \xi_d + \nabla_d \xi_c &= 0}
+        \end{align*}
+        where from the second-to-last line to the last line the following was used:
+        \begin{align*}
+            \partial_e g_{cd} - g_{ad}\Gamma^{a}_{ce}  - g_{ac}\Gamma^{a}_{de} &= \nabla_e g_{cd} = 0\\
+            \pqty{g_{ad}\Gamma^{a}_{ce}  + g_{ac}\Gamma^{a}_{de}} \xi^e &= \xi^e \partial_e g_{cd} 
+        \end{align*}
+
+        If the spacetime metric is independent of \(x^0\), we have \((\bf e_0)^a = \delta^a_0 \implies  (\bf e_0)_b = g_{ba} \delta^a_0 = g_{b_0}\)
+        \begin{align*}
+            \nabla_b (\bf e_0)_a + \nabla_a (\bf e_0)_b &= \nabla_b g_{a 0} + \nabla_a g_{b 0}\\
+            &= \partial_b g_{a 0} + \partial_a g_{b 0} -\Gamma^{c}_{ba} g_{c 0} -\Gamma^{c}_{ab} g_{c 0}\\
+            &= \partial_b g_{a 0} + \partial_a g_{b 0} - \delta^d_0 \pqty{\partial_a g_{db} + \partial_b g_{da} - \partial_d g_{ab}} \\
+            &= \partial_b g_{a 0} + \partial_a g_{b 0} - \partial_a g_{0b} - \partial_b g_{0a} + \underbrace{\partial_0 g_{ab}}_{0} \\
+            &= 0
+        \end{align*}
+        Indeed \(\bf e_0\) satisfies Killing's equation.
+
+        If \(\bf t\) is the tangent vector to a geodesic affinely-parameterised by \(\tau\), \begin{align*}
+            t^a &= \dv{x^a}{\tau}\\
+            \frac{\Dif (\xi_a t^a)}{\Dif  \tau} &= t^b  \pqty{\nabla_b (\xi_a t^a)}\\
+            \frac{\Dif (\xi_a t^a)}{\Dif  \tau} &= t^b t^a\nabla_b \xi_a + t^b \xi_a \nabla_b t^a\\
+            \frac{\Dif (\xi_a t^a)}{\Dif  \tau} &= \overbrace{t^b t^a}^\text{symmetric} \;\overbrace{\nabla_b \xi_a}^\text{antisymmetric} = 0
+        \end{align*}
+        The intrinsic derivative of \(\xi_a t^a\) is thus \(0\). Since \(\xi_a t^a\) is a scalar, the intrinsic derivative coincides with the directional derivative along the curve. Therefore, \(\xi_a t^a\) is constant along the geodesic.
+        \subsection{Dilation on a satellite}
+        \subsubsection{} The Euler-Lagrange equation for the Lagrangian \(L = g_{\mu\nu} \dot{x}^\mu \dot{x}^\nu\) is
+        \begin{multline*}
+            \pdv{x^\mu} \bqty{c^2 \pqty{1- \frac{2\mu}{r} } \dot{t}^2 - \pqty{1- \frac{2\mu}{r} }^{-1} \dot{r}^2 - r^2 \dot{\theta}^2 - r^2\sin^2\theta \dot{\phi}^2} =\\ \dv{\lambda} \pdv{\dot{x}^\mu} \bqty{c^2 \pqty{1- \frac{2\mu}{r} } \dot{t}^2 - \pqty{1- \frac{2\mu}{r} }^{-1} \dot{r}^2 - r^2 \dot{\theta}^2 - r^2\sin^2\theta \dot{\phi}^2}
+        \end{multline*}
+        \begin{multline*}
+            \begin{pmatrix}  0\\\frac{2\mu}{r^2} c^2 \dot{t}^2 + \pqty{1 - \frac{2\mu}{r}}^{-2} \frac{2\mu}{r^2} \dot{r}^2 - 2r (\dot{\theta}^2 + \sin^2 \theta \dot{\phi}^2)\\- 2r^2 \sin\theta \cos\theta \dot{\phi}^2\\0  \end{pmatrix} =\\ \begin{pmatrix} 2c^2 \pqty{1- \frac{2\mu}{r} }\ddot{t} + 2c^2 \frac{2\mu}{r^2} \dot{r} \dot{t}\\ - 2 \pqty{1- \frac{2\mu}{r} }^{-1} \ddot{r} + 2 \pqty{1- \frac{2\mu}{r} }^{ - 2} \frac{2\mu}{r^2} \dot{r}^2 \\ - 4r \dot{r} \dot{\theta} - 2r^2 \ddot{\theta}\\ - 4r \dot{r} \sin^2\theta \dot{\phi} - 4r^2 \sin\theta \cos\theta \dot{\theta} \dot{\phi} - 2r^2 \sin^2\theta \ddot{\phi} \end{pmatrix} 
+        \end{multline*}
+        Formally, the geodesic equation is \begin{align*}
+        \dot{x}^\mu \nabla_\mu \dot{x}^\nu &= 0\\
+        \ddot{x}^\nu +\Gamma^{\nu}_{\mu \gamma} \dot{x}^\mu \dot{x}^\gamma&= 0
+        \end{align*}
+        The only nonzero coefficients can then be read off from the vector equation \begin{align*}
+            \Gamma^{t}_{rt}&= \frac{1 }{\frac{r^2}{\mu} - 2r}\\
+            \Gamma^{r}_{tt} &=  \frac{\mu c^2}{r^2}\pqty{1 - \frac{2\mu}{r}}&\Gamma^{r}_{rr} &= -\qty(1 - \frac{2\mu}{r})^{-1} \frac{\mu}{r^2} \\
+            \Gamma^{r}_{\theta\theta} &=  -\pqty{1 - \frac{2\mu}{r}} r&\Gamma^{r}_{\phi \phi} &= - \pqty{1 - \frac{2\mu}{r}} r \sin^2\theta\\
+            \Gamma^{\theta}_{r\theta} &= \frac{1}{r} &\Gamma^{\theta}_{\phi\phi} &= - \sin\theta \cos\theta\\
+            \Gamma^{\phi}_{r\phi} &=  \frac{1}{r}& \Gamma^{\phi}_{\theta\phi} &=  \frac{\cos\theta}{\sin\theta} 
+        \end{align*}
+        \subsubsection{}
+        The spacetime interval of an infinitesimal section of the worldline of the satellite is equal in all frames. Wlog, put the free falling satellite in a geodesic of constant \(r\) and constant \(\theta = \frac{\pi}{2}\). The proper time on the satellite and the Schwarzschild metric time are related by \begin{align*}
+            \dd{s}^2 &=  g_{\mu\nu} \dd{x}^\mu \dd{x}^\nu\\
+            c^2 \dd{\tau}^2 &= c^2 \pqty{1- \frac{2\mu}{r} } \dd{t}^2 - \pqty{1- \frac{2\mu}{r} }^{-1} \dd{r}^2 - r^2 \dd{\theta}^2 - r^2\sin^2\theta \dd{\phi}^2\\
+            c^2 \dd{\tau}^2 &= c^2 \pqty{1- \frac{2\mu}{r} } \dd{t}^2 - r^2 \dd{\phi}^2
+        \end{align*}
+        The geodesic equation is \begin{align*}
+            -\dot{\phi}^2 r \sin^2\theta + \dot{t}^2 \frac{\mu c^2}{r^2} &= 0\\
+            \dot{\phi}^2 &= \dot{t}^2 \frac{\mu c^2}{r^3 }
+        \end{align*}
+        Combining both above \begin{align*}
+            c^2 &= \bqty{c^2\pqty{1 - \frac{2\mu}{r}} - \frac{\mu}{r} c^2} \pqty{\dv{t}{\tau}}^2\\
+            \dv{t}{\tau} &= \pqty{1 - \frac{3\mu}{r}}^{ -\frac{1}{2}}
+        \end{align*}
+        
+        The clock at rest at the north pole has \(\theta = 0,\phi = 0, r = R\), its spacetime interval is \[
+            c^2 \dd{\tau_0}^2 = c^2 \pqty{1 - \frac{2\mu}{R}} \dd{t}^2
+        \]
+        Therefore, the proper times of both clocks are related by \[
+            \frac{\Delta \tau} {\Delta  \tau_0} = \dv{\tau}{\tau_0} = \pqty{1 - \frac{3\mu}{r}}^\frac{1}{2} \pqty{1 - \frac{2\mu}{R}}^{ - \frac{1}{2}}
+        \]
+        This result coincides with the weak field limit when \(\mu = \frac{GM}{c^2}\).
+        \subsection{Red shift}
+        The frequency and energy of the photon as observed by Bob the falling emitter are related by \[
+            h \nu_e =E_e = g_{\mu\nu} v^\mu(r_e) p^\nu 
+        \]
+        where \(p\) is the 4-momentum of the photon and \(\bf v = \dv{\bf x_B}{\tau}\) is the 4-velocity of Bob. For a massive body like Bob, \(v^\mu v_\mu = c^2\). \begin{align*}
+            c^2 &= g_{\mu\nu}(r) v^\mu(r) v^\nu(r)\\
+            c^2 &= \pqty{1 - \frac{2\mu}{r} } v^t v^t - \pqty{1 - \frac{2\mu}{r}}^{-1} v^rv^r 
+        \end{align*}
+        The geodesic equation is satisfied by \(v^\mu\), it can be used to solve for the components of \(v\), which can only be nonzero in \(r\) and \(t\) for a radially infalling particle.
+        \begin{align*}
+            0 &= \dv{v^\mu}{\tau} + \Gamma^{\mu}_{\alpha\beta} v^\alpha v^\beta\\
+            0 &= \frac{r^2}{\mu}\dv{v^r}{\tau} + \pqty{1 - \frac{2\mu}{r}} v^t v^t - \pqty{1 - \frac{2\mu}{r}}^{-1} v^r v^r \\
+            0 &= \frac{r^2}{\mu}v^r\dv{v^r}{r} + c^2\\
+            - \mu c^2 \frac{1}{r^2}\dd{r}&= v^r \dd{v^r}\\
+            v^r &= -\sqrt{2\mu c^2 \pqty{\frac{1}{r} - \frac{1}{R}}} \\
+            v^t &= c\pqty{1 - \frac{2\mu}{r}}^{-1} \sqrt{1 - \frac{2\mu}{R}} 
+        \end{align*}
+        The energy of the photon observed by Bob can now be explicitly written as 
+        \begin{align*}
+            E_e &= c \sqrt{1 - \frac{2\mu}{R}} p^t + c\pqty{1 - \frac{2\mu}{r}}^{-1} \sqrt{2\mu \frac{R - r}{Rr} } p^r\\
+            p^r p^r \pqty{1 - \frac{2\mu}{r}}^{-1} &=  p^t p^t \pqty{1 - \frac{2\mu}{r}}\\
+            p^t &=  p^r \pqty{1 - \frac{2\mu}{r}}^{-1}\\
+            E_e &= \bqty{\sqrt{1 - \frac{2\mu}{R}}  + \sqrt{2\mu \frac{R - r}{Rr} }}  \pqty{1 - \frac{2\mu}{r}}^{-1} cp^r
+        \end{align*} The photon momentum is parallel transported along its trajectory, using the fact \(t\) and \(r\) are the only varying coordinates, \begin{align*}
+            0 &= \dv{p^\mu}{\lambda} + \Gamma^{\beta}_{\alpha\beta} p^\alpha p^\beta \\
+            \dv{p^r}{\lambda} &= -\Gamma^{r}_{tt} p^t p^t -\Gamma^{r}_{rr} p^r p^r\\
+            \dv{p^r}{\lambda} &= - \frac{\mu}{r^2} \bqty{ \pqty{1 - \frac{2\mu}{r}}p^t p^t - \pqty{1 - \frac{2\mu}{r}}^{-1}p^r p^r}\\
+            \dv{p^r}{\lambda} &= 0
+        \end{align*}
+        where \(\lambda\) is an affine parameter such that \(p^\lambda = \dv{x^\mu}{\lambda}\) and in the last line \(p^\mu p_\mu = 0\) was used. Therefore, \(p^r\) is a constant along the null geodesic. The energy of the photon observed by Alice is thus related to that observed by Bob by \begin{align*}
+            p^t(R) &= \sqrt{ -\frac{g_{rr}}{g_{tt}}}  p^r_R = \pqty{1 - \frac{2\mu}{R}}^{-1} p^r(R)\\
+            E_R &= p^t(R) u_R^t\\
+            u_R^t &= c \pqty{1 - \frac{2\mu}{R}}^{ - \frac{1}{2}}\\
+            E_R &= \pqty{1 - \frac{2\mu}{R}}^{ -\frac{1}{2}} cp_r  \\
+            \frac{E_E}{E_R} &= \pqty{\sqrt{1 - \frac{2\mu}{R}}  + \sqrt{2\mu \frac{R - r}{Rr} }} \pqty{1 - \frac{2\mu}{r}}^{-1} \pqty{1 - \frac{2\mu}{R}}^\frac{1}{2} 
+        \end{align*}
+        \subsection{Impact parameter}
+        Starting with \(p_\mu p^\mu = 0\) for a photon in the equatorial plane \begin{align*}
+            \pqty{1 - \frac{2\mu}{r}} c^2 \dot{t}^2 - \pqty{1 - \frac{2\mu}{r}}^{-1} \dot{r}^2 - r^2 \dot{\phi}^2 &= 0
+        \end{align*}
+        Since \(g_{\mu\nu}\) is independent of \(t\) and \(\phi\), the first integrals of two corresponding components of the geodesic equation are constants
+        \[
+            \pqty{1 - \frac{2\mu}{r}} \dot{t} = k \qquad r^2\dot{\phi} = h
+        \]
+        A light ray ``grazes" the surface of a massive sphere at \(r\), so \(\dot{r}(r) = \dv{r}{\phi}\dot{\phi} = 0\). Substituting in, \begin{align*}
+            0 &= k^2 \pqty{1 - \frac{2\mu}{r}}^{-1} c^2 - \frac{h^2}{r^2} \\
+            \frac{h}{ck} &= r \pqty{1 - \frac{2\mu}{r}}^{ -\frac{1}{2}}  
+        \end{align*}
+        Assume \(\phi \to 0\) (and hence \(\dot{\phi} \to 0\)) as \(r \to  \infty\). The impact parameter \(b\) is defined as \[
+            b \equiv \lim_{r \to \infty}r \sin\phi
+        \]
+        Noticing \begin{align*}
+            \lim_{r \to \infty } \bqty{k^2 \pqty{1 - \frac{2\mu}{r}}^{-1} c^2 - \pqty{1 - \frac{2\mu}{r}}^{-1} \dot{r}^2 - \frac{h^2}{r^2}} &= 0\\
+            \lim_{r \to \infty } \bqty{k^2  c^2 -  \dot{r}^2 } &= 0\\
+            \lim_{r \to \infty } \dot{r} &= ck
+        \end{align*}
+        The impact parameter can be calculated as 
+        \begin{align*}
+            b &= \lim_{r \to \infty} \frac{\dot{\phi}\cos\phi}{ \dot{r} / r^2} \\
+            b &= \lim_{r \to \infty} \frac{r^2\dot{\phi}}{ \dot{r}} \\
+            b &= \frac{h}{ ck} = r \pqty{1 - \frac{2\mu}{r}}^{ -\frac{1}{2}}  
+        \end{align*}
+        For the sum, \(M_\odot = 2 \times 10^{30}\) kg, \(R_\odot = 7 \times 10^8\) m, \begin{align*}
+            b - r & \approx \frac{r}{2} \frac{2\mu}{r} = \mu\\
+            b - r & \approx  \frac{GM_\odot}{c^2}\\
+            b - r & \approx  2.97 \times 10^3 \; \mathrm{m}
+        \end{align*}
+        The light rays coming tangentially from the edge of the Sun will cast a image of radius \(b\) at infinity (ignoring diffraction). The Sun will seem bigger by about \(3\) km in radius.
+        \subsection{Schwarzschild blackhole}
+        Consider the Schwarzschild metric\[
+            \dd{s}^2 = \pqty{1 - \frac{2\mu}{r}} c^2 \dd{t}^2 - \pqty{1 - \frac{2\mu}{r}}^{-1} \dd{r}^2 - r^2 \dot{\theta}^2 - r^2 \sin^2\theta \dot{\phi}^2
+        \]
+        In region 2 where \(r < 2\mu\), the proper time change \(\Delta  \tau\) between entering region \(2\) and reaching the origin\begin{align*}
+            c^2 \dd{\tau}^2 &= \underbrace{\pqty{1 - \frac{2\mu}{r}} c^2 \dd{t}^2}_{ < 0} - \pqty{1 - \frac{2\mu}{r}}^{-1} \dd{r}^2 - \underbrace{r^2 \dot{\theta}^2}_{\leq 0} - \underbrace{r^2 \sin^2\theta \dot{\phi}^2}_{\leq 0} \\
+            c \dd{\tau} &< \pqty{ \frac{2\mu}{r} - 1}^{-\frac{1}{2}} \pqty{ -\dd{r}}\\
+            \Delta \tau &< -\frac{2\mu}{c}\int_{1}^0 \sqrt{ \frac{r / 2\mu}{1 - r / 2\mu}} \dd{\pqty{\frac{r}{2\mu}}}\\
+            \Delta \tau &< \frac{2\mu}{c} \int_0^{\frac{\pi}{2} } \frac{\sin\theta}{\cos\theta}  2\sin\theta \cos\theta \dd{\theta}\\
+            \Delta \tau &< \frac{\pi\mu}{c} 
+        \end{align*}
+        is always less than \(\frac{\pi \mu}{c} \).
 
 \end{document}

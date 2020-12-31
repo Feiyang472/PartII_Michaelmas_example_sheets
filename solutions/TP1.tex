@@ -1,0 +1,701 @@
+\documentclass[12pt]{article}
+\usepackage{MicSheets}
+
+
+\begin{document}
+\title{TP1 Example Sheets}
+\author{Feiyang Chen}
+\date{Michaelmas 2020}
+\maketitle
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+\section{}
+Sorry I handwrote this.
+\newpage
+\section{}
+\subsection{} { \[ S_\lambda = \int \dif x \dif y\abs{\bf Q(x,y)}^\alpha - \int \dif x \dif y\,  \lambda(x,y)\left(\partial_j Q^j - R(x,y)\right)\]}
+        \begin{align*}
+            \pdv{(Q_jQ^j)^\frac{\alpha}{2}}{Q^i} &=  - \pdv{}{x^k}\left(\pdv{\lambda(x,y)\partial_jQ^j}{(\partial_kQ^i)}\right)\\
+            \alpha\abs{\bf Q}^{\alpha - 2}Q_i &=  - \pdv{}{x^k}\left(\lambda(x,y)\delta\indices{^k_i}\right)\\
+            \alpha\abs{\bf Q}^{\alpha - 2}Q_i &=  - \partial_i{\lambda} 
+        \end{align*}
+        The last line encapsulates two equations for $x$ and $y$ respectively.
+        \subsection{} { \[
+            \mathcal L = \frac{1}{2}\left[ \hbar^2 \left(\pdv{\phi}{t}\right)^2 - \hbar^2 c^2 \qty(\grad \phi)^2 - m_0^2c^ 4\phi^2\right]
+        \]}
+        Euler-Lagrange equations:
+        \begin{align*}
+            \pdv{ \mathcal{L}}{\phi } &=  \partial_\mu \pdv{ \mathcal{L}}{\pqty{\partial_\mu \phi }} \\
+            -m_0^2c^4  \phi &= \hbar^2 \pdv[2]{\phi }{t} - \hbar^2c^2 \pqty{\laplacian \phi }
+        \end{align*}
+        Canonical momentum density:
+        \begin{align*}
+            \pi(x,t) &= \pdv{ \mathcal{L}}{ \pqty{\partial_t \phi }}\\
+            &= \hbar^2 \pdv{\phi }{t}
+        \end{align*}
+        Hamiltonian density:
+        \begin{align*}
+            \mathcal{H} &=  \pi \pdv{\phi }{t} - \mathcal{L}\\
+            &= \frac{1}{2}\hbar^2c^2 \pqty{\pdv{\phi }{x^\mu }}^2 + \frac{1}{2}m_0^2c^4 \phi^2\\
+            &= \frac{\pi^2}{ 2\hbar^2} + \frac{ \hbar^2 c^2}{2} \pqty{\grad \phi }^2 + \frac{1}{2}m^2\phi^2
+        \end{align*}
+        \subsection{} { \begin{align*}
+            \mathcal{L} = \frac{\hbar}{2i} \pqty{\psi \pdv{\psi^*}{t} - \psi^*\pdv{\psi}{t}} - \frac{\hbar^2}{2m} \grad \psi \grad \psi^* - V(\bf r)\psi^* \psi 
+        \end{align*}}
+        The Euler-Lagrange equation for \(\psi^*\) gives Schrodinger equation of \(\psi \)
+        \begin{align*}
+            \pdv{ \mathcal{L}}{\psi^* } -  \partial_\mu \pdv{ \mathcal{L}}{\pqty{\partial _\mu \psi^* }} &= 0\\
+            - V(\bf r) \psi - \frac{\hbar}{2i}\pdv{\psi }{t}- \frac{\hbar}{2i}\pdv t \psi + \frac{\hbar^2}{2m} \laplacian \psi &=  0\\
+            i \hbar \pdv{\psi }{t} = - \frac{\hbar^2}{2m}\laplacian \psi + V(\bf r)\psi 
+        \end{align*}
+        and vice versa.
+
+        The canonical momentum densities are
+        \[
+            \pi = \pdv{ \mathcal{L}}{ \pqty{\partial_t \psi}} = \frac{i\hbar}{2} \psi^*\qquad\pi^* = \pdv{ \mathcal{L}}{ \pqty{\partial_t \psi^*}} = - \frac{i\hbar}{2}\psi
+        \]
+        The Hamiltonian density is given by 
+        \begin{align*}
+            \mathcal{H} &=  \pi\pdv{\psi}{t} + \pi^* \pdv{\psi^*}{t} - \mathcal{L}\\
+            \mathcal{H} &=  \frac{\hbar^2}{2m} \grad \psi \grad \psi^* + V(\bf r)\psi^* \psi \\
+            \int \dif \bf x\, \mathcal{H} &= \int \dif \bf x\,  \frac{\hbar^2}{2m} \grad \psi \grad\psi^* +\int \dif \bf x\, V(\bf r) \psi^*\psi \\
+            &= \overbrace{\eval{ \frac{\hbar^2}{2m}\psi^* \grad \psi }_{ -\infty}^{\infty}}^{0 \text{, due to vanishing boundaries}} + \int \dif \bf x\, \psi^* \overbrace{\pqty{ - \frac{\hbar^2}{2m}\laplacian + V(\bf r)}}^\text{the usual expression for energy}\psi 
+        \end{align*}
+        \subsection{} { \[
+            \mathcal{L} =\pdv{\phi^* }{t}\pdv{\phi }{t} - \grad \phi^*\grad \phi - m^2\phi^*\phi 
+        \]}
+            \subsubsection{} { \begin{align*}
+                \mathcal{H} &=  \pi \pdv{\phi }{t} + \pi^*\pdv{\phi^* }{t} - \mathcal{L}\\
+                &= \pdv{\phi^*}{t}\pdv{\phi }{t} + \overbrace{ \pdv{\phi }{t}\pdv{\phi^*}{t} -\pdv{\phi^* }{t}\pdv{\phi }{t}}^{0} + \grad \phi^*\grad \phi + m^2\phi^*\phi\\
+                &= \pdv{\phi^*}{t}\pdv{\phi }{t} + \grad \phi^*\grad \phi + m^2\phi^*\phi
+            \end{align*}}
+            \subsubsection{}  { \[
+                \phi (\bf r,t) = \int \frac{\dd[3] \bf k}{2 (2\pi)^3 \omega  } \pqty{a(\bf k) e^{ - ik_\mu x^\mu } + b^*(\bf k)e^{ik_\mu x^\mu }}
+            \]}
+            where \(k_\mu x^\mu = \omega t - \dotprod{k}{r}\). For simplicity denote \(a(\bf k) e^{ - ik_\mu x^\mu }\equiv \tilde{a}(\bf k,\bf r, t)\) and \(b(\bf k) e^{ - ik_\mu x^\mu }\equiv \tilde{b}(\bf k,\bf r, t)\).
+            \begin{align*}
+                \pdv{\phi }{t} &=  \int \frac{ - i\dd[3] \bf k}{2 (2\pi)^3} \pqty{\tilde{a} - \tilde{b}^*}\\
+                \dot{\phi}^* \dot{\phi} &=  \iint \frac{\dd[3] \bf k}{2 (2\pi)^3} \frac{\dd[3] \bf k'}{2 (2\pi)^3}\pqty{a^*(\bf k)e^{ ik_\mu x^\mu} - b(\bf k)e^{ -ik_\mu x^\mu }}\qty(a(\bf k')e^{ - ik'_\mu x^\mu} - b^*(\bf k')e^{ik'_\mu x^\mu }) \\
+                \dot{\phi}^* \dot{\phi} &=  \iint \frac{\dd[3] \bf k}{2 (2\pi)^3} \frac{\dd[3] \bf k'}{2 (2\pi)^3}\pqty{a^*a\, e^{i(k_\mu -k'_\mu) x^\mu} + b^*b\, e^{ -i(k\mu -k'_\mu) x^\mu} - \tilde{a}(\bf k')\tilde{b}(\bf k)-\tilde{a}^*(\bf k)\tilde{b}^*(\bf k')}
+            \end{align*} \begin{align*}
+                \grad\phi &=  \int \frac{ i\bf k\dd[3] \bf k}{2 (2\pi)^3 \omega } \pqty{\tilde{a} - \tilde{b}^*}\\
+                \grad \phi^* \grad \phi &=  \iint \frac{\dotprod{k}{k'}}{\omega^2}\frac{\dd[3] \bf k}{2 (2\pi)^3} \frac{\dd[3] \bf k'}{2 (2\pi)^3}\left(\tilde{a}^*(\bf k)\tilde{a}(\bf k')+ \tilde{b}^*(\bf k')\tilde{b}(\bf k) - \tilde{a}(\bf k')\tilde{b}(\bf k)-\tilde{a}^*(\bf k)\tilde{b}^*(\bf k')\right)\\
+                \phi &= \int \frac{ \dd[3] \bf k}{2 (2\pi)^3 \omega } \pqty{\tilde{a} + \tilde{b}^*}\\
+                m^2\phi^*\phi &= \iint \frac{m^2}{\omega^2} \frac{\dd[3] \bf k}{2 (2\pi)^3} \frac{\dd[3] \bf k'}{2 (2\pi)^3}\pqty{\tilde{a}^*(\bf k)\tilde{a}(\bf k')+ \tilde{b}^*(\bf k')\tilde{b}(\bf k)+ \tilde{a}(\bf k')\tilde{b}(\bf k) +\tilde{a}^*(\bf k)\tilde{b}^*(\bf k')} 
+            \end{align*}
+            using \(\int \dd[3] \bf r e^{i\dotprod{(k\pm k')}{r}} = (2\pi)^3 \delta (\bf{k \pm k'})\)
+            \begin{align*}
+                &\int \dd[3] \bf r\,  \grad \phi^* \grad \phi\\ 
+                = &\int \frac{\dotprod{k}{k'}}{\omega^2}\frac{\dd[3] \bf k}{2} \frac{\dd[3] \bf k'}{2 (2\pi)^3}\left(a^*(\bf k) a(\bf k')e^{i(\omega - \omega ')t}\delta(\bf{k - k'})+ b^*(\bf k')b(\bf k)e^{i(\omega' - \omega)t}\delta(\bf{k' - k}) \right.\\
+                &\qquad\qquad\qquad\qquad\quad\left. - a(\bf k')b(\bf k)e^{ -i(\omega + \omega ')t}\delta(\bf{k + k'})-a^*(\bf k)b^*(\bf k')e^{ +i(\omega + \omega ')t}\delta(\bf{k + k'})\right)\\
+                = &\int \frac{\dd[3]\bf k}{2 (2\pi)^3} \frac{k^2}{2\omega^2} \pqty{a^*(\bf k)a(\bf k)+ b^*(\bf k)b(\bf k) + a( -\bf k)b(\bf k)e^{ - 2i\omega t } +a^*(\bf k)b^*( -\bf k)e^{ + 2i\omega t}} 
+            \end{align*}
+            Similarly
+            \begin{align*}
+                &\int \dd[3] \bf r\: \pdv{\phi^*}{t}\pdv{\phi}{t}\\ 
+                = &\int \frac{\dd[3]\bf k}{2 (2\pi)^3} \frac{\omega^2}{2\omega^2} \pqty{a^*(\bf k)a(\bf k)+ b^*(\bf k)b(\bf k) - a( -\bf k)b(\bf k)e^{ - 2i\omega t } -a^*(\bf k)b^*( -\bf k)e^{ + 2i\omega t}}\\
+                &m^2\int \dd[3] \bf r\: \phi^*\phi \\ 
+                = &\int \frac{\dd[3]\bf k}{2 (2\pi)^3} \frac{m^2}{2\omega^2} \pqty{a^*(\bf k)a(\bf k)+ b^*(\bf k)b(\bf k) + a( -\bf k)b(\bf k)e^{ - 2i\omega t } +a^*(\bf k)b^*( -\bf k)e^{ + 2i\omega t}} 
+            \end{align*}
+            using \(\omega^2 = k^2 + m^2\)
+            \begin{align*}
+                H &= \int \dd[3] \bf r\, \mathcal{H}\\
+                &= \int \frac{\dd[3]\bf k}{2 (2\pi)^3}\bqty{\abs{a^*(\bf k)}^2 +\abs{b(\bf k)}^2 }
+            \end{align*}
+            \subsubsection{} { \begin{align*}
+                &- i\int \dd[3] \bf r\, {\dot{\phi}^*\phi}\\
+                =& \int \frac{\dd[3]\bf k}{2 (2\pi)^3} \frac{ - i \cdot i\omega }{2\omega^2} \pqty{a^*(\bf k)a(\bf k) - b^*(\bf k)b(\bf k) - a( -\bf k)b(\bf k)e^{ - 2i\omega t } +a^*(\bf k)b^*( -\bf k)e^{ + 2i\omega t}}\\
+                &i\int \dd[3] \bf r\, {\dot{\phi}\phi^*}\\
+                =& \int \frac{\dd[3]\bf k}{2 (2\pi)^3} \frac{ - i \cdot i\omega }{2\omega^2} \pqty{a^*(\bf k)a(\bf k) - b^*(\bf k)b(\bf k) - a^*( -\bf k){b^*}(\bf k)e^{ + 2i\omega t } + a(\bf k)b( -\bf k)e^{ + 2i\omega t}}
+            \end{align*}}
+            \[
+                Q =  - i\int \dd[3] \bf r\, \pqty{\dot{\phi}^*\phi - \dot{\phi} \phi^*} =\int \frac{ \dd[3] \bf k}{2(2\pi)^3 \omega } \bqty{\abs{a(\bf k)}^2 -\abs{b(\bf k)}^2}
+            \]
+            This conserved quantity does not depend on time. It corresponds to conservation of matter in the entire space.
+            \subsection{} After the rotational transform
+            \[
+                \begin{pmatrix} \phi_x\\ \phi_y \end{pmatrix} \to \begin{pmatrix} \cos\theta &- \sin\theta \\ \sin\theta &\cos\theta  \end{pmatrix} \begin{pmatrix} \phi_x \\ \phi_y \end{pmatrix}  
+            \] 
+            Lagrangian density becomes \begin{align*}
+                \mathcal{L} & \to \frac{1}{2}\sigma  \bqty{\pqty{\cos \theta \partial_t \phi_x - \sin\theta \partial_t\phi_y}^2 +\pqty{\sin \theta \partial_t \phi_x + \cos\theta \partial_t\phi_y}^2} \\
+                &\qquad - \frac{1}{2}F\bqty{\pqty{\cos \theta \partial_z \phi_x - \sin\theta \partial_z\phi_y}^2 +\pqty{\sin \theta \partial_z \phi_x + \cos\theta \partial_z\phi_y}^2}\\
+                &=  \frac{1}{2} \sigma \bqty{\dot{\phi_x}^2 + \dot{\phi_y}^2} - \frac{1}{2}F \bqty{\pqty{\partial_z \phi_x}^2 + \pqty{\partial_z \phi_y}^2}
+            \end{align*}
+            which is invariant.
+
+            The corresponding Noether density and current are \begin{align*}
+                \rho &=  \pdv{L}{\dot{\phi_x}} \delta \phi_x +\pdv{L}{\dot{\phi_y}} \delta \phi_y&J_z&= \pdv{L}{\pqty{\partial_z\phi_x }}\delta \phi_x +\pdv{L}{\pqty{\partial_z\phi_y }} \delta \phi_y\\
+                &= \sigma \bqty{\dot{\phi}_x \pqty{ -\phi_y} +\dot{\phi}_y \pqty{\phi_x}}&&=- F\bqty{\partial_z\phi_x\pqty{ - \phi_y} + \partial_z \phi_y\pqty{\phi_x}}\\
+                &= \sigma \pqty{\phi_x\dot{\phi}_y - \phi_y\dot{\phi}_x}&&=- F\pqty{\phi_x\partial_z\phi_y - \phi_y \partial_z\phi_x}
+            \end{align*}
+            \[
+                \partial_z J_z + \partial_t \rho = 0
+            \]
+            The total charge 
+            \[
+                Q =\int \rho \dd{z}
+            \]
+            is conserved. In this case rotational symmetry in the \(x,y\) plane corresponds to conservation of \(z\)-component of angular momentum.
+        \subsection{} The angular momentum of a real scalar field, satisfying Klein-Gordon equation, equipped with metric \(g_{ab} = \eta_{ab}\){\begin{align*}
+            J_i &= \frac{1}{2}\varepsilon_{ijk} J^{jk}\\
+            &= \frac{1}{2}\varepsilon_{ijk} \int \dd[3]{r} \pqty{x^j T^{0k} - x^k T^{0j}}\\
+            &= \int \dd[3]{\bf r}\: \varepsilon_{ijk} x^j T^{0k}\\
+            &= \int \dd[3]{\bf r}\: \varepsilon_{ijk} x^j \pqty{\pdv{\mathcal{L}}{(\partial_0\phi)}\partial^k\phi - g^{0k}\mathcal{L}}\\
+            &= \int \dd[3]{\bf r}\: \varepsilon_{ijk} x^j \pqty{\partial^0 \phi \partial^k\phi - g^{0k}\mathcal{L}}\\
+            &= \int \dd[3]{\bf r}\: g^{0\mu}g^{k\nu}\varepsilon_{ijk} x^j \; \partial_\mu\phi\;  \partial_\nu\phi\\
+            &= - \int \dd[3]{\bf r}\: \dot{\phi} \pqty{\bf r \times \grad \phi}_i
+        \end{align*}}
+        In Fourier space, \begin{align*}
+            r \times \grad \phi &= \bf e_l\, \varepsilon_{lmn} x_m \partial_n \phi\\
+            &= \bf e_l\, \varepsilon_{lmn} \int \frac{i k_n \dd[3]{\bf k}}{2 (2\pi)^3 \omega }\pqty{a x_m e^{ - ik_\mu x^\mu} - a^* x_m e^{ + i k_\mu x^\mu}}\\
+            &= \bf e_l\, \varepsilon_{lmn} \int \frac{\dd[3]{\bf k}}{2 (2\pi)^3 \omega } k_n \pqty{a\pdv{k_m}e^{ - ik_\mu x^\mu} + a^* \pdv{k_m}e^{ + i k_\mu x^\mu}}\\
+            &= - \int \frac{\dd[3]{\bf k}}{2 (2\pi)^3 \omega } \bf k \times \pqty{a\grad^{(\bf k)}e^{ - ik_\mu x^\mu} + a^*\grad^{(\bf k)}e^{ + i k_\mu x^\mu}}\\
+            &= \int \frac{\dd[3]{\bf k}}{2 (2\pi)^3 \omega } \bf k \times \pqty{e^{ - ik_\mu x^\mu} \grad^{(\bf k)}a+ e^{ + i k_\mu x^\mu}\grad^{(\bf k)}a^*}\\
+        \end{align*}
+        Where we have integrated by arts and used the noncurl property of \(\bf k\). Angular momentum can thus be expressed as
+        \begin{align*}
+            &J_i\\
+            =& \frac{i}{2}\int \frac{{\dd[3]{\bf r}}\dd[3]{\bf k'}\dd[3]{\bf k}}{(2\pi)^32 (2\pi)^3 \omega }[{a(\bf k')e^{ - i k'_\mu x^\mu} - a^*(\bf k')e^{ + ik'_\mu x^\mu}}] \bf k \times [{e^{ - ik_\mu x^\mu} \grad^{(\bf k)}a(\bf k)+ e^{ + i k_\mu x^\mu}\grad^{(\bf k)}a^*(\bf k)}]\\
+            =& \frac{i}{2} \int \frac{\dd[3]{\bf k}}{2(2\pi)^3\omega} \bf k \times \bqty{\pqty{a(\bf -\bf k)e^{ - 2i\omega t} - a^*(\bf k)} \grad^{(\bf k)}a(\bf k) +\pqty{a(\bf k) - a^*( -\bf k)e^{ + 2i\omega t}} \grad^{(\bf k)}a^*(\bf k)}\\
+            =& \frac{i}{2} \int \frac{\dd[3]{\bf k}}{2(2\pi)^3\omega} \bf k \times \bqty{ -a^*(\bf k) \grad^{(\bf k)}a(\bf k) +a(\bf k) \grad^{(\bf k)}a^*(\bf k)}\\
+            =& - i \int \frac{\dd[3]{\bf k}}{2(2\pi)^3\omega}\ a^*(\bf k) \bf k \times  \grad^{(\bf k)}a(\bf k) 
+        \end{align*}
+        Where we have dropped the time-dependent parts for this conserved current and integrated by parts in the last step.
+        \subsection{} { \[
+            \mathcal{L} = \frac{1}{2} \partial_\mu\phi_1 \partial^\mu \phi_1 + \frac{1}{2} \partial_\mu\phi_2 \partial^\mu \phi_2 - \frac{1}{2} M_{11} \phi_1^2 - M_{12}\phi_1\phi_2 - M_{22}\phi_2^2 - \frac{1}{4} \Lambda_{11}\phi_1^4 - \frac{1}{2}\Lambda_{12} \phi_1^2\phi_2^2 - \frac{1}{4} \Lambda_{22}\phi_2^4
+        \]}
+        \subsubsection{} In natural units, \(M_{11}\) and \(M_{12}\) have units \([M]^2\), and \(\Lambda\) is dimensionless.
+        \subsubsection{} The Hamiltonian density of the system is given by \begin{align*}
+            \mathcal{H} &= \pi_1 \dot{\phi_1} + \pi_2 \dot{\phi_2} - \mathcal{L}\\
+            &= \pdv{\mathcal{L}}{\dot{\phi_1}} \dot{\phi_1} +\pdv{\mathcal{L}}{\dot{\phi_2}} \dot{\phi_2} - \mathcal{L}\\
+            &= \dot{\phi_1} \dot{\phi_1} + \dot{\phi_2}\dot{\phi_2} - \mathcal{L}\\
+            &= \frac{1}{2}\pqty{\dot{\phi_1}^2 + \dot{\phi_2}^2+ (\grad\phi_1)^2} + (\grad\phi_2)^2 +  V(\phi_1,\phi_2)
+        \end{align*}        
+        Energy bounded from below requires nonnegative dominant term in\[
+            V(\phi_1,\phi_2) =\sum_{ij}\bqty{\frac{1}{2}\pqty{\phi_1,\phi_2}_i M_{ij} \begin{pmatrix} \phi_1\\ \phi_2 \end{pmatrix}_j + \frac{1}{4}\pqty{\phi_1^2,\phi^2_2}_i \Lambda_{ij} \begin{pmatrix} \phi_1^2\\ \phi_2^2 \end{pmatrix} }
+        \]
+        when independent real fields \(\phi_1,\phi_2\) are large. If \(\det(\Lambda)\neq 0\), the fourth power terms are dominant, and \begin{gather*}
+            \Lambda_{11}\phi_1^4 + 2\Lambda_{12}\phi_1^2\phi_2^2 + \Lambda_{22}\phi_2^4 > 0\\
+            \implies\qquad \Lambda_{11}, \Lambda_{22} > 0\quad;\quad \Lambda_{12} > - \pqty{ \frac{\Lambda_{11}\phi_1^2}{2\phi_2^2} +\frac{\Lambda_{22}\phi_2^2}{2\phi_1^2}}\\
+            \qquad \Lambda_{12} > - \frac{1}{2}\pqty{ \Lambda_{11}a +\frac{\Lambda_{22}}{a}}
+        \end{gather*}
+        where \(a\) is a positive parameter. The right hand side takes minimum value when
+        \begin{align*}
+            \Lambda_{11} -\frac{\Lambda_{22}}{a^2} &=  0\\
+            a &=  \sqrt{\frac{\Lambda_{22}}{\Lambda_{11}}}
+        \end{align*}
+        The condition for lower bound of energy \[
+            \Lambda_{12} > - \frac{1}{2} \pqty{ \sqrt{\Lambda_{22}\Lambda_{11}} + \sqrt{\Lambda_{22}\Lambda_{11}}} = - \sqrt{\Lambda_{11}\Lambda_{22}};\qquad \Lambda_{11}, \Lambda_{22} > 0
+        \]
+        However, if \(\det(\Lambda) = 0\), \(M_{ij}\) becomes dominant in a certain combination of \(\phi_1,\phi_2\), we must also require \(M\) be a positive definite matrix, which gives \begin{align*}
+            \det(M) = M_{11} M_{22} - M_{12}^2 \geq 0\quad ;\quad \tr(M) = M_{11} +M_{22} \geq 0
+        \end{align*}
+        \subsubsection{} For this symmetry in the Hamiltonian to be spontaneously broken, at \(\pqty{\phi_1,\phi_2} = \pqty{0,0}\), \(V\pqty{\phi_1,\phi_2}\) is an unstable critical point. Near \(\pqty{\phi_1,\phi_2} = \pqty{0,0}\) \begin{align*}
+            \pdv{V}{\phi_i} &=  \sum_{j}\bqty{ M_{ij} \phi_j + \phi_i\Lambda_{ij}  \phi_j^2 } \\
+            \pdv{V}{\phi_i}{\phi_j} &=  M_{ij} + O(\phi^2)
+        \end{align*}
+        The condition for unstability is either \[
+            M_{11}\text{ or } M_{22} < 0
+        \] or the Hessian is less than zero \[
+            M_{11}M_{22} - M_{12}^2 < 0
+        \]
+        \subsection{} { \[
+            S = \int \dd[4]{x}\bqty{\frac{1}{2}\partial_\mu \phi \partial^\mu \phi - \frac{1}{4} \lambda \phi^4}
+        \]}
+        Under dilation transformation \(\phi(x) \to \alpha \phi(\alpha x)\) \begin{align*}
+            S & \to \int \dd[4]{ x'}\bqty{\frac{1}{2}\alpha^2 \partial_\mu \phi(\alpha x') \partial^\mu \phi(\alpha x') - \frac{1}{4} \alpha^4 \lambda \phi^4(\alpha x')}\\
+            \text{let } x = \alpha x'
+            \qquad S &\to \int \frac{\dd[4]{x}}{\alpha^4} \bqty{\frac{1}{2}\alpha^2 \pdv{\phi(x)}{(\frac{x^\mu}{\alpha})} \pdv{\phi(x)}{(\frac{x_\mu}{\alpha})} - \frac{1}{4} \alpha^4 \lambda \phi^4(x)}\\
+            S &\to \int \dd[4]{x}\bqty{\frac{1}{2}\partial_\mu \phi \partial^\mu \phi - \frac{1}{4} \lambda \phi^4} = S
+        \end{align*}
+        Therefore the \emph{action} is invariant under this transform. 
+
+        The transformation when \(\varepsilon\) is small is \begin{align*}
+            \tilde{\phi} &=  \alpha \phi(\alpha x) \\
+            &=  (1 + \varepsilon)\phi\bqty{(1 + \varepsilon)x}
+        \end{align*}
+        leading to \begin{align*}
+            \partial_\mu\tilde{\phi} &= (1 + \varepsilon)\partial_\mu \phi\bqty{(1 + \varepsilon)x}\\
+            &= (1 + \varepsilon)\partial_\mu\pqty{\phi + \varepsilon  x^\nu\partial_\nu \phi}\\
+            &= (1 + \varepsilon)\pqty{\partial_\mu\phi + \varepsilon \partial_\mu \phi+ \varepsilon x^\nu\partial_\mu\partial_\nu \phi }\\
+            &= {\partial_\mu\phi + 2\varepsilon \partial_\mu \phi+ \varepsilon x^\nu\partial_\mu\partial_\nu \phi }
+        \end{align*}
+        Writing the change in Lagrangian as 
+        \begin{align*}
+            \mathcal{L}(\tilde{\phi},\partial_\mu \tilde{\phi}) &=  L + \varepsilon \pdv{\mathcal{L}}{\phi}\bqty{x^\mu\pdv{\phi}{x^\mu} + \phi} + \varepsilon \pdv{\mathcal{L}}{(\partial_\mu \phi)}\bqty{x^\nu\pdv{(\partial_\mu \phi)}{x^\nu} + 2\partial_\mu \phi} \\
+            \mathcal{L}(\tilde{\phi},\partial_\mu \tilde{\phi}) &=  L + \varepsilon\qty{ \partial_\mu\pdv{\mathcal{L}}{(\partial_\mu \phi)}\bqty{x^\nu \partial_\nu {\phi} + \phi} + \pdv{\mathcal{L}}{(\partial_\mu \phi)}\bqty{x^\nu\partial_\nu{\partial_\mu \phi} + 2\partial_\mu \phi}} \\
+            \mathcal{L}(\tilde{\phi},\partial_\mu \tilde{\phi}) &=  L + \varepsilon \partial_\mu\qty{ \pdv{\mathcal{L}}{(\partial_\mu \phi)}\bqty{x^\nu \partial_\nu {\phi} + \phi} }
+        \end{align*}
+        Evaluating the first line yields \begin{align*}
+            \mathcal{L}(\tilde{\phi},\partial_\mu \tilde{\phi}) &=  L + \varepsilon\qty{ \partial^\mu \phi\bqty{x^\nu \partial_\nu\partial_\mu \phi+ 2\partial_\mu \phi} - \lambda \phi^3\bqty{x^\mu \partial_\mu{\phi} + \phi} } \\
+            \mathcal{L}(\tilde{\phi},\partial_\mu \tilde{\phi}) &=  L + \varepsilon\qty{ x^\nu\pqty{\partial^\mu \phi \partial_\nu \partial_\mu \phi - \lambda \phi^3 \partial_\nu \phi} + \partial_\nu x^\nu \pqty{\frac{1}{2}\partial^\mu \phi \partial_\mu\phi - \frac{1}{4}\lambda \phi^4} } \\
+            \mathcal{L}(\tilde{\phi},\partial_\mu \tilde{\phi}) &=  L +  \varepsilon \partial_\nu\bqty{ x^\nu\pqty{\frac{1}{2}\partial^\mu \phi  \partial_\mu \phi - \frac{1}{4}\lambda \phi^4}} \\
+            \mathcal{L}(\tilde{\phi},\partial_\mu \tilde{\phi}) &=  L +  \varepsilon \partial_\nu\pqty{ x^\nu L }
+        \end{align*}
+        Equating with the last line \[
+            \varepsilon \partial_\mu\bqty{ x^\mu L } - \varepsilon \partial_\mu\qty{ \pdv{\mathcal{L}}{(\partial_\mu \phi)}\bqty{x^\nu \partial_\nu {\phi} + \phi} } = 0
+        \]
+        Allowing us to write a conserved current \[
+            J^\mu =  \partial^\mu \phi\pqty{x^\nu \partial_\nu {\phi} + \phi} - x^\mu L
+        \]
+    \newpage
+    \section{}
+    \subsection{} \subsubsection{} If the same interaction acts between all pairs of spins, the Ising model Hamiltonian becomes 
+        \begin{align*}
+            H &=  \frac{J}{2N} \sum_{ij} s_i s_j - \mu \sum_i s_i B\\
+            &= \frac{J}{2N} \bqty{N^2 \mean{s}^2 - N}- \mu B N\mean{s}\\
+            &= N \pqty{\frac{J\mean{s}}{2} - \mu B}\mean{s} - \frac{J}{2}
+        \end{align*}
+        where \(\frac{J}{N}\) is the interaction coefficient which is inversely proportional to \(N\). The overall energy is thus proportional to \(N\).
+        \subsubsection{} Given the Hamiltonian \begin{equation*}
+            H = - \frac{J}{N}\sum_{i,j}s_i s_j
+        \end{equation*} 
+        The sum runs over all \emph{combinations} of \((i\neq j)\), so we eliminate permutations of the same pair by a factor of \(\frac{1}{2}\) and subtract the case of \(i = j\)
+        \begin{align*}
+            &= - \frac{J}{2N}\pqty{\sum_{i j}s_i s_j - \sum_{i = j} s_i s_j}\\
+            &= - \frac{J}{2N}\pqty{\sum_{i}s_i \sum_j s_j - \sum_{i} 1}\\
+            &= - \frac{J}{2N}\bqty{\pqty{\sum_{i}s_i}^2 - N}
+        \end{align*}
+        \subsubsection{} The number of permutations that achieve the same magnetisation per spin \[
+            m = \frac{\sum_i s_i}{N} = \frac{N_+ - N_ -}{N}
+        \]
+        is equal to the number of combinations that have the numbers of positive and negative spins \(2N_ + = N + mN\) and \(2N_ -= N - mN\)
+        \begin{align*}
+            W (m) &= \frac{N!}{N_+!N_ -!}\\
+            &= \frac{(N!)}{\pqty{\frac{mN + N}{2}}! \pqty{\frac{N - mN}{2}}! }\\
+            &= \frac{N!}{\bqty{\frac{1}{2}(1 + m)N}! \bqty{\frac{1}{2}(1 - m)N}! }
+        \end{align*}
+        \subsubsection{} The partition function is by definition \[
+            Z = \sum_{\qty{s_i}} e^{ - \beta H(\qty{s_i})}
+        \]
+        where \(\qty{s_i}\) is the set of microscopically distinguishable configurations. Using the fact that the Hamiltonian is uniquely determined by \(m\), the sum can be partitioned into macroscopically distinguishable configurations which have different values of \(m\) \begin{align*}
+            Z &=  \sum_{m} \sum_{\mean{s} = m} e^{ - \beta H(m)}\\
+            Z &=  \sum_{m} W(m) e^{ - \beta H(m)}
+        \end{align*}
+        Using Stirling's approximation \(\ln(n!) \approx n\ln n - n\), we find \begin{align*}
+            &\ln(W(m))\\
+            \approx& N\pqty{\ln N - 1} -\left( \frac{1}{2}(1 + m)N \bqty{\ln\pqty{\frac{1}{2}(1 + m)N} - 1} \right.\\
+            &\qquad\qquad\qquad\qquad\left. +\frac{1}{2}(1 - m)N \bqty{\ln\pqty{\frac{1}{2}(1 - m)N} - 1}\right)\\
+            =& N \left(\ln N - \frac{1}{2}(1 + m) \bqty{\ln\pqty{\frac{1}{2}(1 + m)N}} -\frac{1}{2}(1 - m) \bqty{\ln\pqty{\frac{1}{2}(1 - m)N}}\right)\\
+            =& - N \qty{ \ln 2 + \frac{1}{2}\bqty{(1 + m) {\ln(1 + m)} +(1 - m) {\ln(1 - m)}}}
+        \end{align*}
+        The term in the partition function has \begin{align*}
+            & \ln(W(m)e^{ -\beta H(m)}) \\ 
+            =&  \frac{\beta J}{2N}\pqty{m^2N^2 - N}- N \qty{ \ln 2 + \frac{1}{2}\bqty{(1 + m) {\ln(1 + m)} +(1 - m) {\ln(1 - m)}}}\\
+            =&  -\frac{\beta J}{2} + \frac{N}{2} \qty{ { \beta J m^2 - (1 + m) {\ln(1 + m)} -(1 - m) {\ln(1 - m)}} - 2\ln 2}
+        \end{align*}
+        The sharpness of the peak grows roughly as \(N\). The natural log is a monotonic function, so the value of \(m\) which maximises \[
+            - \beta F = { \beta J m^2 - (1 + m) {\ln(1 + m)} -(1 - m) {\ln(1 - m)}}
+        \]
+        also maximises the term in the sum.
+        \[
+            Z \approx \exp(- \frac{NF}{2k_BT} ) 2^{ - N}
+        \]
+        \begin{figure}[H]
+            \centering
+            \subcaptionbox*{high temperature}{
+            \def\svgwidth{150pt}    
+            \incfig{TP1_3_01d1}}
+            \subcaptionbox*{low temperature}{
+            \def\svgwidth{150pt}    
+            \incfig{TP1_3_01d2}}
+        \end{figure}
+        \subsubsection{} The maximum value of \( -F\) is found at \begin{align*}
+            0 = -\dv{F}{m} &= 2Jm - kBT - k_BT\ln(1 + m) + k_BT + k_BT\ln(1 - m)\\
+            m &= \frac{k_BT}{2J}\ln(\frac{1 +m}{1 - m}) = \frac{k_BT}{J}\tanh[ - 1](m)\\
+            m &= \tanh(\frac{Jm}{k_BT})
+        \end{align*}
+        At higher temperatures, there is no nonzero solution for \(m\) in \([ - 1, + 1]\), whereas at lower temperatures such solutions may exist, indicating a phase transition. The critical temperature \(T_c\) is the temperature lower than which symmetry is spontaneously broken at \(m = 0\), i.e. \begin{align*}
+            0 &= -\dv[2]{F}{m} =  \dv{m}\bqty{2Jm + k_BT \ln(\frac{1 -m}{1 + m}) } \\
+            0 &= 2J + k_BT \pqty{ - \frac{1}{1 - m} - \frac{1}{1 + m}} \\
+            0 &= 2J - 2k_BT_c \\
+            T_c &= \frac{J}{k_B}
+        \end{align*}
+        The sign of \(F''(m_0)\) is positive, such that the statistical weight times the Boltzmann factor is a maximum.
+        \subsubsection{} For \(m \to 0\), \begin{align*}
+            &F\\ =& - Jm^2 + \frac{1}{\beta}\bqty{(1 + m)\ln(1 + m) + (1 - m)\ln(1 - m)}\\
+            =& - Jm^2 + \frac{1}{\beta}\bqty{(1 + m)\qty(m - \frac{m^2}{2} + \frac{m^3}{3} - \frac{m^4}{4}) + (1 - m)\qty( - m - \frac{m^2}{2} - \frac{m^3}{3} - \frac{m^4}{4})}\\
+            =& - Jm^2 + k_BT\bqty{ -m^2 -\frac{m^4}{2} + 2m^2 + \frac{2m^4}{3}}\\
+            =&(k_BT - J) m^2 + \frac{1}{2}\frac{kBT}{3} m^4
+        \end{align*}
+        so we have \[
+            F(T) = \alpha(T) m^2 + \frac{1}{2} \frac{k_BT}{3}m^4
+        \]
+        where \(\alpha = k_BT - J\) and \(\beta = \frac{k_BT}{3} \).
+        \subsubsection{} Upon introduction of a magnetic field, the statistical weight of each distinguishable spin configuration is unchanged, and the Boltzmann factor is multiplied by \[
+            e^{ \beta \mu B N m}
+        \]
+        which takes the free energy to be minimised, \(F\), to \[
+            F = 2\mu Bm + Jm^2 + k_BT\bqty{(1 + m)\ln(1 + m) +(1 - m)\ln(1 - m)}
+        \]
+        which is extremised at \begin{align*}
+            0 = \dv{F}{m} &= 2(\mu B + Jm) + k_BT\bqty{\ln(\frac{1 + m}{1 - m})}\\
+            m &= \tanh(\frac{Jm + \mu B}{k_BT}) 
+        \end{align*}
+        It is observed that at higher temperatures, a positive value of \(B\) gives a unque positive solution of magnetisation and vice versa. At lower temperatures, another local maximum of \(m\) may be obtained.
+        \subsection{} The Landau free energy expansion for a uniaxial ferromagnet in a uniform magnetic field  \[
+            F = F_0 - hm + \frac{a}{2}m^2 + \frac{b}{4}m^4
+        \]
+        \subsubsection{} This expansion has odd and even parts in \(m\). The effective Hamiltonian of the system under no external field has translational symmetry in \(\bf x\) space and rotational symmetry in \(\bf m\) space, giving rise to the part of free energy even in \(m\). The odd part \( - hm\) results from the interaction between external field and magnetisation. At temperatures \(T > T_c\), we expect no spontaneously broken symmetry, which gives \(a(T > T_c) > 0\). At temperatures lower than \(T_c\), we expect a phase transition which gives \(a < 0\). Additionally, for a free energy bound from below, \(b > 0\) at all temperatures.
+        \subsubsection{} \(\delta\) is the reciprocal of the exponent of the power law dependence of \(m\) on \(h\) at the critical temperature \(T = T_c\). It can be calculated by minimising the free energy at \(a = 0\)
+        \begin{align*}
+            \dv{F}{m} &= - h + b m^3 = 0\\
+            m &=  \pqty{\frac{h}{b}}^{\frac{1}{3}} \propto h^ \frac{1}{\delta}
+        \end{align*}
+        giving \(\delta = 3\).
+        \subsubsection{} At \(h = 0\), if \(t > 0\), we simply have \(m = 0\). However if \(t < 0\), the solution for \(m\) satisfies \begin{gather*}
+            \dv{F}{m} = am + bm^3 = 0\\
+            m^2 =- \frac{a}{b}\qquad (h = 0,\; t < 0)
+        \end{gather*}
+        Near the critical temperature, we can expand the coefficients about \(t = 0\) 
+        \begin{gather*}
+            F =  F_0(T) - hm + \frac{0 + T_c a'(T) t}{2}m^2 + \frac{b}{4}m^4 + O(t m^4)\\
+            \dv{F}{m} = - h + T_c a'(T) t m + bm^3 = 0\\
+            - 1 + \pqty{a'(T) t T_c+ 3bm^2} \chi  = 0\\
+            \chi = \frac{1}{a'(T) t T_c + 3bm^2}
+        \end{gather*}
+        Using \(m^2\) evaluated earlier \[
+            \chi(t) = \begin{cases} 
+                \frac{1}{a'(T) T_c t - 3a} = -\frac{1}{2a'(T)T_c t} & t < 0 \\
+                \frac{1}{a'(T) T_c t} & t > 0
+             \end{cases}
+        \]
+        Therefore \[
+            \lim_{t \to 0} \frac{\chi(t)}{\chi( - t)} = \lim_{t \to 0} -\frac{2a'(T_c)T_c ( -t)}{a'(T_c)T_c t} = 2
+        \]
+        \subsubsection{} In the presence of a term \(\frac{dm^3}{3}\), the system is now no longer symmetric under rotation \(m \to  - m\). The new free energy has nonzero equilibrium values of \(m\) \begin{align*}
+            F &= F_0 + \frac{a}{2} m^2 + \frac{d}{3} m^3 + \frac{b}{4} m^4\\
+            \dv{F}{m} &= a m + dm^2 + b m^3 = 0\\
+            m &= 0\qquad \text{ or }\qquad \frac{-d\pm \sqrt{d^2-4ab}}{2b}
+        \end{align*}
+        Ordering transition occurs when \(m = 0\) changes from a stable to an unstable equilibrium, i.e. \(\eval{\dv[2]{F}{m}}_0\) flips sign. \begin{align*}
+            \dv[2]{F}{m} &= a + 2dm + 3bm^2\\
+            \eval{\dv[2]{F}{m}}_0 &= a(T) = 0
+        \end{align*}
+        So similar to the previous case, critical temperature is characterised by \(a(T_c) = 0\). However, at \(a = 0\), the only possible stable solution of \(m\) \[
+            \frac{ - d - \sqrt{d^2}}{2m} = - \frac{d}{b}
+        \]
+        is nonzero. The transition of the order parameter \(m\) is discontinous (first order).
+        \subsection{} \[
+            \beta H =\int\bqty{a \abs{\phi}^2 + \frac{1}{2} \abs{\phi}^4 + c \abs{\partial_x \phi}^2 + \abs{\partial_x^2\phi}^2} \dd{x}
+        \]
+        \subsubsection{} The condition \(c > 0\) ensures spatiall uniform solution of \(\phi\) is the lowest energy state, which allows us to rewrite the free energy as \[
+            F = a \phi^*\phi + \frac{1}{2} (\phi^*\phi)^2 
+        \]
+        Treating \(\phi\) and its c.c. as two independent fields, the free energy is minimised at \begin{gather*}
+            \pdv{F}{\phi} = a\phi^* + \phi^*\phi \phi^* = 0\\
+            \pdv{F}{\phi^*} = a\phi + \phi^*\phi \phi = 0\\
+            \phi^* (a + \phi^*\phi) = 0\\
+            \phi (a + \phi^*\phi) = 0\\
+            \phi = 0\qquad \text{ or }\qquad \sqrt{-a(T)}e^{i\delta}\\
+            \phi^* = 0\qquad \text{ or }\qquad \sqrt{-a(T)}e^{-i\delta}
+        \end{gather*}
+        where the nonzero solutions exists only for \(a(T) < 0\) and \(\delta\) can be any real number. By looking at \begin{align*}
+            \eval{\pdv[2]{F}{\phi}{\phi^*}}_0 &= a + 2\phi^* \phi = a(T)
+        \end{align*}
+        We see that at critical temperature \(a(T_c) = 0\), \emph{second order} phase transition of \(\phi\) occurs continuously, and phase symmetry of \(\phi\) is spontaneously broken. Close to the critical temperature, we have \[
+            a(T) = 0 + \alpha \frac{T - T_c}{T_c} + \dots  = \alpha t + O(t^2)
+        \]
+        Therefore in the ordered phase \[
+            \phi(t) \approx \sqrt{ \abs{\alpha t}} e^{i\delta}
+        \]
+        \subsubsection{} Add in interaction term with the \emph{real} magnetic field \(B\), \[
+            F = - B\pqty{\frac{\phi + \phi^*}{2}} + a\phi^*\phi + \frac{1}{2} (\phi^*\phi)^2
+        \]
+        For a given general complex \(\phi\), making the substitution \[
+            \phi\to \frac{\abs{B\phi}}{B} 
+        \]
+        always finds a lower free energy, therefore in this part it is sufficient to consider real field \(\phi\), i.e. \begin{gather*}
+            \dv{F}{\phi} = - B + 2a\phi + 2\phi^3 =  0\\
+            2\phi(a + \phi^2) = B\\
+            2a\chi + 6\phi^2 \chi = B\\
+            \begin{cases}
+                \text{unordered phase, } \phi^2 = 0&\chi = \frac{B}{2a}\\
+                \text{ordered phase, }\phi^2 = - a&\chi = -\frac{B}{4a}\\
+            \end{cases}
+        \end{gather*}
+        \subsubsection{} Allow \(c\) to be negative. Assume \(\phi\) to take the from \(\phi_0 e^{i(kx + \delta)}\), we get \begin{align*}
+            \partial_x \phi &= ik \phi\\
+            \partial_x^2 \phi &= k^2 \phi\\
+            \beta H = \int f \dd{x}&= \int\bqty{a \phi_0^2 + \frac{1}{2}\phi_0^4 + c k^2\phi_0^2 + k^4 \phi_0^2} \dd{x}
+        \end{align*}
+        Minimisation of \(\beta H\) therefore minimises \(f(\phi_0,k)\), which occurs at \begin{gather*}
+            \pdv{f}{\phi_0} = 2a\phi_0 + 2\phi_0^3 + 2ck^2\phi_0 + 2k^4 \phi_0 =  0\\
+            \pqty{\phi_0^2 + a  + ck^2 + k^4} \phi_0 =  0\\
+            \pdv{f}{k} = 2ck \phi_0^2 + 4k^3 \phi_0^2 = 0\\
+            \pqty{c + 2k^2}k\phi_0^2 = 0
+        \end{gather*}
+        Equilibrium solutions include \[
+            \begin{cases}
+                \phi_0, k = 0&\implies f = 0\\
+                k = \pm \sqrt{ - \frac{c}{2}}, \phi_0 = 0&\implies f = 0\\
+                k = \pm \sqrt{ - \frac{c}{2}}, \phi_0 = \sqrt{ - a + \frac{c^2}{4} }&\implies f =- \frac{1}{2}\pqty{ -a + \frac{c^2}{4} }^2 \\
+                k = 0, \phi_0 = \sqrt{ - a}&\implies f = - \frac{a^2}{2}\\
+            \end{cases}
+        \]
+        Nonzero solutions of \(\phi_0\) or \(k\) exist only if the coefficients allow real solution, which means \[
+            \text{minimum is }\begin{cases}
+                c > 0, a > 0 &\implies f(0,0) = 0\\
+                c > 0, a < 0 &\implies f(\sqrt{ - a},0) = - \frac{a^2}{2}\\
+                c < 0, a > \frac{c^2}{4} &\implies f(0,0) = f(0, \pm \sqrt{-\frac{c}{2}}) = 0\\
+                c < 0, a < \frac{c^2}{4} &\implies f(\sqrt{ - a + \frac{c^2}{4}}, \pm \sqrt{ -\frac{c}{2}}) = - \frac{1}{2}\pqty{ - a + \frac{c^2}{4}}^2\\
+                c < 0, a < 0 &\implies f(\sqrt{ - a + \frac{c^2}{4}},\pm \sqrt{ -\frac{c}{2}}) = - \frac{1}{2}\pqty{ - a + \frac{c^2}{4}}^2
+            \end{cases}
+        \]
+        where the last two cases can be considered as one phase. \(\delta\) dependence is not present because the free energy has a global phase symmetry, which is spontaneously broken by the arbitrarily phased state.
+        \subsubsection{} 
+        Using the categories given in (c)
+        \begin{center}
+            \def\svgwidth{300pt}
+            \incfig{TP1_303d}
+        \end{center}
+        Near the tricritical point in the ordered phase \(k = \pm \sqrt{ - \frac{c}{2}}, \phi_0 = \sqrt{ - a + \frac{c^2}{4}}\):
+        
+        If \(c = a\), we get \[
+            \phi_0 = \sqrt{\frac{c^2}{4} - c} \approx \abs{c}^\frac{1}{2} 
+        \]
+        However if \(a = 0, c < 0\) \[
+            \phi_0 = \sqrt{\frac{c^2}{4}} = \frac{1}{2} \abs{c}
+        \]
+        The criticall exponents are not the same along these two directions in the \(a\)-\(c\) plane.
+        \subsection{} \[
+            E = -\sum_{ij}(\bf s_i \dotproduct \bf s_j)^2
+        \]
+        \subsubsection{} The nematic energy is symmetric under transfrom \(\bf s_i \to \bf s_j\), and thus does not distinguish between alignment and antialignment of molecules. The statistical weight of different values of vector \(\bf m \equiv \frac{1}{N}\sum_i \bf s_i\) is sharply peaked at \(\bf m = 0\), so \(\bf m\) is not a good order parameter.
+        \subsubsection{} Define \[
+            S_{\alpha\beta} \equiv \frac{1}{N} \sum_i \pqty{3s_{i\alpha}s_{i\beta} - \delta_{\alpha\beta}}
+        \]
+        Its trace can be calculated as \begin{align*}
+            \Tr(S) &= \sum_{\alpha} S_{\alpha\alpha}\\
+            &= \sum_{\alpha,i}\frac{1}{N} \pqty{3s_{i\alpha}^2 - \delta_{\alpha\alpha}}\\
+            &= \sum_i \frac{1}{N} \pqty{3 \bf s_i \dotproduct \bf s_i - 3}\\
+            &= 0
+        \end{align*}
+        \subsubsection{} Landau free energy expansion \[
+            f = a \Tr(S \dotproduct S) + b \Tr(S \dotproduct S \dotproduct S) + c \Tr(S \dotproduct S\dotproduct S \dotproduct S) 
+        \]
+        applying mean-field theory \[
+            S_{\alpha \beta} = Q(3n_\alpha n_\beta - \delta_{\alpha \beta})
+        \]
+        we have (summed over repeated indices)\begin{align*}
+            \Tr(S \dotproduct S) &= Q^2\pqty{9n_\alpha n_\beta n_\beta n_\alpha - 2\delta_{\alpha \beta} 3 n_\beta n_\alpha + \delta_{\alpha\beta}\delta_{\beta \alpha}}\\
+            \Tr(S \dotproduct S) &= Q^2\pqty{9 - 6 + 3}\\
+            \Tr(S \dotproduct S) &= 6Q^2\\
+            \Tr(S \dotproduct S \dotproduct S) &= Q^3 \pqty{9n_\alpha n_\gamma - 6n_\alpha n_\gamma + \delta_{\alpha \gamma}}\pqty{3n_\gamma n_\alpha - \delta_{\gamma\alpha}}\\
+            \Tr(S \dotproduct S \dotproduct S) &= Q^3 \pqty{9 - 3 + 3- 3}\\
+            \Tr(S \dotproduct S \dotproduct S) &= 6Q^3\\
+            \Tr(S \dotproduct S \dotproduct S \dotproduct S) &= Q^4\pqty{3n_\alpha n_\gamma + \delta_{\alpha \gamma}}\pqty{3n_\alpha n_\gamma + \delta_{\alpha \gamma}}\\
+            \Tr(S \dotproduct S \dotproduct S \dotproduct S) &= Q^4\pqty{9 + 6 + 3}\\
+            \Tr(S \dotproduct S \dotproduct S \dotproduct S) &= 18Q^4
+        \end{align*}
+        substituting into \(f\) \[
+            f = 6 \pqty{aQ^2 + bQ^3 + 3cQ^4}
+        \]
+        The factor of \(6\) can be discarded for simplicity. Extrema can be found as \begin{align*}
+            \pdv{f}{Q} &=  \pqty{2a + 3bQ + 12c Q^2}Q =  0\\
+            \pdv[2]{f}{Q} &=  {2a + 6bQ + 36c Q^2}\\
+            &= 2a + 3bQ + 12cQ^2 + 3bQ + 24cQ^2\\
+            Q &= \begin{cases}
+                0\\
+                \frac{ - 3b\pm \sqrt{9b^2 - 96ac}}{24c} 
+            \end{cases}
+        \end{align*}
+        Given that \(a,c > 0\), disordered phase \(Q = 0\) is always (albeit very narrow) metastable, if not the global mimnimum. 
+        \begin{center}
+            \def\svgwidth{250pt}
+            \incfig{TP1_304c}
+        \end{center}
+        Negative \(Q\) solutions can be abandonned for \(b\leq 0\). Ordering transition occurs when \(f(\frac{ - 3b + \sqrt{9b^2 - 96ac}}{24c})\leq f(0)\), which is equivalent to the condition that\[
+            Q^2\pqty{a + bQ + 3cQ^2} = 0
+        \] has a nonzero real solution, i.e. \[
+            b^2 - 12ac \geq 0 \implies b\leq - \sqrt{12ac}
+        \]
+        At this value of \(b\), the nonzero solution which is real minimum is
+        \[
+            Q = \sqrt{\frac{a}{3c}} 
+        \]
+        i.e. the transition is \emph{first order}, or discontinuous.
+        \subsubsection{} Above the transition \(b < - \sqrt{12ac}\), the liquid is in disordered phase, \(Q = 0\). Just below the transition \(b\leq - \sqrt{12ac}\), the liquid is in ordered phase \(Q = \sqrt{\frac{a}{3c}}\).
+    \newpage
+    \section{}
+    \subsection{} Contour integral exercises 
+    \subsubsection{} Let \(z = e^{i\theta}\), \begin{align*}
+        \int_0^{2\pi} \frac{\dd{\theta}}{a + b\sin\theta} &= \int_0^{2\pi} \frac{2\dd{\theta}}{2a - ib e^{i\theta} + ib e^{ - i\theta}}\\
+        &= \int_C \frac{ -2i \dd{z}}{2a z - ib z^2 + ib }\\
+        &= \int_C \frac{2 \dd{z}}{ bz^2 + 2iaz -b}
+    \end{align*}
+    Where \(C\) is the counterclockwise unit circle on the complex plane. The function \[
+        \frac{2}{ bz^2 + 2iaz -b}
+    \]
+    can be decomposed into \[
+        \frac{2}{b(z - z_ +)(z - z_ -)}
+    \]where \(z_\pm\) are singular points. \[
+        z_\pm = \frac{ a \pm \sqrt{a^2 - b^2}}{ib} 
+    \] Given \(a > b\) \begin{align*}
+        (a - b)^2 &< a^2 - b^2\\
+        \frac{a - \sqrt{a^2 - b^2}}{b}  &< 1
+    \end{align*}
+    \(z_ -\) is the only singularity inside the unit circle. Therefore the contour integral evaluates to \begin{align*}
+        \int_0^{2\pi} \frac{\dd{\theta}}{a + b\sin\theta} &= 2\pi i \frac{2}{b(z_ -- z_ +)}\\
+        &= 2\pi i \frac{2}{b(z_ -- z_ +)}\\
+        &= 2\pi i \frac{2i}{ - 2 \sqrt{a^2 - b^2}}\\
+        &=  \frac{2\pi}{\sqrt{a^2 - b^2}}
+    \end{align*}
+    \subsubsection{}  \begin{align*}
+        \int_0^\infty \frac{\dd{x}}{1 + x^6} &= \frac{1}{2} \int_{ - \infty}^\infty \frac{\dd{x}}{1 + x^6} \\
+        &= \frac{1}{2} \int_C \frac{\dd{z}}{1 + z^6} 
+    \end{align*}
+    Where \(C\) is the counterclockwise infinite semicircle in the upper-half of the complex plane, and by Jordan's lemma the integral on the arc vanishes as the radius approaches infinity. The singularities in the upper-half plane are \begin{align*}
+        z_n = e^{\frac{i(2n + 1)\pi}{6} } \quad \text{ for } n = 0,1,2
+    \end{align*}
+    l'Hopital's rule gives \begin{align*}
+        \int_0^\infty \frac{\dd{x}}{1 + x^6} &= 2\pi i \frac{1}{2}\pqty{ \eval{\frac{1}{6z^5}}_{z_0} +\eval{\frac{1}{6z^5}}_{z_1} + \eval{\frac{1}{6z^5}}_{z_2} }\\
+        &= \frac{\pi i}{6} \pqty{e^{ - i\pi \frac{5}{6}} + e^{ - i\pi \frac{15}{6}} + e^{ - i\pi \frac{25}{6}}} \\
+        &= \frac{\pi i}{6} \pqty{ - \frac{i}{2} - i - \frac{i}{2}} \\
+        &= \frac{\pi}{3}
+    \end{align*}
+    \subsection{} The steady-state response of this circuit for each frequency is described by the net impedance of the circuit \begin{align*}
+        Z(\omega) &=  \pqty{\frac{1}{Z_C} + \frac{1}{Z_L + Z_R}}^{-1}\\
+        &=  \frac{i\omega L + R}{1 + i \omega RC - \omega^2 LC}
+    \end{align*}
+    The temporal susceptibility can be obtained by inverse Fourier transform \begin{align*}
+        Z(t) &= \int_{ - \infty}^{\infty} \frac{\dd{\omega}}{2\pi} Z(\omega) e^{i\omega t}\\
+        &= \int_{ - \infty}^{\infty} \frac{\dd{\omega}}{2\pi}  \frac{(i\omega L + R)e^{i\omega t}}{1 + i \omega RC -\omega^2 LC} \\
+        &= i\sum_{\mathbb{C}} \operatorname{res}\pqty{Z(\omega)e^{i\omega t}}
+    \end{align*}
+    For \(t > 0\), \(\mathbb{C}\) is the upper-half \(\omega\)-complex plane. The singularities of \(Z(\omega) e^{i\omega t }\) are at \[
+        \omega_{\pm} = \frac{iR\pm \sqrt{4L /C  - R^2}}{2L} 
+    \]
+    Consider light damping such that the square root is real. Both poles are now in the upper-half plane, so we have \begin{align*}
+        Z(t) &= -i \pqty{\frac{i\omega_ +L+ R}{LC( \omega_ + - \omega_ -)}  e^{i\omega_ + t} + \frac{i\omega_ - L+ R}{LC( \omega_ - - \omega_ +)}  e^{i\omega_ - t} }\\
+        Z(t) &= -i \pqty{\frac{i\omega_ + L+ R}{C \sqrt{4L /C - R^2}}  e^{i\omega_ + t} - \frac{i\omega_ -L+ R}{C \sqrt{4L /C - R^2}}  e^{i\omega_ - t} }
+    \end{align*}
+    for \(t \geq 0\). There are no poles in the lower-half plane, so \(Z(t) = 0\) for \(t < 0\) as required by causality. By concolution theorem, when an input voltage \(I_0 \cos(\omega t)\) which is turned on at \(t = 0\) is supplied
+    \begin{align*}
+        V_C(t) &= \int_{ -\infty}^{\infty} Z(t - t') I(t') \dd{t'}\\
+        V_C(t) &= \frac{I_0}{C \sqrt{4L /C - R^2}}\int_0^t  \bqty{(\omega_ + L - i R)  e^{i\omega_ + (t - t')} -( \omega_ -L - i R)  e^{i\omega_ - (t- t')} }\cos(\omega t') \dd{t'}
+    \end{align*}
+    \subsection{} The Green's function for a quantum-mechanical particle with Hamiltonian \(H\) is defined by \[
+        \pqty{i\hbar \pdv{t} - H} G (\bf r - \bf r';t - t') = \delta^3(\bf r - \bf r') \delta(t - t')
+    \]
+    Performing Fourier transform in the temporal domain\begin{align*}
+        G(\bf r - \bf r'; z) &= \int e^{iz(t - t')/{\hbar} } G(\bf r - \bf r'; t - t') \dd{t}\\
+        \pqty{i\hbar \pdv{t} - H}G(\bf r - \bf r'; z) &= - z\int e^{iz(t - t')/{\hbar} } G(t - t') \dd{t} + \int e^{iz(t - t')/{\hbar} } \delta^3(\bf r - \bf r') \delta(t - t') \dd{t}\\
+        \pqty{\frac{\hbar^2}{2m} \laplacian + z} G(\bf r - \bf r';z) &= \delta^3(\bf r - \bf r')
+    \end{align*}
+    Similarly, in space domain
+    \begin{align*}
+        \pqty{\frac{\hbar^2}{2m} \laplacian + z}G(\bf r;z) &= \pqty{2\pi}^{-3} \int  - \frac{\hbar^2k^2}{2m} e^{i\dotprod{k}{(r - r')}} G(\bf k ;z)\dd[3]{\bf k} + z G(\bf r,z) \\
+        1 &=  - \frac{\hbar^2k^2}{2m} G(\bf k ;z) + z G(\bf k,z) \\
+        G(\bf k, z) &= \frac{1}{z - \frac{\hbar^2k^2}{2m} }
+    \end{align*}
+    Transforming back \begin{align*}
+        G(\bf r - \bf r'; z) &= \pqty{2\pi}^{- 3} \int e^{i\bf k \dotproduct (\bf{r - r'})} G(\bf k;z) \dd[3]{\bf k}\\
+        G(\bf r - \bf r'; z) &= \pqty{2\pi}^{- 3} \int  \frac{\exp(i\bf k \dotproduct( \bf{r - r'}))}{z - \frac{\hbar^2k^2}{2m} } \dd[3]{\bf k}
+    \end{align*}
+    letting \(z = E + i\epsilon \) where \(\epsilon\) is small, \begin{align*}
+        G(\bf r - \bf r'; z) &= \pqty{2\pi}^{- 3} \int  \frac{\exp(i\bf k \dotproduct( \bf{r - r'}))}{E + i\epsilon - \frac{\hbar^2k^2}{2m} } \dd[3]{\bf k} \\
+        &= \pqty{2\pi}^{- 3} \int_0^{\infty} \int_0^{2\pi} \int_0^\pi  \frac{2m\exp(i\bf k \dotproduct( \bf{r - r'}))}{ - \hbar^2 (k - k_ + )(k - k_ -) } k^2  \sin\theta \dd{\theta} \dd{\phi} \dd{k}\\
+        &= - \pqty{2\pi}^{- 2} \frac{2m}{\hbar^2}\int_0^{\infty} \int_0^\pi \frac{k^2\exp(ik\abs{\bf{r - r'}} \cos\theta)}{ (k - k_ + )(k - k_ -) } \sin\theta \dd{\theta}\dd{k}\\  
+        &=- \pqty{2\pi}^{- 2} \frac{2m}{\abs{\bf{r - r'}}\hbar^2}\int_{ - \infty}^{\infty} \frac{k\sin(k\abs{\bf{r - r'}})}{  (k - k_ + )(k - k_ -) } \dd{k}
+    \end{align*}
+    where the \(k_z\)-axis is aligned to \(\bf r -\bf r'\). The poles are at \[
+        k_{\pm} =\pm \frac{\sqrt{2m(E + i\epsilon)}}{\hbar} = \pm \frac{\sqrt{2mE}}{\hbar} \pqty{1 + \frac{i\epsilon}{2E} } 
+    \]
+    \subsubsection{} With \(E > 0\), there are two poles, one just above and another just below the real axis. The integrand vanishes for the infinite arc on the upper half-plane, for \(\epsilon > 0\), \(k_ +\) is above the real axis, \begin{align*}
+        G(\bf r - \bf r'; z) &= - i\pqty{2\pi}^{- 1} \frac{2m}{\abs{\bf{r - r'}}\hbar^2} \frac{k_ +\sin(k_ +\abs{\bf{r - r'}})}{  (k_ + - k_ -) } \\
+        G(\bf r - \bf r'; z) &= - i\pqty{2\pi}^{- 1} \frac{2m}{\abs{\bf{r - r'}}\hbar^2} \frac{\sqrt{2mE}\sin(\sqrt{2mE}\abs{\bf{r - r'}}/\hbar)  }{ 2 \sqrt{2mE} } \\
+        G(\bf r - \bf r'; z) &= - i \frac{m}{2\pi\abs{\bf{r - r'}}\hbar^2} {\sin(\sqrt{2mE}\abs{\bf{r - r'}}  /\hbar)} 
+    \end{align*}
+    for \(\epsilon < 0\), \(k_ -\) is above the real axis\[
+        G(\bf r - \bf r'; z) = i \frac{m}{2\pi\abs{\bf{r - r'}}\hbar^2} {\sin(\sqrt{2mE}\abs{\bf{r - r'}}  /\hbar)} 
+    \]
+    The difference in the limits \(\Delta G = G_{\epsilon = 0^ +} - G_{\epsilon = 0^ -}\) can be expressed as \begin{align*}
+        \Delta  G &= - 2\pi i \frac{2m}{4\pi^2\abs{\bf{r - r'}}\hbar^2} {\sin(\sqrt{2mE}\abs{\bf{r - r'}}  /\hbar)}\\ 
+        \lim_{r \to r'}\Delta  G &= - 2\pi i \frac{m}{2\pi^2\hbar^3} \sqrt{2mE} 
+    \end{align*} 
+    \subsubsection{} With \(E < 0\), the two poles are nearly along the imaginary axis. An infinitesimal \(\epsilon\) has no effect on which one is in which plane. It is always \(k_ + = + i \frac{\sqrt{ - 2mE}}{\hbar} \) which is in the upper half-plane. \[
+        G(\bf r - \bf r'; z) = \frac{ - i m}{2\pi\abs{\bf{r - r'}}\hbar^2} {\sinh(\sqrt{ -2mE}\abs{\bf{r - r'}}  /\hbar)} 
+    \]
+     Therefore \[
+        \Delta G = - 2\pi i \frac{2m}{4\pi^2\abs{\bf{r - r'}}\hbar^2} {\sin(\sqrt{2mE}\abs{\bf{r - r'}}  /\hbar)} \Theta (E)
+    \]
+    The number of states in a sphere of radius \(k\) in phase space is\[
+        N = \frac{V}{(2\pi)^3} \frac{4\pi}{3} k^3
+    \] Using \(E = \frac{\hbar^2k^2}{2m} \implies k = \sqrt{2mE}  /\hbar\)
+    \begin{align*}
+        \rho(E) &= \dv{N}{E}\\
+        &= \dv{N}{k} \dv{k}{E}\\
+        &= \frac{V}{(2\pi)^3} 4\pi \frac{2mE}{\hbar^2} \frac{\sqrt{2m}}{2\hbar \sqrt{E}}\\
+        &= \frac{V}{2\pi^2} \frac{m \sqrt{2mE}}{\hbar^3} \\
+        &= \frac{V}{ -2\pi i} \lim_{r \to r'}\Delta G
+    \end{align*}
+
+    For a system with Hamiltonian \(H\), energy eigenvalues \(E_n\), and corresponding eigenfunctions \(\phi_n(\bf r)\), using the earlier expression which is independent of the dispersion relation \begin{align*}
+        \pqty{z - H} G(\bf r - \bf r';z) &= \delta^3(\bf r - \bf r')\\
+        \int \dd[3]{\bf r}\phi_n^*(\bf r)\pqty{z - H}  G(\bf r - \bf r';z) &= \int \dd[3]{\bf r}\phi_n^*(\bf r) \delta^3(\bf r - \bf r') \\
+        \text{Hermitian }H\implies\quad  \int \dd[3]{\bf r}G(\bf r - \bf r';z)\pqty{z - E_n} \phi_n(\bf r)  &= \phi_n(\bf r')\\
+        \int \dd[3]{\bf r}\underbrace{\sum_n \phi_n(\bf r) \phi^*_n(\bf r')}_{=\delta^3(\bf r - \bf r'')} G(\bf r - \bf r';z)   &= \sum_n\frac{\phi_n(\bf r')\phi^*_n(\bf r')}{z-E_n} \\
+        G(\bf r'' - \bf r';z)   &= \sum_n\frac{\phi_n(\bf r')\phi^*_n(\bf r'')}{z-E_n} 
+    \end{align*}
+    Given\[
+        \lim_{y \to 0^ + } \frac{1}{x \pm iy} = \frac{1}{x} \mp i\pi \delta(x)
+    \]
+    the Dirac delta can be expressed, using a small \(\epsilon\) \[
+        \delta(E - E_n) = \frac{1}{2i\pi} \pqty{\frac{1}{E -E_n - i\epsilon} - \frac{1}{E - E_n + i\epsilon}}
+    \]
+    \begin{align*}
+        \rho(\bf r) &= \sum_n \phi_n(\bf r) \phi^*_n(\bf r) \\
+        \rho(\bf r; E) &= \sum_n \phi_n(\bf r) \phi^*_n(\bf r) \delta(E - E_n)\\
+        \rho(\bf r; E) &= \sum_n \phi_n(\bf r) \phi^*_n(\bf r) \frac{1}{2i\pi} \pqty{\frac{1}{E -E_n - i\epsilon} - \frac{1}{E - E_n + i\epsilon}}\\
+        \rho(\bf r; E) &= \frac{1}{2i\pi}\sum_n   \pqty{\frac{\phi_n(\bf r) \phi^*_n(\bf r)}{E -E_n - i\epsilon} - \frac{\phi_n(\bf r) \phi^*_n(\bf r)}{E - E_n + i\epsilon}}\\
+        \rho(\bf r; E) &= \frac{1}{2i\pi}  \bqty{G_{0^ -}(\bf r, \bf r;E) - G_{0^ +}(\bf r, \bf r;E)}\\
+        \rho(\bf r; E) &= \frac{1}{ - 2\pi i} \Delta G(\bf r, \bf r, E)
+    \end{align*}
+    \subsection{} Start with the definition of linear susceptibility \(\alpha(t)\) \[
+        x(t) = \int_{ - \infty}^{\infty} f(t') \alpha(t - t') \dd{t'}
+    \]
+    By convolution theorem \[
+        x(\omega) = f(\omega) \alpha(\omega)
+    \]
+    Causality demands that \(\alpha(t) = 0\) for \(t < 0\). We can therefore write \[
+        \alpha(t) = \Theta (t) v(t) \qquad \implies \qquad \alpha(\omega) = \int \Theta (\omega') v(\omega - \omega') \frac{\dd{\omega'}}{2\pi} 
+    \]
+    The Fourier transform of the Heaviside step function is \begin{align*}
+        \Theta (\omega) &=\int_{ 0}^{\infty} 1 e^{i\omega t} \dd{t}\\
+        &=\lim_{\epsilon \to 0}\int_{ 0}^{\infty} 1 e^{i\omega t - \epsilon t} \dd{t}\\
+        &=\lim_{\epsilon \to 0}\bqty{ -\frac{1}{i\omega - \epsilon}}\\
+        &=\lim_{\epsilon \to 0}\bqty{ \frac{\epsilon + i\omega}{\omega^2 + \epsilon^2}}\\
+        &= \frac{i}{\omega} + \pi \delta(\omega) 
+    \end{align*}
+    Substituting into \(\alpha(\omega) = \alpha'(\omega) + i \alpha''(\omega)\) where \(\alpha'\) and \(\alpha''\) are the real and imaginary parts.
+    \begin{align*}
+        \alpha(\omega) &=  \int \pqty{\frac{i}{\omega} + \pi \delta(\omega) } v(\omega - \omega') \frac{\dd{\omega'}}{2\pi}\\
+        \alpha(\omega) &=  \int \frac{i}{\omega}  v(\omega - \omega') \frac{\dd{\omega'}}{2\pi} + \frac{1}{2}\int  \delta(\omega) v(\omega - \omega') \dd{\omega}\\
+        \alpha(\omega) &=  \int \frac{i}{\omega}  v(\omega - \omega') \frac{\dd{\omega'}}{2\pi} + \frac{1}{2} v(\omega ')
+    \end{align*}
+    \subsubsection{} Assume \(v(t)\) is antisymmetric, so that \(v(\omega)\) is purely imaginary \begin{align*}
+        \alpha(\omega) &=  \int \frac{i}{\omega}  v(\omega - \omega') \frac{\dd{\omega'}}{2\pi} + \frac{1}{2} v(\omega ')\\
+        \alpha(\omega) &=  -\int \frac{2\alpha''(\omega ')}{\omega - \omega'}   \frac{\dd{\omega'}}{2\pi} + i\alpha''(\omega)\\
+        \alpha'(\omega) &= \int \frac{2\alpha''(\omega ')}{\omega' - \omega}   \frac{\dd{\omega'}}{2\pi}
+    \end{align*}
+    \subsubsection{} Assume \(v(t)\) is symmetric, so that \(v(\omega)\) is purely real \begin{align*}
+        \alpha(\omega) &=  \int \frac{i}{\omega}  v(\omega - \omega') \frac{\dd{\omega'}}{2\pi} + \frac{1}{2} v(\omega ')\\
+        \alpha(\omega) &=  \int \frac{i2\alpha'(\omega ')}{\omega - \omega'}   \frac{\dd{\omega'}}{2\pi} + \alpha'(\omega)\\
+        \alpha''(\omega) &= \int \frac{2\alpha'(\omega ')}{\omega - \omega'}   \frac{\dd{\omega'}}{2\pi}
+    \end{align*}
+    
+    The equation of motion for a damped harmonic oscillator has the form \begin{align*}
+        \ddot{x} + \gamma \dot{x} + \omega_0^2 x &= f(t)\\
+        x(t) &= \int G(t - t') f(t') \dd{t'}\\
+        - \omega^2 x(\omega) + i\omega\gamma x(\omega) + \omega_0^2 x(\omega) &= f(\omega)\\
+        x(\omega) &= G(\omega) f(\omega)\\
+        G(\omega) &= \frac{1}{ (\omega_0^2 - \omega^2) +i\omega \gamma}\\
+        G(\omega) &= \frac{\omega_0^2 - \omega^2 - i\omega \gamma}{ (\omega_0^2 - \omega^2)^2 +\omega^2 \gamma^2}
+    \end{align*}
+    The Kramers-Kronig relations state \begin{align}
+        G''(\omega) &= \int \frac{2G'(\omega ')}{\omega - \omega'}   \frac{\dd{\omega'}}{2\pi}\\
+        G'(\omega) &= \int \frac{2G''(\omega ')}{\omega' - \omega}   \frac{\dd{\omega'}}{2\pi}
+    \end{align}
+\end{document}

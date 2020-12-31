@@ -1,0 +1,172 @@
+\documentclass[12pt]{extarticle} 
+\usepackage{Year3,outlines}
+\renewcommand{\course}{Electrodynamics and Optics} 
+\renewcommand{\hwnumber}{2}
+\renewcommand{\sheetdate}{\today}
+
+\newenvironment{eando2enum}
+{\begin{enumerate}
+\setcounter{enumi}{16}}
+{\end{enumerate}}
+
+\begin{document}
+    \begin{outline}[eando2enum] 
+        \1 The gauge field \(\bf A\) has the same symmetries as current density \(\bf J\). A dipole moment along \(Oz\) corresponds to a current loop whose only nonzero \(J\) component is constant along in \(\phi\). Therefore, \begin{align*}
+            \curl \bf A &= \frac{1}{r^2\sin\theta}\begin{pmatrix} \pdv{\theta} (r\sin\theta A_\phi)\\- r\pdv{r} (r\sin\theta A_\phi)\\0\end{pmatrix}\\ 
+            \curl \bf A &= \frac{1}{r^2\sin\theta}\begin{pmatrix} \pdv{\theta} (r\sin\theta A_\phi)\\- r\pdv{r} (r\sin\theta A_\phi)\\0\end{pmatrix} = \frac{\mu_0 m}{4\pi r^3}\begin{pmatrix} 2\cos\theta\\ \sin\theta\\0 \end{pmatrix}
+        \end{align*} \begin{align*} 
+            \pdv{\theta} (\sin\theta A_\phi) &= \frac{\mu_0 m}{4\pi r^2} \sin(2\theta)\\
+            \sin\theta A_\phi &= -\frac{\mu_0 m}{4\pi r^2} \frac{\cos(2\theta)}{2} + f(r)\\
+            -\sin\theta \pdv{r} (r A_\phi) &= \frac{\mu_0 m}{4\pi r^2} \sin[2](\theta)\\
+            rA_\phi &= \frac{\mu_0 m}{4\pi r} \sin(\theta) + g(\theta)\\
+            A_\phi &= \frac{\mu_0}{4\pi} \frac{m}{r^2}\sin\theta + \text{const.}
+        \end{align*}
+        \1 Evaluate the divergence for the two fields. 
+        \begin{enumerate}
+        \item \[
+            \pdv{x_i} \frac{1}{r^3} = - \frac{3x_i}{r^5}
+        \]
+        \begin{align*}
+            \div \bf B &= \frac{B_0 b}{r^3}\bqty{ - \frac{3x(x - y)z}{r^2} + z - \frac{3y(x - y)z}{r^2} - z - \frac{3z(x^2 - y^2)}{r^2} }\\
+            &=- \frac{B_0 b}{r^3}\bqty{ \frac{6z(x^2 - y^2)}{r^2} }
+        \end{align*}
+        which is nonzero and therefore disobeys Maxwell's equations.
+        \item {\eqhold \begin{align*}
+            \div \bf B &= 
+            B_0b^2\bqty{\frac{z \pdv{r^2}{r}}{(b^2 + z^2)^2r} - \frac{2z}{(b^2 + z^2)^2}}\\
+            &= 0
+        \end{align*}}
+        This field is plausible because it obeys Maxwell's equations.
+        \end{enumerate}
+        For the field in (b) \begin{align*}
+            \mu_0 \bf J &= \curl \bf B\\
+            &= B_0b^2\begin{pmatrix} 0\\ \frac{r}{(b^2 + z^2)^2} - \frac{4z^2r}{(b^2 + z^2)^3} \\ 0\end{pmatrix} \\
+            &= \frac{B_0b^2r(b^2 - 3z^2)}{(b^2 + z^2)^3} \hat{\boldsymbol{\phi}}\\
+            \curl \bf A &=  \bf B \\
+            \begin{pmatrix} -\pdv{A_\phi}{z}\\0\\\frac{1}{r}\pdv{(rA_\phi)}{r} \end{pmatrix} &= B_0b^2 \begin{pmatrix} \frac{zr}{(b^2 + z^2)^2}\\0\\\frac{1}{b^2 + z^2} \end{pmatrix} \\
+            \bf A &= \frac{B_0b^2r}{2(b^2 + z^2)} \hat{\boldsymbol\phi} + \text{const.}
+        \end{align*}
+        \1 Probe the direction of polarisation of \(\bf E\) field at a point \(\bf r\) from the box. Then, move in the direction \(\bf r \times \bf E\). 
+        \begin{itemize}
+            \item If the electric field strength does not change along this direction, the dipole is electric. Move along the direction of \(\bf E\) to find the plane which maximises field strength or radiation power. The normal to the plane will be the direction of the dipole (and also the direction of polarisation at that point).
+            \item If the electric field strength did change, the dipole is magnetic. Move along \(\bf r \times \bf E\), find the plane at which radiation is maximised, and the direction of magnetic dipole is the normal of the plane or \(\parallel \bf r \times \bf E\).
+        \end{itemize}
+        Assuming the length sacle of the antenna is the same as that of the box, the power dependence on the current for electric and magnetic dipoles can be calculated as \begin{align*}
+            \mean{P_E} &= \frac{\omega^4 (\frac{\mean{I_0}d}{\omega} )^2}{12\pi\epsilon_0 c^3}& \mean{P_M} &= \frac{\mu_0 \omega^4 (I_0d^2)^2}{12\pi c^3}
+        \end{align*}
+        respectively. If the power supplies are replaced with a matched load, the box can still be illuminated with microwaves, and the reradiated (scattered) signal will have the same patterns as emitted signal.
+        \1 The farfield expansion of the vector potential corresponding to magnetic dipole is 
+        \begin{align*}
+            \bf A (\bf r) &=  \frac{\mu_0}{4\pi} \frac{e^{ikr}}{r}( - ik) \int \bf J(\bf{r'})(\dotprod{\hat{r}}{r'}) \dd{V}\\
+            \bf A (\bf r) &=  \frac{\mu_0}{4\pi} \frac{ik e^{ikr}}{r} \bf{\hat{r}} \times \bf m
+        \end{align*}
+        where \(\bf m\) is the magnetic dipole moment, and \(\bf{\hat{r}}\) is the unit vector parallel to \(\bf r\).
+
+        For a dipole in the \(x\text{-}y\) plane rotating about the \(z\) axis at angular frequency \(\omega\), working in cylindrical coordinates, we have \begin{align*}
+            \bf m &= \frac{m_0}{\sqrt{2}}\begin{pmatrix} e^{i(\omega t + \phi_0 + \phi)}\\ ie^{i(\omega t + \phi_0 + \phi)}\\ 0\end{pmatrix} \\
+            \bf A (\bf r) &=  \frac{\mu_0}{4\pi} {ike^{ikr}} \frac{m_0}{\sqrt{2}} \begin{pmatrix} \frac{\rho}{r} \\0 \\ \frac{z}{r}\end{pmatrix} \times  \begin{pmatrix} e^{i(\omega t + \phi_0 + \phi)}\\ ie^{i(\omega t + \phi_0 + \phi)}\\ 0\end{pmatrix}\\
+            &=  \frac{\mu_0}{4\pi} {ike^{ikr}} \frac{m_0}{\sqrt{2}} \begin{pmatrix} - \frac{z}{r} i e^{i (\omega t + \phi_0 + \phi)} \\ \frac{z}{r}e^{i(\omega t + \phi_0 + \phi)}\\\frac{\rho}{r} i e^{i(\omega t + \phi_0 + \phi)} \end{pmatrix} \\
+            &=  \frac{\mu_0}{4\pi} \frac{ike^{ikr}}{r}  \frac{m_0}{\sqrt{2}} e^{i(\omega t + \phi_0 + \phi)} \begin{pmatrix} - iz \\ z\\ i\rho  \end{pmatrix} \\
+            \bf B &=  -ik \bf A \times \bf n\\
+            \bf B &=  \frac{\mu_0}{4\pi} \frac{k^2e^{ikr}}{r^2}  \frac{m_0}{\sqrt{2}} e^{i(\omega t + \phi_0 + \phi)} \begin{pmatrix} - iz \\ z\\ i\rho  \end{pmatrix} \times \begin{pmatrix} \rho\\ 0\\z \end{pmatrix} \\
+            \bf B &=  \frac{\mu_0}{4\pi} \frac{k^2e^{ikr}}{r^2}  \frac{m_0}{\sqrt{2}} e^{i(\omega t + \phi_0 + \phi)} \begin{pmatrix} z^2\\ - \rho^2 + iz^2\\- z\rho \end{pmatrix} 
+        \end{align*}
+        \begin{enumerate}
+        \item In the \(x\text{-}y\) plane \begin{align*}
+            \bf B &=   \frac{\mu_0}{4\pi} \frac{k^2e^{ikr}}{r^2}  \frac{m_0}{\sqrt{2}} e^{i(\omega t + \phi_0 + \phi)}( - \rho^2 \hat{\bf \phi})\\
+            \bf E &= - \pdv{\bf A}{t}\\         
+            \bf E &= - i\frac{\mu_0}{4\pi} \frac{\omega ke^{ikr}}{r}\frac{m_0}{\sqrt{2}} e^{i(\omega t + \phi_0 + \phi)}\rho \hat{\bf z}         
+        \end{align*}
+        The radiation pattern is circular and the polarisation of the electric field is parallel to \(Oz\).
+        \item The direction of polarisation, at an angle \(\theta\) to \(Oz\), is parallel to the vector \begin{align*}
+             &- \cos(\theta) \hat{\boldsymbol \rho} - i\cos(\theta) \hat{\boldsymbol \phi} + \sin(\theta) \hat{\bf z} \\=& \bqty{ -\cos(\theta) \sin(\theta) + \sin(\theta) \cos(\theta)} \hat{\bf r} -i\cos(\theta) \hat{\boldsymbol \phi} +\bqty{ - \cos[2](\theta) - \sin[2](\theta)}\hat{\boldsymbol \theta}\\
+             =& -i\cos(\theta) \hat{\boldsymbol \phi} - \hat{\boldsymbol \theta}
+        \end{align*}
+        which is always perpendicular to \(\hat{\bf r}\), the direction of outward propagation of the wave.
+        \end{enumerate}
+        \1 Assuming one of the principal axis of rotation of the magnet is parallel to \(z\)-axis, the rotational kinetic energy at any instant is given by \[
+            E_k = \frac{1}{2} I \omega^2
+        \]
+        The formula for radiation loss for an oscillating magnetic dipole is \[
+            \mean{P_M} = \frac{\mu_0 M^2}{12\pi c^3}\omega^4
+        \]
+        The rotating magnetic dipole \(\bf M\) can be decomposed into two orthogonal dipoles oscillating in phase quadrature, which contribute to the total power independently. \[
+            P_{\bf M} =2\mean{P_M} = \frac{\mu_0 M^2}{6\pi c^3}\omega^4 = C \omega^4
+        \] 
+        For \(\dot{\omega} \ll \omega^2\), kinetic energy changes over a time scale much greater than the period of rotation, such that the instantaneous power can be approximated by the average over a period \begin{align*}
+            P_{\bf M} &= \dv{E_k}{t}\\
+            C\omega^4&= I\omega \dot{\omega}\\
+            \dv{t}\pqty{\frac{C}{I}}&= \dv{t}\pqty{\frac{\dot{\omega}}{\omega^3} }\\
+            0&= \frac{\ddot{\omega}\omega^3 - 3\omega^2 \dot{\omega}^2}{\omega^6} \\
+            \Aboxed{\ddot{\omega} \omega &= 3 \pqty{\dot{\omega}}^2}
+        \end{align*}
+        For the pulsar in the Crab Nebula, the period \(T = 33\) ms and \(\dot{T} = 36\) ns/day. Assume that it is a sphere (of uniform density) with radius \(7\) km and a mass equal to that of the Sun (\(2 \times 10^{30}\) kg). We have \begin{align*}
+            \omega &= \frac{2\pi}{T}\\
+            \dot{\omega} &= \frac{2\pi \dot{T}}{T^2}
+        \end{align*}
+        Substituting in 
+        \begin{align*}
+            \frac{\mu_0 M^2}{6\pi c^3}\omega^4 &=  \frac{2}{5} m_s R^2\omega \dot{\omega}\\
+            M &=  \sqrt{\frac{12m_s R^2\dot{\omega} \pi c^3}{5\mu_0\omega^3}}\\
+            M &= 2 \times 10^{27}\; \mathrm{A\; m^2}
+        \end{align*}
+        Near the equator the magnetic field is azimuthal, \begin{align*}
+            B_\theta &= \frac{\mu_0 M}{4\pi R^3}\\
+            B_\theta &= 7 \times 10^8\; \mathrm{T}
+        \end{align*}
+        \1 \emph{Radiation resistance} is the effective resistance \(R_r\) of an antenna, such that \[
+            \mean{P} \equiv \mean{I^2} R_{r}
+        \]
+
+        The \emph{power gain} of an antenna is the angular distribution of time-averaged radial Poynting flux, normalised to \(4\pi\) \[
+            G(\theta,\phi) = \frac{4\pi N(\theta,\phi)}{\iint N(\theta,\phi) \sin\theta\dd{\theta}\dd{\phi}} 
+        \]      
+
+        For a plane wireloop of area \(a^2\), the time-averaged radial Poynting flux is \begin{align*}
+            N(\theta,\phi) &= \mean{r^2 \hat{\bf n} \cdot (\bf E \times \bf H)}(\theta,\phi)\\
+            &= \mean{r^2 \frac{Z_0k^2}{4\pi}e^{ikr} \sin\theta Ia^2\frac{k^2}{4\pi}e^{ikr} \sin\theta Ia^2}\\
+            &= {\frac{Z_0 \omega^4 \sin^2\theta }{16\pi^2 c^4 } } a^4 \mean{I^2} 
+        \end{align*}
+        Normalising the essential angular distribution, we get \begin{align*}
+            4\pi =\iint G(\theta,\phi) \sin\theta\dd{\theta} \dd{\phi} &= A \iint \sin^3\theta \dd{\theta} \dd{\phi}\\
+            2 &=  A \int_0^\pi \sin^3\theta \dd{\theta}\\
+            2 &=  A {\bqty{ -\cos\theta + \frac{\cos^3\theta}{3}}_0^\pi}\\
+            G(\theta,\phi) &= \frac{3}{2} \sin^2\theta
+        \end{align*}
+        Integrating over the unit sphere, we get
+        \begin{align*}
+            \mean{P} &= \frac{8\pi}{3}{\frac{Z_0 \omega^4  }{16\pi^2 c^4 } } a^4 \mean{I^2} \\
+            \mean{P} &= {\frac{Z_0 \omega^4  }{6\pi c^4 } } a^4 \mean{I^2} \\
+            R_r &= {\frac{\mu_0 \omega^4  }{6\pi c^3 } } a^4 
+        \end{align*}
+        By conservation of energy, the cross-section of combined scattering and absorption is the total power per incident electromagnetic flux density
+        \begin{align*}
+            \sigma &= \frac{\mean{P}}{\mean{N_{\text{inc}}}} \\
+            &= \frac{\mean{V^2}  /2R_r}{\mean{B^2}  c/\mu_0} \\
+            &= \frac{\mean{(\omega B a^2)^2}  /2R_r}{\mean{B^2}  c^3 \varepsilon_0} \\
+            &= \frac{\omega^2 a^4}{c^3\varepsilon_0} \frac{3\pi c^3 }{\mu_0\omega^4 a^4}\\
+            &= \frac{3\pi c^2}{\omega^2}
+        \end{align*}
+        \1 For our purposes, the Earth can be estimated to be flat. The mass of gas above unit area of earth relates to atmospheric pressure \begin{align*}
+            \frac{m}{A} &= \frac{p_\text{atm}}{g} 
+        \end{align*}
+        The atmosphere can be modelled as an ideal gas of volumeric composition \(\frac{1}{5}\) Oxygen and \(\frac{4}{5}\) Nitrogen, which gives number per area \begin{align*}
+            \frac{m}{A} &= \pqty{\frac{m_{\mathrm{O}_2}}{5} +\frac{4m_{\mathrm{N}_2}}{5}}\frac{N}{A}\\
+            \frac{N}{A} &= 2 \times 10^{29} \; \mathrm{m^{ - 2}}
+        \end{align*}
+        On the assumption that a molecule can be represented as a \emph{perfectly conducting sphere} with polarisability \(\alpha = 4\pi r^3\varepsilon_0\) of radius \(0.1\) nm, the phase change of ultraviolet radiation with wavelength \(\lambda = 320\) nm over individual molecules can be neglected. We are therefore in Rayleigh scattering regime. Ignoring multiple scattering \begin{align*}
+            \frac{\mean{P}_\text{sc}}{\mean{P}_\text{in}} &= \frac{\sigma_\text{sc} \mean{N}}{A \mean{N}} \\
+            &= \frac{1}{A}\frac{\mu_0^2 \omega^4 \alpha^2 N}{6\pi} \\
+            &= \frac{\mu_0^2 \varepsilon_0^2 (2\pi c)^4 16\pi^2 r^6 }{6\pi \lambda^4} \frac{N}{A}\\
+            &= \frac{ 2^8 \pi^5 r^6 }{6 \lambda^4} \frac{N}{A}\\
+            & \approx  25\%
+        \end{align*}
+        The molecules are randomly directed, so half of the re-radiated light are scattered away from earth, giving \[
+            \frac{\mean{P}_\text{lost}}{\mean{P}_\text{in}}= \frac{25\%}{2}=13\%
+        \]
+        \1 Cambridge is \(52^\circ \; \mathrm{N}\). Assume the Sun, a point (far) source, is coplanar with the equator of the Earth on March 21. At noon, Cambridge is nearest the Sun, sunlight, arriving at the atmosphere parallel to the equator, is scattered by the piece of atmosphere above Cambridge through an angle \(\alpha =52^\circ\). The degree of polarisation is therefore \begin{align*}
+            P &= \frac{1 - \cos^2\alpha}{1 + \cos^2\alpha} \\
+            P &= 45\%
+        \end{align*}
+    \end{outline}
+\end{document}

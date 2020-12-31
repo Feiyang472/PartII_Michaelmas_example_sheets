@@ -1,0 +1,307 @@
+\documentclass[12pt]{extarticle} 
+\usepackage{Year3,outlines}
+\renewcommand{\course}{Electrodynamics and Optics} 
+\renewcommand{\hwnumber}{1}
+\renewcommand{\sheetdate}{November 3, 2020}
+
+\renewcommand{\bf}{\mathbf}
+
+\begin{document}
+    \begin{outline}[enumerate]
+        \1 Shine unpolarised light (e.g. sunlight) onto a reflective surface at a nonzero angle of incidenece. The intensity of the reflected beam, viewed through the linear polariser, will be maximised when the transmitting axis is perpendicular to the plane of reflected beam.
+        \1 
+        \begin{align*}
+            \bf E_\pm  &=  \bf E_1 \pm  i\bf E_2\\
+            \bf E_\pm  &=  e^{i\pqty{  kz - \omega t}}\begin{pmatrix} E_1 \\\pm i E_2 \\0\end{pmatrix}\\
+            \bf B_\pm &=  \frac{1}{\omega }\bf k \cp \bf E\\
+            \bf B_\pm  &= \frac{k}{\omega } e^{i\pqty{ kz - \omega t}} \begin{pmatrix} \pm  iE_2\\ E_1\\0 \end{pmatrix} 
+        \end{align*}
+        The instantaneous \(\bf E_+\) field sweeps out a left-handed helix if \(k_z > 0\).
+        \begin{table}[htbp]
+            \centering\begin{tabular}{ccc}
+                \(k_z\) & \(\bf E_ +\) & \(\bf E_ -\)\\
+                \( > 0\)& LCP&RCP\\
+                \( < 0\)& RCP&LCP
+            \end{tabular}
+        \end{table}
+        \1 {\eqhold
+        \begin{gather*}
+            J_\theta \begin{pmatrix} 1\\0  \end{pmatrix} = \overbrace{\cos \theta}^\text{Modulus of field strength projected along $\theta$}\overbrace{\begin{pmatrix} \cos \theta\\ \sin \theta  \end{pmatrix}}^\text{components in $x$ and $y$} \\
+            J_\theta \begin{pmatrix} 0\\1 \end{pmatrix} = \sin\theta \begin{pmatrix}  \cos \theta \\ \sin \theta \end{pmatrix}\\
+            J_\theta =J_\theta \begin{pmatrix} 1&0\\0&1 \end{pmatrix} = \begin{pmatrix}  \cos^2\theta &\sin\theta \cos \theta \\ \cos \theta \sin\theta & \sin^2 \theta \end{pmatrix}
+        \end{gather*}}
+        \1 When light is propagated through a uniaxial birefringent material, if the refractive index is different for different polarisation directions of the \(E\) field, the different polarisation components traverse different optical paths which are \begin{align*}
+            \omega n_f \frac{d}{c} && \omega n_s \frac{d}{c}
+        \end{align*} 
+        respectively, where \(d\) is the thickness along the direction of propagation. \(d\) can be varied so that the path difference is \(\frac{\pi}{2}\), to make a quarter-wave plate. If the principal refractiveindices are \(n_o,n_o,n_e\) respectively, the minimum thickness required for a quarter-wave plate is\footnote{This is too slim for calcite to support itself. In practice, two packs of birefringent material with their fast and slow axis aligned perpendicularly, and thickness difference equal to the calculated \(d_0\) can be used to achieve a self-suppporting zero-order waveplate.} \[
+            \frac{\omega d\abs{n_e - n_o}}{c} = \frac{\pi}{2} \implies d = \frac{\pi c}{2\omega \abs{n_e - n_o}}= \frac{ \lambda}{4 \abs{n_e - n_o}}
+        \]
+        \1 Jones vector of a general elliptically polarised 3:1 beam is \[
+            \bf L_i = \begin{pmatrix} \cos\theta &- \sin\theta \\ \sin \theta &\cos \theta  \end{pmatrix} \begin{pmatrix} 1\\ \pm 3i \end{pmatrix} 
+        \] Jones matrix of a quarter-wave plate is \[
+            J = \begin{pmatrix} 1&\\ &i \end{pmatrix} 
+        \]
+        Output beam is thus \begin{align*}
+            \bf L_o &=  \begin{pmatrix} \cos\theta &- \sin\theta \\ i\sin \theta &i\cos \theta  \end{pmatrix} \begin{pmatrix} 1\\ \pm 3i \end{pmatrix}\\
+            &= \begin{pmatrix} \cos \theta \mp 3i \sin \theta \\ i\sin\theta\mp 3\cos \theta  \end{pmatrix} 
+        \end{align*}
+        Any general linearly polarised beam has no phase difference in components of \(\bf L\) so 
+        \begin{gather*}
+            \pqty{\cos \theta \mp 3i\sin\theta }\pqty{ - i\sin\theta \mp 3\cos \theta }\in \mathbb{R}\\
+            \mp 3 \cos^2 \theta  \mp 3\sin^2\theta-i\sin\theta \cos\theta + 9i\cos\theta \sin\theta  \in \mathbb{R}\\
+            \cos\theta \sin\theta = 0\implies \theta = \frac{n\pi}{2} \qquad\forall n \in \mathbb{Z}
+        \end{gather*}
+        i.e. when the wave plate is alligned any integer multiple of \(\frac{\pi}{4}\) to the incident beam a linearly polarised beam is produced. \(\theta \to \theta + \pi\) is physically invariant, so \(n = 0\) or \(1\) are the only meaningful values.
+        \[
+            \bf L_o \propto \begin{pmatrix} 1\\ \mp 3 \end{pmatrix} \text{ (\(n=0\))} \qquad\text{ or }\qquad \begin{pmatrix} \mp 3\\1 \end{pmatrix}\text{ (\(n = 1\))}
+        \]
+        The possible polarisation directions of the output beam with respect to the major axis of the incident are 
+        \[
+            \pm\tan^{-1}\qty(\frac{1}{3})\text{ (\(n=0\))} \qquad\text{ or }\qquad \pm \tan^{-1}{(3)} - \frac{\pi}{2} =\mp \tan^{-1}\pqty{1/3}\text{ (\(n=1\))}
+        \]
+        The plus and minus signs depend on chirality of the incident beams.
+        \1 The beam consists of polarised and unpolarised light. The intensity \(I_u\) of the unpolarised part is halved after passing through a linear polariser. The polarised part is elliptically polarised with major/minor axes vertical and horizontal, with Jones vector
+        \[
+            \bf L_p = \begin{pmatrix} \pm i\sqrt{2 - \frac{I_u}{2}}\\ \sqrt{5 - \frac{I_u}{2}} \end{pmatrix} 
+        \]
+        When the beam is passed through a quarter-wave plate, the Jones vector of the polarised part is changed to
+        \[
+            \bf L_o = \begin{pmatrix} i\\ &1 \end{pmatrix} \begin{pmatrix} \pm i\sqrt{2 - \frac{I_u}{2}}\\ \sqrt{5 - \frac{I_u}{2}} \end{pmatrix}  = \begin{pmatrix} \mp \sqrt{2 - \frac{I_u}{2}}\\ \sqrt{5 - \frac{I_u}{2}} \end{pmatrix}
+        \]
+        Which is now linearly polarised. The unpolarised part is unaffected. Maximum intensity is found when the subsequent linear polariser is at angle \(26.6^\circ\) with the vertical, which means
+        \begin{align*}
+            \tan{26.6^\circ} &=  \frac{\sqrt{2 - \frac{I_u}{2}}}{\sqrt{5 - \frac{I_u}{2}}} \\
+            \frac{I_u}{2}&= 1 \text{ unit}
+        \end{align*}
+        The intensity transmitted in this case is \begin{align*}
+            I &=  \underbrace{\pqty{1^2 + 2^2}}_\text{Modulus of passed Jones vector squared}+ \underbrace{1}_{I_u/2}\\
+            &= 6.00 \text{ units}
+        \end{align*}
+        Before passing through the quarter-wave plate,
+        \[
+            V_b = \frac{5}{5 + 2} = \frac{5}{7}
+        \]
+        After passing through the plate,
+        \[
+            V_a = \frac{5}{7}\qquad  \text{ still}
+        \]
+        because the wave plate does not change the intensities of the polarised nor the unpolarised parts.
+        \1 Circular polarisations of opposite handedness produce double slit interference fringes when observed through a plane polarising filter. When the plane polariser is rotated, we get the fringes gradually shifting in one direction. When the rotated angle reaches \(\frac{\pi}{2}\), new maxima in the fringe have landed where minima used to be.
+        \begin{figure}[H]
+            \centering
+            \subcaptionbox{Constructive interference in \(x\)}{\includegraphics[scale=0.5,page=1]{plot107.pdf}}
+            \subcaptionbox{Destructive interference in \(y\)}{\includegraphics[scale=0.5,page=2]{plot107.pdf}}
+        \end{figure}
+        Because of the opposite handedness, (say \((1,i)^T\) and \((1, - i)^T\)) of light from the two slits, if at any point on screen the waves interfere constructively in \(x\) components (\(L_x =1 + 1\)), they must interfere destructively in \(y\) components (\(L_y = i - i\)), vice versa.
+        \1 \2 The Jones vector of two ideal crossed linear polarisers can be written as \[
+            \begin{pmatrix} 0&0\\0&1 \end{pmatrix} \begin{pmatrix}1&0\\0&0\end{pmatrix} = \begin{pmatrix} 0&0\\0&0 \end{pmatrix} 
+        \]
+        i.e. any light is eliminated.
+        \2 The Jones matrix of a rotated waveplate is \begin{align*}
+            &\begin{pmatrix} \cos \theta &-\sin\theta \\ \sin\theta &\cos\theta  \end{pmatrix} \begin{pmatrix} 1&\\ &i \end{pmatrix} \begin{pmatrix} \cos \theta &\sin\theta \\-\sin\theta &\cos\theta  \end{pmatrix} \\
+            =& \begin{pmatrix} \cos^2\theta + i\sin^2\theta & \pqty{1 - i}\sin\theta \cos\theta \\ \pqty{1 - i}\cos\theta \sin\theta & \sin^2\theta + i\cos^2\theta   \end{pmatrix}\\ 
+            =& \begin{pmatrix} 1 - (1 - i)\sin^2\theta & \pqty{1 - i}\sin\theta \cos\theta \\ \pqty{1 - i}\cos\theta \sin\theta & (1 - i)\sin^2\theta + i  \end{pmatrix} 
+        \end{align*}
+        The resulting Jones matrix of this sandwiched waveplate is \begin{align*}
+            &\begin{pmatrix} 0&0\\0&1 \end{pmatrix}\begin{pmatrix} 1 - (1 - i)\sin^2\theta & \pqty{1 - i}\sin\theta \cos\theta \\ \pqty{1 - i}\cos\theta \sin\theta & (1 - i)\sin^2\theta + i  \end{pmatrix} \begin{pmatrix} 1&0\\0&0\end{pmatrix}\\
+            =&\begin{pmatrix} 0 & 0 \\ \pqty{1 - i}\cos\theta \sin\theta &0 \end{pmatrix}\\
+            \propto&\begin{pmatrix} 0 & 0 \\ \frac{1}{\sqrt{2}}\sin(2\theta) &0 \end{pmatrix}
+        \end{align*}
+        Which is consistent with our intuition: if \(\theta = 0\) or \(\pm\frac{\pi}{2}\) the resulting Jones matrix is trivial.
+        \2 Unpolarised light has a uniform probabilty of pointing its electric field in any direction. When it is incident on a linear polariser, we have transmitted intensity 
+        \begin{align*}
+            I_t &= \int_0^{2\pi}\frac{I}{2\pi} \abs{\begin{pmatrix} 1&0\\0&0 \end{pmatrix} \begin{pmatrix} \cos\theta \\ \sin\theta  \end{pmatrix} }^2\dd{\theta }\\
+            &= \int_0^{2\pi}\frac{I}{2\pi} \cos^2\theta \dd{\theta } \\
+            &= \frac{I}{2}
+        \end{align*}
+        Then the resulting transmission through the waveplate and the second polariser is not unlike that of polarised light
+        \[
+            I_\text{final} = \frac{1}{2}\sin^2(2\theta )\frac{I}{2} = \frac{\sin^2(2\theta )}{4} I
+        \]
+        which takes maximum value \(\frac{I}{4}\) at \(\theta = \frac{\pi}{4}\).
+        \1 
+        \2 The nonmagnetic uniaxial crystal has \begin{align*}
+            \bf E &= \frac{1}{\varepsilon_0}\begin{pmatrix} \frac{1}{\varepsilon_o}\\ &\frac{1}{\varepsilon_o}\\ &&\frac{1}{\varepsilon_e} \end{pmatrix} \bf D = \frac{D}{\varepsilon_0}\begin{pmatrix} \frac{ - \cos\theta }{\varepsilon_o}\\0\\\frac{\sin\theta }{\varepsilon_e} \end{pmatrix} e^{i \dotprod kr - i\omega t}& \bf B &= \mu_0 \bf H = \mu_0 H e^{i \dotprod kr - i\omega t}\hat{\bf j}
+        \end{align*}
+        These fields have
+        \begin{align*}
+            \div \bf D &= i D \qty( - k_x\cos\theta + k_z\sin\theta ) e^{i\dotprod kr - i\omega t}\\
+            \div \bf B &= \mu_0 k_y H e^{i\dotprod kr - i\omega t}\\
+            \curl \bf E &=  \frac{iD}{\varepsilon_0} \begin{pmatrix} \frac{k_y\sin\theta }{\varepsilon_e}\\- k_z \frac{\cos\theta }{\varepsilon_o} - k_x \frac{\sin\theta }{\varepsilon_e}\\k_y \frac{\cos\theta }{\varepsilon_o}\end{pmatrix} e^{i\dotprod kr - i\omega t}\\
+            \curl \bf H &= iH\begin{pmatrix} - k_z \\0\\k_x \end{pmatrix}e^{i\dotprod kr - i\omega t} 
+        \end{align*}
+        which satisfy Maxwell's equations provided that
+        \begin{align*}
+            \bf k &=  - \omega \frac{D}{H}\begin{pmatrix} \sin\theta \\0\\ \cos\theta  \end{pmatrix} \\
+            \frac{\omega D^2}{H\varepsilon_0}\pqty{\frac{\cos^2\theta}{\varepsilon_o} + \frac{\sin^2 \theta }{\varepsilon_e}} &= \omega \mu_0 H\\
+            \implies \frac{D^2}{H^2}\pqty{\frac{\cos^2\theta}{\varepsilon_o} + \frac{\sin^2 \theta }{\varepsilon_e}} &= c^{-2}
+        \end{align*}
+        Rearranging, we get \[
+            \bf k = \pm \omega \frac{n_b}{c}\omega \begin{pmatrix} \sin\theta \\0\\ \cos\theta  \end{pmatrix} 
+        \]
+        where \(n_b^{-2} \equiv \pqty{\frac{\cos^2\theta }{\varepsilon_o} + \frac{\sin^2\theta }{\varepsilon_e}}\)
+        \begin{center}
+            \def\svgwidth{300pt}
+            \incfig{eando9}
+        \end{center}
+        \2 The Poynting vector is given by \begin{align*}
+            \bf N &= \bf E \times \bf H\\
+            &= -\frac{DH}{2\varepsilon_0}\begin{pmatrix} \frac{\sin\theta}{\varepsilon_e}\\0\\ \frac{\cos\theta }{\varepsilon_o}  \end{pmatrix} 
+        \end{align*}
+        which is at angle \(\theta ' = \arctan(\frac{\varepsilon_o}{\varepsilon_e}  \tan\theta )\) to the optical axis.
+        \1 If a molecules is composed of 4 \textit{identical} polarisable spheres at corners of a regular tetrahedron, its mirror image cannot be distinguished from itself, so chirality is not present.
+
+        A triatomic molecule, consisting of spheres interacting by Coulomb fields, is always planar. A planar molecule does not demonstrate chirality either.
+        \1 \2\3With the optic axis aligned with the \(z\) axis, \(\bf D\) field is in the degenerate plane, so the \(\bf E\) vector will be parallel to \(\bf D\) and hence also in the \(x\)-\(y\) plane, which gives us 
+        \begin{align*}
+            \omega &=  \frac{c}{n_o} k \\
+            &=  \frac{\pi c}{L\, n_o} m\qquad m\in \mathbb{Z}
+        \end{align*}
+        \begin{center}
+            \includegraphics[scale=1,page=1]{plot111.pdf}
+        \end{center}
+        \3 In this case both \(\bf D\) and \(\bf E\) are still in \(x\text{-}y\) plane, but the \(x\) and \(y\) components of the wave propagate at different speeds, for a stationary solution, we must have 
+        \begin{center}
+            \includegraphics[scale=1,page=2]{plot111.pdf}
+        \end{center}
+        \[
+            \omega = \frac{\pi c}{L\, n_o}m =\frac{\pi c}{L\, n_e}n \qquad m,n \in \mathbb{Z}
+        \]
+        simultaneously, unless \(\bf D\) is parallel to one of the principal axes. 
+        \2 A chiral material is fully isotropic, and its eigenpolarisations (polarisations that remain coherent through propagation) are LCP and RCP.
+
+        Handedness of circularly polarised lights revert upon reflection. Therefore, the boundary condition is \begin{align*}
+            \frac{\omega}{c /n_l}L + \frac{\omega}{c /n_r}L &= \frac{2 n_o \omega L}{c} = 2m\pi\\
+            \omega &= \frac{\pi c}{n_o \omega L}
+        \end{align*}
+        \2 The total angle that a plane polarised beam is (clockwise) rotated through by a return trip in this system is \(2VB_0 L\), and the phase change is \(2kL + \pi \). The changes in polarisation direction and phase are fully described by the following complex matrix
+        \[
+            -\exp(i2kL)\begin{pmatrix} \cos(2VB_0 L) & \sin(2VB_0 L) \\ -\sin(2VB_0 L) &\cos(2VB_0 L) \end{pmatrix} 
+        \]
+        The vanishing boundary condition at the mirror requires the above to have eigenvalue \( - 1\). i.e. \(\lambda\) has a solution \( - 1\) in the equation below
+        \begin{gather*}
+            \pqty{\cos(2VB_0 L) +e^{ - i 2kL}\lambda} \pqty{\cos(2VB_0 L) + e^{ - i2kL}\lambda} + \sin^2(2VB_0 L) = 0\\
+            1 + 2 e^{i 2kL}\lambda \cos(2VB_0 L) + e^{i 4kL}\lambda^2 = 0\\
+            2\cos(2kL) = 2  \cos(2VB_0 L)\\
+            kL = \pm VB_0 L + m\pi\\
+            \omega  = \frac{c}{n}\pqty{\pm VB_0  + \frac{m\pi}{L}} \qquad m\in \mathbb{Z}
+        \end{gather*}
+        
+        \parbox{\linewidth}{\centering
+            \captionsetup{type=figure,width =\linewidth}
+            \includegraphics[scale=1,page=3]{plot111.pdf}
+            \captionof{figure}{The boundary condition is that at both mirrors, the two waves superimpose to \(0\) at all times.}
+        }
+        \1 The equation of motion of each electron in the plasma is \[
+            m \bf{\ddot{r}} = - e(\bf E + \bf{\dot{r}} \times \bf B)
+        \]
+        where the contribution from the magnetic field in the EM wave has been neglected. The transverse response of the electrons is thus given by \begin{align*}
+            - \omega^2\bf r &=- \frac{e}{m}(\bf E - i\omega \bf{r}\times\bf B ) 
+        \end{align*}
+        LCP and RCP modes have respectively \begin{align*}
+            \bf r_L &=  a \begin{pmatrix} 1\\i \end{pmatrix} &\bf r_R &=  a \begin{pmatrix} 1\\-i \end{pmatrix} \\
+            -i\omega {\bf r}_L \times \bf B &= \omega  B_z \bf r_L  &-i\omega {\bf r}_R \times \bf B &= - \omega  B_z \bf r_R\\
+            \omega \pqty{\omega - \omega_c}\bf r_L &= \frac{e}{m}\bf E &  \omega \pqty{\omega + \omega_c}\bf r_R &= \frac{e}{m}\bf E\\
+            \frac{1}{\varepsilon_0}\bf P_L &= -\frac{ne^2 /m \varepsilon_0}{\omega \pqty{\omega - \omega_c}}\bf E &\, \frac{1}{\varepsilon_0}\bf P_R &= -\frac{ne^2 /m\varepsilon_0}{\omega \pqty{\omega + \omega_c}} \bf E\\
+            \frac{1}{\varepsilon_0}\bf P_L &= -\frac{\omega_p^2}{\omega \pqty{\omega - \omega_c}}\bf E &\frac{1}{\varepsilon_0}\bf P_R &= -\frac{\omega_p^2}{\omega \pqty{\omega + \omega_c}} \bf E\\
+            \bf D_L &= \varepsilon_0\bqty{1-\frac{\omega_p^2}{\omega \pqty{\omega - \omega_c}}}\bf E &\bf D_R &= \varepsilon_0 \bqty{1-\frac{\omega_p^2}{\omega \pqty{\omega + \omega_c}}} \bf E
+        \end{align*}
+        At low frequencies, \(\omega \ll \omega_c\), \(\omega \ll \frac{\omega^2_p}{\omega_c}\) \begin{align*}
+            \bf D_L & \approx  \varepsilon_0\bqty{1 + \frac{\omega_p^2}{\omega \omega_c}}\bf E &\bf D_R & \approx  \varepsilon_0 \bqty{1 -\frac{\omega_p^2}{\omega {\omega_c}}} \bf E
+        \end{align*}
+        which gives us that the effective susceptibility of LCP will be \(( +)\)ve and that of RCP will be \(( -)\)ve, so the wavevector of LCP will be real, but that of RCP will be imaginary, i.e. RCP cannot propagate.
+        \begin{align*}
+            k &=  \frac{n\omega}{c} = \frac{\sqrt{\varepsilon}}{c} \omega \\
+            &= \frac{\omega}{c} \frac{\omega_p}{\sqrt{\omega \omega_c}}\\
+            &= \frac{\omega_p}{c} \sqrt{\frac{\omega}{\omega_c}}\\
+            v_g =\dv{\omega}{k} &= \frac{2\sqrt{\omega_c \omega }}{\omega_p} c
+        \end{align*}
+        \1 The dielectric multilayer has dispersion relation \[
+            \cos(qd) = F(\omega ) = \cos(k_a a)\cos(k_b b) - \frac{1}{2}\pqty{\frac{k_b}{k_a} + \frac{k_a}{k_b}}\sin(k_a a)\sin(k_b b)
+        \]
+        where \(k_a = \frac{\omega n_a}{c}\) etc. 
+
+        At low frequencies, we can calculate the effective refractive index \(n_\text{eff}=\frac{qc}{\omega}\)\begin{align*}
+            \cos(qd) &=  1 + \frac{1}{2} k_a^2  a^2 + \frac{1}{2} k_b^2 b^2- \frac{1}{2}\pqty{k_a^2ab + k_b^2ab} +  O(\omega^4)\\
+            1 - \frac{1}{2}\pqty{qd}^2 &=  1 + \frac{1}{2} k_a^2  a^2 + \frac{1}{2} k_b^2 b^2 - \frac{1}{2}\pqty{k_a^2ab + k_b^2ab} + O(\omega^4 + q^4)\\
+            \pqty{n_\text{eff}d }^2 &= n_a^2 a(a + b) + n_b^2 b(a + b) + O(\omega^2 + \frac{q^4}{\omega^2})\\
+            n_\text{eff} &\approx  \sqrt{\frac{n_a^2 a + n_b^2b}{a+b} }
+        \end{align*}
+        The dispersion relation is approximately periodic when \(\omega \) is approximately a common multiple of \(\frac{n_a a}{c}\) and \(\frac{n_b b}{c}\), so we expect a linear asymptote of slope equal to the low-frequency refractive index, as in Fig. 2.26. The mid-gap frequency of the first gap can thus be estimated to be \[
+            n_\text{eff}\, \frac{\pi}{d}  \approx  \pi \sqrt{\frac{n_a^2 a + n_b^2b}{(a+b)^3} }
+        \]
+        \1 The visibility as a function of path difference is equal to 
+        \begin{align*}
+            \abs{\gamma(d)} &=  \abs{\frac{\Gamma(d)}{I_0}}\\
+            &= \abs{\frac{\mean{f(t)f(t - \frac{d}{c})}}{I_0}}
+        \end{align*}
+        Where \(f(t)\) is the superposition of two oppositely doppler shifted radiations, which has Gaussian power spectra
+        \begin{gather*}
+            P(\omega) = P_0(\omega) * \bqty{\delta(\omega + \Delta \omega) +\delta(\omega - \Delta \omega)}\\
+            P_0 (\omega) = C\exp( - \frac{(\omega - \omega_0)^2}{2\sigma^2})
+        \end{gather*}
+        Using Wienner-Khinchin theorem,
+        \begin{align*}
+            \gamma(d) =\gamma(\tau c) &\propto \mathcal{F}^{-1}[P(\omega)] \\
+            \gamma(\tau c)&\propto  \mathcal{F}^{-1}[P_0(\omega)] \cos(\Delta\omega \tau)
+        \end{align*}
+        The inverse fourier transform of a Gaussian will be another Gaussian of width  \(\frac{c}{\sigma}\). Therefore, the form of the visibility curve is the absolute value of a Gaussian multiplied by a cosine. The velocity of expansion can be estimated from doppler equation (at low velocities)\begin{align*}
+            \Delta\omega &= \frac{\omega_0v}{c}\\
+            \cos(\Delta \omega \frac{d}{c}) &= 0\quad  \text{ at }\Delta \omega = \frac{\pi c}{2d}\\
+            v &= \frac{ c\lambda}{4d}\\
+            &= 24.6\: \text{km}\,\text{s}^{-1}
+        \end{align*}
+        The apparent line width  is 
+        \begin{align*}
+            \delta\omega =2.36\sigma &= \frac{2.36 \sqrt{2}c}{l_c}
+        \end{align*}
+        where \(l_c \) is the coherent length, the path difference at which the visibility, \emph{unmodulated by cosine}, drops to \(\frac{1}{e}\) maximum. \[
+            l_c \approx 5.5\: \text{mm}
+        \]
+        so we have\[
+            \delta\omega \approx 1.81 \times 10^{11}\:  \text{rad s}^{-1}
+        \]
+        If the linewidth is due to thermal broadening, the temperature of the hydrogen gas shell is \begin{align*}
+            \sigma &=  \omega_0\pqty{\frac{k_BT}{mc^2}}^\frac{1}{2}\\
+            T &= \pqty{\frac{\sigma}{\omega_0}}^2\frac{mc^2}{k_B}\\
+            T &= 7759\: \text{K}
+        \end{align*}
+        \1 \2 Coherence length is related to line width by \begin{align*}
+            \delta \omega &=  \frac{2\pi c}{\lambda^2} \delta \lambda\\
+            l_c &= \frac{2.36 \sqrt{2}c}{\delta \omega}\\
+            l_c &= \frac{2.36 \sqrt{2} \lambda^2}{2\pi \delta \lambda}\\
+            l_c &= 0.16\: \text{m}
+        \end{align*}
+        \2 The visibility of the fringes can be modelled to be \[
+            \gamma(d) = e^{-\dfrac{\sigma^2 (\, \overbrace{2d}^\text{return trip}\,)^2}{2c^2}}= \exp( -\frac{4d^2}{l_c^2})
+        \]
+        So when one of the mirrors is moved by \(10\) mm and \(50\) mm, the visibilityof the fringes decreases to \begin{equation*}
+            \gamma = 0.984\qquad\text{ and }\qquad\gamma = 0.677
+        \end{equation*}
+        respectively.
+        \2 If the power spectrum is a top-hat of width \(\Delta\omega\) centered at \(\omega_0\), the visibility function would be\[
+            \gamma(d)\propto \mathrm{sinc}\qty(\frac{d \Delta \omega}{c})
+        \]
+        which first falls to \(0\) at \[
+            \frac{d\Delta\omega}{c} = \pi \implies d = \frac{\lambda^2}{2\delta \lambda} = 0.16\;\mathrm{m}
+        \] 
+        \1
+        The width of the wire is small compared to the focal length, so we make several approximations:\begin{align*}
+            \theta =  \arcsin(\frac{x}{f}) &=  \frac{x}{f} & (\alpha = \frac{w}{f})\\
+            \text{the angular intensity } I(\theta) &= \frac{I_0}{\alpha}\\
+            u &= kd
+        \end{align*}
+        \begin{center}
+            \includegraphics[scale=1,page=1]{plot116.pdf}
+        \end{center}
+        \begin{align*}
+            \gamma(u) &=   \frac{1}{I_0}\int_{\frac{\alpha}{2}}^{\frac{\alpha}{2}}\frac{I_0}{\alpha}e^{iu\theta}\dd{\theta}\\
+            &= \frac{2f\sin(\frac{kdw}{2f})}{kdw}\\
+            &= \mathrm{sinc}\pqty{\frac{kdw}{2f} }\\
+            &= \mathrm{sinc}\pqty{\frac{\pi dw}{f\lambda} }
+        \end{align*}
+        For the degree of coherence to be \(0\), the smallest separation is when \[
+            \frac{\pi dw}{f\lambda} = \pi \implies d = \frac{f\lambda}{w} = 0.6 \:\mathrm{mm}
+        \]
+    \end{outline}
+\end{document}
